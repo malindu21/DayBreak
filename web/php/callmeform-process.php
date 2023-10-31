@@ -31,7 +31,7 @@ if (empty($_POST["terms"])) {
     $terms = $_POST["terms"];
 }
 
-$EmailTo = "yourname@domain.com";
+$EmailTo = "malinduki@outlook.com";
 $Subject = "New quote request from Aria landing page";
 
 // prepare email body text

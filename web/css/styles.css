@@ -156,31 +156,55 @@ strong {
 
 .btn-solid-reg:hover {
 	background-color: transparent;
-	color: #14bf98;
+	color: #fff;
 	text-decoration: none;
 }
 
 .user-friendly-paragraph {
 	font-family: Arial, sans-serif;
     font-size: 20px;
-    
+    color: #f5f5f5a0;
     text-align: center; /* Center text horizontally */
   }
 
+ 
+
 /* Define a CSS class to style the white boxes */
 .white-box {
-	width: 200px; /* Adjust the width as needed */
-	height: min-content; /* Adjust the height as needed */
+	width: 250px; /* Adjust the width as needed */
+	height: 100px; /* Adjust the height as needed */
 	background-color: rgba(255, 255, 255, 0.08);
 	transition: transform .2s; /* Animation */
 
 	margin: 15px; /* Add margin to separate the boxes */
-	display: inline-block; /* Display the boxes in a row */
+	display: inline-flex; /* Display the boxes in a row */
 	border-radius: 10px;
 	align-items: center; /* Center content vertically */
 	text-align: center; /* Center content horizontally */
 
 	padding: 10px;
+
+  }
+
+  .white-box-how-to-book {
+	width: 90%; /* Adjust the width as needed */
+	height: min-content; /* Adjust the height as needed */
+	background-color: #fff;
+	transition: transform .2s; /* Animation */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	
+	border-radius: 10px;
+	padding: 10px;
+
+
+    display: flex; /* Use flex to center both horizontally and vertically */
+   
+    align-items: center; /* Center vertically */
+
+	
+    flex-direction: row;
+    justify-content: flex-start;
+  
 
   }
 
@@ -207,16 +231,36 @@ strong {
 
   }
 
+  .white-box p {
+	color: #f5f5f5a0;
+	width: 70%;
+
+  }
+
+  .custom-col-wider {
+    width: 30%; /* Adjust the width as needed */
+}
+
+.custom-col-narrower {
+    width: 70%; /* Adjust the width as needed */
+}
+
+
   .white-box h3,
 .white-box p {
     margin: 0; /* Remove any margin */
     padding:  0; /* Add padding as needed to control the spacing */
-	
+	text-align: start;
 	
 }
 
+
   .white-box:hover {
 	transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .white-box-how-to-book:hover {
+	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
   .white-box-anti {
@@ -840,7 +884,6 @@ input[type='checkbox'] {
 	margin-bottom: 0.5rem;
 	align-items: center;
 	height: min-content;
-	height: 50px;
 	background-color: rgba(255, 255, 255, 0.09);
 	border-radius: 50px; 
 }
@@ -923,8 +966,53 @@ input[type='checkbox'] {
 	display: none;
 }
 
-.navbar-custom .switch-container {
-	display: none;
+
+/* Media query for mobile devices (adjust the max-width as needed) */
+@media (max-width: 1200px) {
+    .navbar-custom .switch-container {
+        display: none;
+    }
+
+	.box-icon {
+		display: none;
+	}
+	.boxes-container{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 15px; /* Adjust the gap as needed */
+	}
+
+	.cards-2  h5 {
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	.cards-2  {
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	.box-text {
+		text-align: left;
+		margin-left: 3rem;
+		flex-direction: row;
+		margin-top: 1rem;
+		font-size: 10px; /* You can adjust the font size as needed */
+		margin-right: 2rem;
+	}
+
+	.accordion {
+		height: min-content;
+		border-radius: 20px;
+		background-color: rgba(255, 255, 255, 0.09);
+	}
+	
+	
 }
 
 
@@ -1097,11 +1185,11 @@ input[type='checkbox'] {
 .cards-2 h2 {
 	margin-bottom: 1.5rem;
 	text-align: left;
-	
+	font-size: 24px;
 }
 
 .cards-2 h5 {
-	margin-top: 6rem;
+	margin-top: 15%;
 	margin-bottom: 0.5rem;
 	text-align: left;
 	font-size: 16px; /* Adjust the font size as desired */
@@ -1123,10 +1211,10 @@ input[type='checkbox'] {
 .cards-2 .card-body {
 	border-color: #111;
 	border-width: 2px;
-		background: url('../images/Video.gif') center center no-repeat;
-		margin-left: 3.25rem;
+		background: url('../images/Sample_Image_of_Video_1.jpg') center center no-repeat;
+		margin-left: 10%;
 		padding: 20px;
-		margin-top: 3rem;
+		margin-top: 10vh;
 		margin-bottom: 2rem;
 		border-radius: 20px;
 		height: 80vh;
@@ -1185,7 +1273,7 @@ input[type='checkbox'] {
 /*************************/
 .accordion .area-1 {
 	height: 27rem;
-	background: url('../images/project-3.jpg') center center no-repeat;
+	/* background: url('../images/project-3.jpg') center center no-repeat; */
 	background-size: cover;
 	position: relative; 
 }
@@ -1638,6 +1726,10 @@ input[type='checkbox'] {
     text-align: center;
 }
 
+.form-2 .card-body form {
+    width: 100%;
+}
+
 /**********************/
 /*     17. Footer     */
 /**********************/
@@ -1691,13 +1783,13 @@ a.back-to-top {
 	width: 2.625rem;
 	height: 2.625rem;
 	border-radius: 1.875rem;
-	background: #14bf98 url("../images/up-arrow.png") no-repeat center 47%;
+	background: #f1cc11 url("../images/up-arrow.png") no-repeat center 47%;
 	background-size: 1.125rem 1.125rem;
 	text-indent: -9999px;
 }
 
 a:hover.back-to-top {
-	background-color: #13aa87; 
+	background-color: #f1cc11; 
 }
 
 
@@ -1845,6 +1937,8 @@ a:hover.back-to-top {
 	.navbar-custom .dropdown-items-divide-hr {
 		width: 84%;
 	}
+
+	
 	/* end of navigation */
 
 
@@ -2278,7 +2372,7 @@ a:hover.back-to-top {
 	}
 	
 	.card5 .card-body {
-		background: url('../images/Video.gif') center center no-repeat;
+		background: url('../images/Sample_Image_of_Video_1.jpg') center center no-repeat;
 		padding: 20px;
 		margin-top: 3rem;
 		margin-bottom: 3rem;
@@ -2292,21 +2386,6 @@ a:hover.back-to-top {
 		justify-content: flex-end;
 	}
 	
-	/* Add a media query for mobile screens */
-	@media screen and (max-width: 767px) {
-		.card5 {
-			margin-left: 5%; /* Adjust the left margin for better positioning on mobile */
-		}
-	
-		.card5 .card-body {
-			height: auto; /* Allow the height to adjust based on content */
-			width: 80%; /* Adjust the width for mobile screens */
-			padding: 1rem; /* Reduce the padding for better mobile display */
-		}
-	}
-
-	
-
 	
 	.cards-2 .col-lg-12 div.card:nth-child(3n+2) {
 		margin-right: 3rem;
@@ -2340,6 +2419,7 @@ a:hover.back-to-top {
     justify-content: flex-start;
     align-items: center;
 }
+
 
 
 .box:hover {
@@ -2475,11 +2555,11 @@ a:hover.back-to-top {
 	/* Contact */
 	.form-2 .text-container {
 		margin-top: 0.875rem;
-		margin-right: 1.5rem;
+		
 	}
 
 	.form-2 form {
-		margin-left: 1.5rem;
+	
 	}
 
 	.form-2 h3 {
