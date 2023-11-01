@@ -1,0 +1,121 @@
+.review-bg {
+  background: url(../images/review_bg.jpg) no-repeat;
+  width: 100%;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: #75521a40;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-position: 50% 50%;
+  border-radius: 10px;
+}
+
+.review-list {
+  position: relative;
+}
+
+.review-box {
+  width: 100%;
+  border-radius: 50px !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.review-profile {
+  flex: 1;
+  min-width:250px;
+}
+.review-profile img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+ 
+}
+
+.review-text {
+  flex: 2;
+  padding: 10px;
+  min-width: 450px;
+}
+
+.review-image {
+  flex: 1;
+  min-width:250px;
+}
+.review-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.review-profile-pic {
+  height: 90px;
+  width: 90px;
+  background: white;
+}
+
+.review-carousel-controls {
+  width: 100px;
+  height: 50px;
+  color: #ffffff;
+}
+
+.review-carousel-left-arrow,
+.review-carousel-right-arrow {
+  cursor: pointer;
+}
+
+.fade {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.blur-bg {
+  padding: 1px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.text-grey {
+  color: #7f8c8d;
+  font-weight: 400;
+}
+
+.text-small {
+  font-size: 12px;
+}
+.text-regular {
+  font-size: 14px;
+}
+.text-medium {
+  font-size: 16px;
+}
+.text-large {
+  font-size: 18px;
+}
+.text-larger {
+  font-size: 20px;
+}
+
+
+@media  (max-width: 600px) {
+    .review-profile {
+        flex: 1;
+        min-width: 200px;
+    }
+    .review-text {
+        flex: 2;
+        min-width: 200px;
+        font-size: 1rem;
+        padding: 20px 0px;
+    }
+      
+      .review-image {
+        flex: 1;
+        min-width: 200px;
+      }
+}

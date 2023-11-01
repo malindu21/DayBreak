@@ -1,0 +1,57 @@
+
+
+.tour-package {
+  background: url(../images/tour1.jpg) no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  width: 300px;
+  border-radius: 30px;
+  margin: 10px auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
+  transition:transform  0.5s;
+}
+
+.tour-package:hover{
+    transform: scale(1.1);
+   
+}
+
+.tour-package-details{
+    height: 80px;
+    width: 100%;
+}
+
+.tour-package-end-section{
+    box-shadow: inset 0 200px 200px #00000010;
+    height: 220px;
+}
+
+
+.blur-bg {
+  padding: 1px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.text-grey{
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+.text-small{
+    font-size: 12px;
+}
+.text-regular{
+    font-size: 14px;
+}
+.text-medium{
+    font-size: 16px;
+}
+.text-large{
+    font-size: 18px;
+}
+
