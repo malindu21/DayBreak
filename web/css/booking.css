@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.main {
+    background: url(../images/booking_bg.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .booking-form {
+    min-height: 80vh;
+    width: 50%;
+    backdrop-filter: blur(20px) !important;
+    color: #ffffff;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .text-area-form-group {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  
+  .form-control {
+    box-shadow: none !important;
+    min-height: 60px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .selected-tour-card {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .quick-info {
+    width: 200px;
+    margin-bottom: 10px;
+    display: inline-flex;
+  }
+  
+  .quick-info .text {
+    line-height: 0.9;
+  }
+  
+  .booking-form-footer-item {
+    height: 70px;
+    width: 250px;
+    margin-bottom: 10px;
+  }
+  
+  .booking-form-footer-item .btn {
+    width: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .location-wrapper {
+    position: relative;
+  }
+  
+  .search-results {
+    top: 85px;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 9999999999;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 10px 10px;
+    border: solid 1px #58545490;
+    border-top: 0px !important;
+    transition: 0.5s;
+  }
+  
+  .user-select{
+    cursor: pointer;
+  }
+  
+  .blur-bg {
+    padding: 1px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  
+  .text-grey {
+    color: #7f8c8d;
+    font-weight: 400;
+  }
+  
+  .text-small {
+    font-size: 12px;
+  }
+  .text-regular {
+    font-size: 14px;
+  }
+  .text-medium {
+    font-size: 16px;
+  }
+  .text-large {
+    font-size: 18px;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .booking-form {
+      width: 80%;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .form-control {
+      min-height: 50px;
+    }
+  }
