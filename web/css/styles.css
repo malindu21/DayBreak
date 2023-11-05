@@ -168,23 +168,27 @@ strong {
   }
 
  
+ 
+
+/* Define a CSS class to style the white boxes */
+
 
 /* Define a CSS class to style the white boxes */
 .white-box {
-	width: 250px; /* Adjust the width as needed */
-	height: 100px; /* Adjust the height as needed */
+	width: 250px; 
+	height: 100px; 
 	background-color: rgba(255, 255, 255, 0.08);
-	transition: transform .2s; /* Animation */
-
-	margin: 15px; /* Add margin to separate the boxes */
-	display: inline-flex; /* Display the boxes in a row */
+	transition: transform .2s; 
+	margin: 15px; 
+	display: inline-flex;
 	border-radius: 10px;
-	align-items: center; /* Center content vertically */
-	text-align: center; /* Center content horizontally */
-
+	align-items: center; 
+	text-align: center; 
 	padding: 10px;
-
+	backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
   }
+
 
   .white-box-how-to-book {
 	width: 90%; /* Adjust the width as needed */
@@ -209,26 +213,21 @@ strong {
   }
 
   .white-box-time {
-	width: 150px; /* Adjust the width as needed */
-	height: min-content; /* Adjust the height as needed */
+	width: 150px;
+	height: min-content; 
 	background-color: rgba(255, 255, 255, 0.2);
-	transition: transform .2s; /* Animation */
-
-	
-	display: inline-block; /* Display the boxes in a row */
-	
-	align-items: center; /* Center content vertically */
-	text-align: center; /* Center content horizontally */
-
+	transition: transform .2s; 
+	display: inline-block; 
+	align-items: center; 
+	text-align: center;
 	padding: 10px;
-
+	backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
   }
-  .white-box-time p {
 
+  .white-box-time p {
 	font-size: 12px;
 	font-weight: bold;
-	
-
   }
 
   .white-box p {
@@ -246,12 +245,12 @@ strong {
 }
 
 
+
   .white-box h3,
 .white-box p {
     margin: 0; /* Remove any margin */
     padding:  0; /* Add padding as needed to control the spacing */
 	text-align: start;
-	
 }
 
 
@@ -263,19 +262,7 @@ strong {
 	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
-  .white-box-anti {
-	width: 250px; /* Adjust the width as needed */
-	height: 100px; /* Adjust the height as needed */
-	margin: 15px; /* Add margin to separate the boxes */
-	display: inline-block; /* Display the boxes in a row */
-	border-radius: 10px;
-	align-items: center; /* Center content vertically */
-	text-align: center; /* Center content horizontally */
-	padding: 10px;
 
-  }
-  
- 
 .white-box h3 {
     font-size: 15px;
     font-weight: bold;
@@ -286,10 +273,49 @@ strong {
     font-size: 14px;
     font-style: normal;
 }
-.white-box-anti p {
-    font-size: 12px;
-    font-style: normal;
+
+.white-box-about-activity {
+	width: 90%;
+	height: min-content;
+	margin: 15px;
+	display: flex;
+	align-items: flex-start;
+	padding: 10px;
+	text-align: left;
+  }
+  
+  .custom-col-wider-about-activity {
+	width: 10%;
+	/* Adjust the width as needed */
+  }
+  
+  .custom-col-narrower-about-activity {
+	width: 90%;
+	/* Adjust the width as needed */
+  }
+
+
+
+
+.white-box-about-activity h2 {
+    font-size: 14px;
+    font-weight: bold;
+	color: #ffff;
 }
+
+.white-box-about-activity h3 {
+    font-size: 13px;
+    font-style: normal;
+	color: #ffff;
+}
+
+.white-box-about-activity p {
+    font-size: 13px;
+    font-style: normal;
+	color: #ffff;
+}
+
+
 
 
 
@@ -885,6 +911,8 @@ input[type='checkbox'] {
 	align-items: center;
 	height: min-content;
 	background-color: rgba(255, 255, 255, 0.09);
+	backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
 	border-radius: 50px; 
 }
 
@@ -1010,6 +1038,8 @@ input[type='checkbox'] {
 		height: min-content;
 		border-radius: 20px;
 		background-color: rgba(255, 255, 255, 0.09);
+		backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
 	}
 	
 	
@@ -1080,94 +1110,6 @@ input[type='checkbox'] {
 }
 
 
-/*********************/
-/*     05. Intro     */
-/*********************/
-.basic-1 {
-	padding-top: 6.5rem;
-	padding-bottom: 3rem;
-}
-
-.basic-1 .text-container {
-	margin-bottom: 3rem;
-}
-
-.basic-1 .section-title {
-	margin-bottom: 0.5rem;
-}
-
-.basic-1 h2 {
-	margin-bottom: 1.375rem;
-}
-
-.basic-1 .testimonial-author {
-	color: #484a46;
-}
-
-/* Hover Animation */
-.basic-1 .image-container {
-	overflow: hidden;
-	border-radius: 0.25rem;
-}
-
-.basic-1 .image-container img {
-	margin: 0;
-	border-radius: 0.25rem;
-	transition: all 0.3s;
-}
-
-.basic-1 .image-container:hover img {
-	-moz-transform: scale(1.15);
-	-webkit-transform: scale(1.15);
-	transform: scale(1.15);
-} 
-/* end of hover animation */
-
-
-/***************************/
-/*     06. Description     */
-/***************************/
-.cards-1 {
-	padding-top: 3rem;
-	padding-bottom: 2.875rem;
-}
-
-.cards-1 .card {
-	margin-bottom: 2.5rem;
-	border: none;
-	text-align: center;
-}
-
-.cards-1 .fa-stack {
-	width: 6rem;
-	height: 6rem;
-	margin-right: auto;
-	margin-bottom: 1rem;
-	margin-left: auto;
-	line-height: 6rem;
-	text-align: left;
-}
-
-.cards-1 .fa-stack .hexagon {
-	position: absolute;
-	width: 6rem;
-	height: 6rem;
-	background: url('../images/hexagon-green.svg') center center no-repeat;
-	background-size: 6rem 6rem;
-}
-
-.cards-1 .fa-stack-1x {
-	color: #fff;
-	font-size: 2rem;
-}
-
-.cards-1 .card-body {
-	padding: 0;
-}
-
-.cards-1 .card-title {
-	margin-bottom: 0.625rem;
-}
 
 
 /************************/
@@ -1185,14 +1127,14 @@ input[type='checkbox'] {
 .cards-2 h2 {
 	margin-bottom: 1.5rem;
 	text-align: left;
-	font-size: 24px;
+
 }
+
 
 .cards-2 h5 {
 	margin-top: 15%;
 	margin-bottom: 0.5rem;
 	text-align: left;
-	font-size: 16px; /* Adjust the font size as desired */
     opacity: 0.5;   /* Adjust the opacity value between 0 (fully transparent) and 1 (fully opaque) */
 }
 
@@ -1273,7 +1215,7 @@ input[type='checkbox'] {
 /*************************/
 .accordion .area-1 {
 	height: 27rem;
-	/* background: url('../images/project-3.jpg') center center no-repeat; */
+	background: url('../images/package-demo.png') center center no-repeat;
 	background-size: cover;
 	position: relative; 
 }
@@ -1292,6 +1234,8 @@ input[type='checkbox'] {
 	width: 30px;
 	height: 30px;
 	background-color: rgba(255, 255, 255, 0.4);
+	backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
 	color: #fff;
 	border: none;
 	border-radius: 50%;
@@ -1348,7 +1292,7 @@ input[type='checkbox'] {
 }
 
 .accordion h2 {
-	margin-bottom: 1.625rem;
+	margin-bottom: 0;
 	
 	color: #fff;
 }
@@ -1363,13 +1307,13 @@ input[type='checkbox'] {
 
 .accordion h5 {
 	margin-bottom: 0;
-	
+	font-weight: 100;
 	color: #fff;
 }
 
 .accordion p {
 	margin-bottom: 0;
-	
+	font-style:inherit;
 	color: #fff;
 }
 
@@ -1423,192 +1367,6 @@ input[type='checkbox'] {
 .accordion .accordion-body {
 	margin-left: 3.125rem;
 }
-
-
-/*************************/
-/*     09. Details 2     */
-/*************************/
-.tabs .tabs-container {
-	max-width: 90%;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 2rem;
-	padding-bottom: 5.75rem;
-}
-
-.tabs .nav-tabs {
-	justify-content: center;
-	margin-bottom: 1.125rem;
-	border-bottom: none;
-}
-
-.tabs .nav-link {
-	margin-right: 1.625rem;
-	margin-bottom: 0.875rem;
-	padding: 0;
-	border: none;
-	border-radius: 0.25rem;
-	color: #787976;
-	font: 700 1.375rem/1.375rem "Montserrat", sans-serif;
-	text-decoration: none;
-	transition: all 0.2s ease;
-}
-
-.tabs .nav-link:hover,
-.tabs .nav-link.active {
-	color: #14bf98;
-}
-
-.tabs .nav-link .fas {
-	margin-right: 0.125rem;
-	font-size: 0.875rem;
-	vertical-align: 20%;
-}
-
-.tabs #tab-1 .progress-container {
-	margin-top: 1.5rem;
-}
-
-.tabs #tab-1 .progress-container .title {
-	margin-bottom: 0.25rem;
-	color: #484a46;
-	font: 600 0.875rem/1.25rem "Open Sans", sans-serif;
-}
-
-.tabs #tab-1 .progress {
-	height: 1.375rem;
-	margin-bottom: 1.125rem;
-	border-radius: 0.125rem;
-	background-color: #f9fafc;
-}
-
-.tabs #tab-1 .progress-bar {
-	display: block;
-	padding-left: 1.5rem;
-	border-radius: 0.125rem;
-	background: linear-gradient(to bottom right, #14bf98, #1bd1a7);
-}
-
-.tabs #tab-1 .progress-bar.first {
-	width: 100%;
-}
-
-.tabs #tab-1 .progress-bar.second {
-	width: 75%;
-}
-
-.tabs #tab-1 .progress-bar.third {
-	width: 90%;
-}
-
-.tabs #tab-2 .list-unstyled {
-	margin-top: 1.75rem;
-	margin-bottom: 0;
-	vertical-align: top;
-}
-
-.tabs #tab-2 .list-unstyled .media {
-	margin-bottom: 2rem;
-}
-
-.tabs #tab-2 .list-unstyled .media-bullet {
-	color: #14bf98;
-	font-weight: 600;
-	font-size: 2rem;
-	line-height: 2rem;
-}
-
-.tabs #tab-2 .list-unstyled .media-body {
-	margin-left: 0.875rem;
-}
-
-.tabs #tab-3 .list-unstyled .fas {
-	color: #14bf98;
-	font-size: 0.5rem;
-	line-height: 1.375rem;
-}
-
-.tabs #tab-3 .list-unstyled .media-body {
-	margin-left: 0.625rem;
-}
-
-.tabs #tab-3 .list-unstyled {
-	margin-bottom: 1.75rem;
-}
-
-.tabs .area-2 {
-	height: 27rem;
-	background: url('../images/details-2-background.jpg') center center no-repeat;
-	background-size: cover;
-}
-
-
-
-
-/*********************/
-/*     15. About     */
-/*********************/
-.counter {
-	padding-top: 6.875rem;
-	padding-bottom: 5.25rem;
-}
-
-.counter .image-container {
-	margin-bottom: 3rem;
-}
-
-.counter .image-container img {
-	border-radius: 0.25rem;
-}
-
-.counter .section-title {
-	margin-bottom: 0.5rem;
-}
-
-.counter h2 {
-	margin-bottom: 1.375rem;
-}
-
-.counter .list-unstyled {
-	margin-bottom: 1.5rem;
-}
-
-.counter .list-unstyled .fas {
-	color: #14bf98;
-	font-size: 0.5rem;
-	line-height: 1.375rem;
-}
-
-.counter .list-unstyled .media-body {
-	margin-left: 0.625rem;
-}
-
-.counter #counter {
-	text-align: center;
-}
-
-.counter #counter .cell {
-	display: inline-block;
-	width: 9.5rem;
-	margin-bottom: 0.75rem;
-}
-
-.counter #counter .counter-value {
-	display: inline-block;
-	margin-bottom: 0.125rem;
-	color: #14bf98;
-	font: 700 2.875rem/3.25rem "Montserrat", sans-serif;
-	vertical-align: middle;
-}
-
-.counter #counter .counter-info {
-	display: inline-block;
-	margin-left: 0.5rem;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-	vertical-align: middle;
-}
-
 
 /***********************/
 /*     16. Contact     */
@@ -1762,6 +1520,9 @@ input[type='checkbox'] {
 	padding-bottom: 0.5rem;
 	background-color:  #111;
 	text-align: center;
+
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 .copyright p,
@@ -1783,7 +1544,7 @@ a.back-to-top {
 	width: 2.625rem;
 	height: 2.625rem;
 	border-radius: 1.875rem;
-	background: #f1cc11 url("../images/up-arrow.png") no-repeat center 47%;
+	background: #f1cc11 url("../images/up-arrow.svg") no-repeat center 47%;
 	background-size: 1.125rem 1.125rem;
 	text-indent: -9999px;
 }
@@ -2168,6 +1929,8 @@ a:hover.back-to-top {
 		margin-bottom: 6rem;
 		border-radius: 20px;
 		background-color: rgba(255, 255, 255, 0.09);
+		backdrop-filter: blur(10px);
+    	-webkit-backdrop-filter: blur(5px);
 	}
 	
 	.accordion .area-1 {
@@ -2187,6 +1950,8 @@ a:hover.back-to-top {
 
 		border-top-right-radius: 10px;
 		border-bottom-right-radius: 10px;
+		overflow-x: hidden;
+        overflow-y: auto;
 	}
 	
 	.accordion .accordion-container {
@@ -2201,72 +1966,10 @@ a:hover.back-to-top {
 	/* end of details 1 */
 
 
-	/* Details 2 */
-	.tabs {
-		height: 36.125rem;
-	}
-
-	.tabs .area-1 {
-		width: 50%;
-		height: 100%;
-		display: inline-block;
-		vertical-align: top;
-	}
-
-	.tabs .area-2 {
-		width: 50%;
-		height: 100%;
-		display: inline-block;
-	}
-
-	.tabs .tabs-container {
-		max-width: 88%;
-		margin-left: 2rem;
-		padding-top: 6.75rem;
-		padding-bottom: 0;
-	}
-
-	.tabs .nav-tabs {
-		justify-content: flex-start;
-	}
-	/* end of details 2 */
 
 
-	/* Call Me */
-	.form-1 {
-		padding-top: 7rem;	
-	}
-
-	.form-1 .text-container {
-		margin-bottom: 0;
-	}
-	/* end of call me */
 
 
-	/* Project Lightboxes */
-	.lightbox-basic img {
-		margin-bottom: 0;
-	}
-	
-	.lightbox-basic h3 {
-		margin-top: 0.375rem;
-	}
-
-	.lightbox-basic .btn-solid-reg,
-	.lightbox-basic .btn-outline-reg {
-		margin-bottom: 0;
-	}
-	/* end of project lightboxes */
-
-
-	/* Team */
-	.basic-2 .team-member {
-		width: 12.75rem;
-		max-width: 100%;
-		margin-right: 0.75rem;
-		margin-left: 0.75rem;
-	}
-	/* end of team */
 
 
 	/* About */
@@ -2526,13 +2229,7 @@ a:hover.back-to-top {
 	/* end of projects */
 
 
-	/* Team */
-	.basic-2 .team-member {
-		width: 14.375rem;
-		margin-right: 1.375rem;
-		margin-left: 1.375rem;
-	}
-	/* end of team */
+
 
 
 	/* About */
