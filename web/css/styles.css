@@ -1368,6 +1368,31 @@ input[type='checkbox'] {
 	margin-left: 3.125rem;
 }
 
+.collapsible {
+	margin: 10px;
+
+
+	padding: 10px;
+  }
+  
+  .collapsible h3 {
+	cursor: pointer;
+	font-size: small;
+	color: white;
+  }
+  
+  .collapsible .content {
+	display: none;
+	color: white;
+	font-size: small;
+  }
+  
+  .collapsible.active .content {
+	display: block;
+  }
+
+  
+
 /***********************/
 /*     16. Contact     */
 /***********************/

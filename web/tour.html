@@ -149,7 +149,8 @@
                 <pre></pre>
 
                 <div class="white-box-time" style="float: right">
-                    <p >Duration: 11.00 Hours</p>
+                    <div id = "packageDuration"> </div>
+
                 </div>
 
                 <pre></pre>
@@ -216,6 +217,57 @@
                     </div>
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionOne">
                         <div class="accordion-body">
+                            
+                            <div class="collapsible">
+                                <h3>What to Wear</h3>
+                                <div class="content">
+                                  <ul>
+                                    <li>Comfortable clothing</li>
+                                    <li>Walking shoes</li>
+                                    <li>Sunscreen</li>
+                                    <li>Jacket</li>
+                                  </ul>
+                                </div>
+                              </div>
+                              
+                              <div class="collapsible">
+                                <h3>Not Allowed</h3>
+                                <div class="content">
+                                  <ul>
+                                    <li>Luggage and large bags</li>
+                                    <li>Pets</li>
+                                    <li>Smoking on-board</li>
+                                    <li>More than 4 passengers per booking</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            
+                              <div class="collapsible">
+                                <h3>Know Before You Go</h3>
+                                <div class="content">
+                                  <ul>
+                                    <li>You will receive confirmation at the time of booking</li>
+                                    <li>You must be at least 18 years old to drink alcohol</li>
+                                    <li>Please note that a moderate amount of walking is involved</li>
+                                    <li>Destination entrance fees and nature walk fees are included</li>
+                                    <li>Beverages will be provided</li>
+                                    <li>Breakfast will not be provided (stop to purchase at your own expense)</li>
+                                    <li>Lunch will be provided</li>
+                                    <li>Child car seat available for toddlers and kids under the age of 7</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            
+                              <div class="collapsible">
+                                <h3>Not Suitable For</h3>
+                                <div class="content">
+                                  <ul>
+                                    <li>Wheelchair users</li>
+                                    <li>Travelers with heart problems or other serious medical conditions</li>
+                                    <li>Pregnant women</li>
+                                  </ul>
+                                </div>
+                              </div>
 
                         </div>
                     </div>
@@ -284,5 +336,21 @@
         const dataElement = document.getElementById('data-display');
         dataElement.innerText = retrievedData;
     </script>
+        <script>
+            const collapsibles = document.querySelectorAll('.collapsible');
+    
+    collapsibles.forEach((collapsible) => {
+      const content = collapsible.querySelector('.content');
+      const heading = collapsible.querySelector('h3');
+    
+      heading.addEventListener('click', () => {
+        collapsible.classList.toggle('active');
+      });
+    });
+    
+        </script>
+        <script src="js/tour.js"></script>
+        <script src="js/dummyData.js"></script>
+    
 </body>
 </html>
