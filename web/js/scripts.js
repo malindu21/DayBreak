@@ -12,6 +12,31 @@
 (function($) {
     "use strict"; 
 	
+    var textToType = "Private day tours for families & small groups";
+        
+    // Typing speed in milliseconds
+    var typingSpeed = 100; 
+
+    // Get the h1 element
+    var headerElement = document.getElementById('typing-header');
+
+    // Function to simulate typing effect
+    function typeText() {
+        var index = 0;
+        var typingInterval = setInterval(function() {
+            headerElement.textContent += textToType[index];
+            index++;
+            if (index === textToType.length) {
+                clearInterval(typingInterval);
+            }
+        }, typingSpeed);
+    }
+
+    // Start typing animation when the page loads
+    window.onload = function() {
+        typeText();
+    };
+    
 	/* Preloader */
 	$(window).on('load', function() {
 		var preloaderFadeOutTime = 500;

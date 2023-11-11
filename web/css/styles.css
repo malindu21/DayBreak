@@ -46,6 +46,13 @@ body,
 html {
     width: 100%;
 	height: 100%;
+	padding: 10px;
+}
+
+@media (max-width: 1550px) { 
+    html {
+        padding: 0;
+    }
 }
 
 body, p {
@@ -83,6 +90,53 @@ h2 {
 	color: #484a46;
 	font: 700 1.75rem/2.125rem "Montserrat", sans-serif;
 } 
+
+.social-icons{
+	padding:30px;
+
+  text-align: center;
+  
+}
+.social-icons a{
+	color:#fff;
+  line-height:30px;
+  font-size:30px;
+  margin: 0 5px;
+  text-decoration:none;
+  
+  
+}
+.social-icons a i{
+	line-height:30px;
+  font-size:30px;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1); 
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1); 
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+}
+.social-icons a:hover i{
+  box-shadow: 0px 0px 150px #000000;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);   
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1.5);
+}
+
+.header-h2 {
+    font: 400 1.375rem/1.75rem "Montserrat", sans-serif;
+    /* Use font-weight: 400 for normal font weight */
+    color: #f5f5f5;
+}
+
 
 h3 {
 	color: #484a46;
@@ -159,9 +213,13 @@ strong {
 	text-decoration: none;
 }
 
+@font-face {
+    font-family: 'Panterick';
+    src: url('../webfonts/Panterick.ttf');
+}
 .user-friendly-paragraph {
-	font-family: Arial, sans-serif;
-    font-size: 20px;
+	font-family: Panterick;
+    font-size: 35px;
     color: #f5f5f5a0;
     text-align: center; /* Center text horizontally */
   }
@@ -174,20 +232,30 @@ strong {
 
 /* Define a CSS class to style the white boxes */
 .white-box {
-	width: 250px; 
-	height: 100px; 
-	background-color: rgba(255, 255, 255, 0.08);
+	width: 220px; 
+	height: 120px; 
+	background-color: rgba(78, 78, 78, 0.8);
 	transition: transform .2s; 
 	margin: 15px; 
+	margin-top: 4.5rem;
 	display: inline-flex;
 	border-radius: 10px;
 	align-items: center; 
 	text-align: center; 
-	padding: 10px;
+	padding:  5px;
+	border-radius: 15px;
 	backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
+  .white-box i {
+	font-size: 1.5em; /* Adjust font size for heading */
+  }
+
+  .white-box h3 {
+    font-size: 1.0em; /* Adjust font size for heading */
+}
 
   .white-box-how-to-book {
 	width: 90%; /* Adjust the width as needed */
@@ -196,7 +264,7 @@ strong {
 	transition: transform .2s; /* Animation */
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	
-	border-radius: 10px;
+	border-radius: 30px;
 	padding: 10px;
 
 
@@ -230,8 +298,8 @@ strong {
   }
 
   .white-box p {
-	color: #f5f5f5a0;
-	width: 70%;
+	color: #f5f5f5;
+
 
   }
 
@@ -263,13 +331,14 @@ strong {
 
 
 .white-box h3 {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
 	color: #ffff;
 }
 
 .white-box p {
-    font-size: 14px;
+    font-size: 13px;
+	width: 80%;
     font-style: normal;
 }
 
@@ -339,59 +408,11 @@ strong {
 	text-decoration: none;
 }
 
-.btn-outline-reg {
-	display: inline-block;
-	padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
-	border: 0.125rem solid #787976;
-	border-radius: 0.25rem;
-	background-color: transparent;
-	color: #787976;
-	font: 700 0.75rem/0 "Montserrat", sans-serif;
-	text-decoration: none;
-	transition: all 0.2s;
-}
 
-.btn-outline-reg:hover {
-	background-color: #787976;
-	color: #fff;
-	text-decoration: none;
-}
 
-.btn-outline-lg {
-	display: inline-block;
-	padding: 1.375rem 2.125rem 1.375rem 2.125rem;
-	border: 0.125rem solid #787976;
-	border-radius: 0.25rem;
-	background-color: transparent;
-	color: #787976;
-	font: 700 0.75rem/0 "Montserrat", sans-serif;
-	text-decoration: none;
-	transition: all 0.2s;
-}
 
-.btn-outline-lg:hover {
-	background-color: #787976;
-	color: #fff;
-	text-decoration: none;
-}
 
-.btn-outline-sm {
-	display: inline-block;
-	padding: 1rem 1.625rem 0.9375rem 1.625rem;
-	border: 0.125rem solid #787976;
-	border-radius: 0.25rem;
-	background-color: transparent;
-	color: #787976;
-	font: 700 0.75rem/0 "Montserrat", sans-serif;
-	text-decoration: none;
-	transition: all 0.2s;
-}
 
-.btn-outline-sm:hover {
-	background-color: #787976;
-	color: #fff;
-	text-decoration: none;
-}
 
 .form-group {
 	position: relative;
@@ -891,8 +912,8 @@ input[type='checkbox'] {
 }
 
 .navbar-custom .navbar-brand.logo-image img {
-    width: 7.0625rem;
-	height: 2.5rem;
+    width: 10.0625rem;
+	height: 3.5rem;
 	-webkit-backface-visibility: hidden;
 }
 
@@ -994,6 +1015,26 @@ input[type='checkbox'] {
 }
 
 
+
+
+/* 
+/* 
+@media (max-width : 1350px) {
+
+	.white-box {
+		
+		display: none;
+		
+
+	}
+
+	html {
+        padding: 0;
+    }
+
+	
+} */
+
 /* Media query for mobile devices (adjust the max-width as needed) */
 @media (max-width: 1200px) {
     .navbar-custom .switch-container {
@@ -1040,7 +1081,7 @@ input[type='checkbox'] {
 		backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(5px);
 	}
-	
+	/* end of general styles */
 	
 }
 
@@ -1075,13 +1116,36 @@ input[type='checkbox'] {
 .header {
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
 	background-size: cover;
-	border-radius: 10px;
-  	height: min-content; /* Set the height to adjust based on content */
-
+	border-radius: 20px;
+	height: 87vh;
     width: 100%;
     margin: 0;
     padding: 0;
 }
+
+@media (max-width: 1350px) { 
+	.header {height: min-content;}
+	
+	.white-box {
+		
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	
+	  }
+	
+	}
+
+
+.header2 {
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
+	background-size: cover;
+	border-radius: 20px;
+	height: min-content;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 .header .header-content {
 	padding-top: 8rem;
@@ -1152,12 +1216,12 @@ input[type='checkbox'] {
 .cards-2 .card-body {
 	border-color: #111;
 	border-width: 2px;
-		background: url('../images/Sample_Image_of_Video_1.jpg') center center no-repeat;
+		background: url('../images/Sample_Image_of_Video_2.jpg') center center no-repeat;
 		margin-left: 10%;
 		padding: 20px;
 		margin-top: 10vh;
 		margin-bottom: 2rem;
-		border-radius: 20px;
+		border-radius: 30px;
 		height: 80vh;
 		width: 80%;
 		opacity: 0.9;
@@ -1168,6 +1232,8 @@ input[type='checkbox'] {
 		color: #111;
 		justify-content: flex-end;
 }
+
+
 
 .cards-2 h3 {
 	margin-bottom: 0.75rem;
@@ -1214,11 +1280,20 @@ input[type='checkbox'] {
 /*************************/
 .accordion .area-1 {
 	height: 27rem;
+	height: 27rem;
 	background: url('../images/package-demo.png') center center no-repeat;
-	background-size: cover;
-	position: relative; 
+    height: 27rem;
+	background: url('../images/package-demo.png') center center no-repeat;
+    background-size: cover;
+	background: url('../images/Sample_Image_of_Video_1.jpg') center center no-repeat;
+    position: relative;
+    transition: all 1s ease-in-out;
 }
 
+
+  .area-1.fade-out {
+    opacity: 0;
+  }
 
 .circle-buttons {
 	position: absolute;
@@ -1257,14 +1332,16 @@ input[type='checkbox'] {
     align-items: center; /* Vertically align buttons */
 }
 
-.button-container-left{
-	position: absolute;
-	margin-top: 20px;
-	margin-left: 20px;
-	left: 20px; /* Adjust the distance from the right as needed */
+.button-container-left {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+    left: 20px; /* Adjust the distance from the right as needed */
+    width: 120px; /* Adjust the width as needed */
     display: flex;
-    align-items: center; /* Vertically align buttons */
+    align-items: center; /* Vertically align items */
 }
+
 
 
 .circle-button:not(:last-child) {
@@ -1398,8 +1475,11 @@ input[type='checkbox'] {
 .form-2 {
 	padding-top: 6.625rem;
 
+	height: 100vh;
 	background-color: #fbfbfb;
+	padding-top: 2.625rem;
 }
+
 
 .form-2 .text-container {
 	margin-bottom: 3rem;
@@ -1497,6 +1577,7 @@ input[type='checkbox'] {
 }
 .card.small-card .card-body {
     display: flex;
+	width: 100%;
     flex-direction: row;
     align-items: center;
 	border-radius: 20px;
@@ -1511,6 +1592,20 @@ input[type='checkbox'] {
 .form-2 .card-body form {
     width: 100%;
 }
+.form-2 .container {
+    width: 100%;
+	align-items: center;
+}
+
+  #typewriter-text {
+            overflow: hidden;
+            white-space: nowrap;
+			margin-bottom: 0.5rem;
+			color: #fff;
+			font-size: xx-large;
+			height: max-content;
+       
+        }
 
 /**********************/
 /*     17. Footer     */
@@ -1555,6 +1650,95 @@ input[type='checkbox'] {
 	text-decoration: none;
 }
 
+  
+
+.centered-div {
+	width: 300px; /* Adjust the width as needed */
+	height: 200px; /* Adjust the height as needed */
+	background-color: #f0f0f0;
+	text-align: center;
+	padding: 20px;
+}
+  
+  .chevron {
+
+	width: 28px;
+	position: fixed;
+	bottom: 8%;
+	right: 6.5%;
+	align-items: center;
+	height: 8px;
+	opacity: 0;
+	transform: scale3d(0.5, 0.5, 0.5);
+	animation: move 3s ease-out infinite;
+  }
+  
+  .chevron:first-child {
+	animation: move 3s ease-out 1s infinite;
+  }
+  
+  .chevron:nth-child(2) {
+	animation: move 3s ease-out 2s infinite;
+  }
+  
+  .chevron:before,
+  .chevron:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 51%;
+	background: #fff;
+  }
+  
+  .chevron:before {
+	left: 0;
+	transform: skew(0deg, 30deg);
+  }
+  
+  .chevron:after {
+	right: 0;
+	width: 50%;
+	transform: skew(0deg, -30deg);
+  }
+  
+  @keyframes move {
+	25% {
+	  opacity: 1;
+  
+	}
+	33% {
+	  opacity: 1;
+	  transform: translateY(30px);
+	}
+	67% {
+	  opacity: 1;
+	  transform: translateY(40px);
+	}
+	100% {
+	  opacity: 0;
+	  transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+	}
+  }
+  
+  .text {
+	display: block;
+	margin-top: 75px;
+	margin-left: -30px;
+	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 12px;
+	color: #fff;
+	text-transform: uppercase;
+	white-space: nowrap;
+	opacity: .25;
+	animation: pulse 2s linear alternate infinite;
+  }
+  
+  @keyframes pulse {
+	to {
+	  opacity: 1;
+	}
+  }
 
 /**********************************/
 /*     19. Back To Top Button     */
@@ -1900,7 +2084,7 @@ a:hover.back-to-top {
 	}
 
 	.header .text-container {
-		margin-top: 6.5rem;
+		margin-top: 1.5rem;
 	}
 	/* end of header */
 
@@ -1949,12 +2133,13 @@ a:hover.back-to-top {
 	
 	.accordion {
 		height: 44.625rem;
-		margin-top: 6rem;
+		margin-top: 3rem;
 		margin-bottom: 6rem;
 		border-radius: 20px;
+		backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(5px);
 		background-color: rgba(255, 255, 255, 0.09);
-		backdrop-filter: blur(10px);
-    	-webkit-backdrop-filter: blur(5px);
+	
 	}
 	
 	.accordion .area-1 {
@@ -2279,9 +2464,9 @@ a:hover.back-to-top {
 		
 	}
 
-	.form-2 form {
 	
-	}
+	
+	
 
 	.form-2 h3 {
 		margin-bottom: 1rem;
@@ -2318,7 +2503,7 @@ a:hover.back-to-top {
 		margin-left: 1.75rem;
 	}
 	/* end of extra pages */
-}
+
 /* end of min-width width 1200px */
 
 
@@ -2338,3 +2523,4 @@ a:hover.back-to-top {
 	/* end of navigation */
 }
 /* end of min-width width 1200px */
+}
