@@ -239,7 +239,7 @@ strong {
 	background-color: rgba(78, 78, 78, 0.8);
 	transition: transform .2s; 
 	margin: 15px; 
-	margin-top: 4.5rem;
+	margin-top: 6.5rem;
 	display: inline-flex;
 	border-radius: 10px;
 	align-items: center; 
@@ -1185,7 +1185,7 @@ input[type='checkbox'] {
 		}
 	
 		.header-h2{
-			font-size: 1rem; /* Increase the font size */
+		font-size: 1rem; /* Increase the font size */
 		font-weight: 75; /* Keep the font weight the same */
 		line-height: 1.2rem; /* Adjust the line height */
 		font-family: sans-serif; /* Use generic sans-serif font */
