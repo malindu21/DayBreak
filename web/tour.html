@@ -47,22 +47,7 @@
     
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Day Break</a> -->
 
-        <!-- Image Logo -->
-
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-        <!-- end of mobile menu toggle button -->
-
-        <!-- HOME, TOURS, HOW TO BOOK, REVIEWS, CONTACT -->
- 
-    </nav> <!-- end of navbar -->
     <!-- end of navbar -->
 
 
@@ -277,13 +262,11 @@
     </div> <!-- end of accordion -->
     <!-- end of details 1 -->
 
-    <div class="centerc">
+    <div class="centerc" onclick= "scrollToBottom()" >
         <div class="chevron"></div>
         <div class="chevron"></div>
         <div class="chevron"></div>
-       
-       
-      </div>
+    </div>
 
       <pre></pre>
       
@@ -355,6 +338,31 @@
   }
 
   setInterval(changeBackground, 7000);
+
+  function scrollToBottom() {
+    // Scroll to the bottom of the element with class 'area-2'
+    var area2Element = document.querySelector('.area-2');
+    
+    area2Element.scrollTo({
+        top: area2Element.scrollHeight,
+        behavior: 'smooth'
+    });
+
+    // Add an event listener to check for scroll position changes
+    area2Element.addEventListener('scroll', function() {
+        // Check if the scroll position is at the bottom
+        if (area2Element.scrollTop + area2Element.clientHeight === area2Element.scrollHeight) {
+            // Hide the scroll-to-bottom button
+            document.querySelector('.scroll-to-bottom').style.display = 'none';
+        } else {
+            // Show the scroll-to-bottom button
+            document.querySelector('.scroll-to-bottom').style.display = 'block';
+        }
+    });
+}
+
+
+
           </script>
     
 </body>
