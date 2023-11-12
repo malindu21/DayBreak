@@ -1129,8 +1129,40 @@ input[type='checkbox'] {
     height: 100px;
   
 }
+/* Wrapper to Center the Typewriter */
+.wrapper {
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.centeredBox {
+	width: 100%;
+	text-align: center;
+}
 
+/* The Typewriter */
+
+#typewriter  {
+	
+}
+
+.cursor {
+	border-left: 4px solid white;
+
+	display: inline-block;
+	animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+	0%, 50%, 100% {
+		opacity: 1;
+	}
+	25%, 75% {
+		opacity: 0;
+	}
+}
 @media (max-width: 1350px) { 
 	
 	.header {height: min-content;}

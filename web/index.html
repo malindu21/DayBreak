@@ -116,7 +116,12 @@
                     <div class="col-lg-12">
                         <div class="text-container">
                             <!-- <h1>BUSINESS <span id="js-rotating">TEMPLATE, SERVICES, SOLUTIONS</span></h1> -->
-                            <h1 id="typing-header"></h1>
+                            <div class="wrapper">
+                                <div class="centeredBox"> 
+                                    <h1 id="typing-header" data-array=""> <span class="cursor"></span></h1>
+                                 
+                                </div>
+                            </div>
 
                             <!-- //<h1>Private day tours for families & small groups</h1> -->
                   
@@ -711,6 +716,65 @@
         <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
         <script src="js/scripts.js"></script> <!-- Custom scripts -->
         <script src="js/reviews.js"></script>
+        <script>
+            // The typewriter element
+var typeWriterElement = document.getElementById('typing-header');
+
+// The TextArray: 
+var textArray = ["Private day tours",  "For families & small groups"];
+
+// You can also do this by transfering it through a data-attribute
+// var textArray = typeWriterElement.getAttribute('data-array');
+
+
+// function to generate the backspace effect 
+function delWriter(text, i, cb) {
+	if (i >= 0 ) {
+		typeWriterElement.innerHTML = text.substring(0, i--);
+		// generate a random Number to emulate backspace hitting.
+ 		var rndBack = 10 + Math.random() * 100;
+		setTimeout(function() {
+			delWriter(text, i, cb);
+		},rndBack); 
+	} else if (typeof cb == 'function') {
+		setTimeout(cb,500);
+	}
+};
+
+// function to generate the keyhitting effect
+function typeWriter(text, i, cb) {
+	if ( i < text.length+1 ) {
+		typeWriterElement.innerHTML = text.substring(0, i++);
+		// generate a random Number to emulate Typing on the Keyboard.
+		var rndTyping = 250 - Math.random() * 100;
+		setTimeout( function () { 
+			typeWriter(text, i++, cb)
+		},rndTyping);
+	} else if (i === text.length+1) {
+		setTimeout( function () {
+			delWriter(text, i, cb)
+		},500);
+	}
+};
+
+// the main writer function
+function StartWriter(i) {
+	if (typeof textArray[i] == "undefined") {
+		setTimeout( function () {
+			StartWriter(0)
+		},500);
+	} else if(i < textArray[i].length+1) {
+		typeWriter(textArray[i], 0, function () {
+			StartWriter(i+1);
+		});
+	}  
+};
+// wait one second then start the typewriter
+setTimeout( function () {
+	StartWriter(0);
+},1000);
+	
+        </script>
 
         
 
