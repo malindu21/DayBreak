@@ -117,3 +117,9 @@ function calcDistance(startCoords, destCoords) {
     ) * radius;
   return distanceInKilometers;
 }
+
+//enable custom datepicker 
+
+flatpickr("input[type=datetime-local]" , {
+  minDate: "today",
+});
