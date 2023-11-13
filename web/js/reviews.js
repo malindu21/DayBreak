@@ -42,6 +42,11 @@ const reviewerprofilePic = document.getElementById("reviewer_profilePic");
 let index = 0;
 
 onReviewChange();
+
+setInterval(function() {
+  onReviewChange(true);
+}, 7000);
+
 function onReviewChange(isForward) {
   if (isForward && index < reviewList.length - 1) {
     ++index;
