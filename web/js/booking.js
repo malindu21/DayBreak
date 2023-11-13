@@ -5,17 +5,14 @@ let selectedAddress = {};
 let distance = 0;
 
 let sCoords = {
-    latitude: selectedAddress.lat,
-    longitude: selectedAddress.lon,
+  latitude: selectedAddress.lat,
+  longitude: selectedAddress.lon,
 };
 
 let dCoords = {
   latitude: -37.840935,
-  longitude:  144.946457,
+  longitude: 144.946457,
 };
-
-
-
 
 function searchLocations(text) {
   fetch(
@@ -76,14 +73,17 @@ function loadCityResult(address) {
     e.stopPropagation();
     selectedAddress = JSON.parse(e.currentTarget.dataset.address);
     sCoords = {
-        latitude: selectedAddress.lat,
-        longitude: selectedAddress.lon,
+      latitude: selectedAddress.lat,
+      longitude: selectedAddress.lon,
     };
     distance = calcDistance(sCoords, dCoords);
-    console.log(distance , "Km")
+    console.log(distance, "Km");
     cityTextBox.value = selectedAddress.formatted;
     citySearchResults.innerHTML = "";
     citySearchResults.classList.add("d-none");
+    if(distance > 20){
+      console.log("Too far from melbourne")
+    }
   });
 
   li.appendChild(citySpan);
@@ -99,14 +99,13 @@ function degreesToRadians(degrees) {
 
 // Function takes two objects, that contain coordinates to a starting and destination location.
 function calcDistance(startCoords, destCoords) {
-    debugger
   let startingLat = degreesToRadians(startCoords.latitude);
   let startingLong = degreesToRadians(startCoords.longitude);
   let destinationLat = degreesToRadians(destCoords.latitude);
   let destinationLong = degreesToRadians(destCoords.longitude);
 
   // Radius of the Earth in kilometers
-  let radius = 6571;
+  let radius = 6371;
 
   // Haversine equation
   let distanceInKilometers =
@@ -118,5 +117,3 @@ function calcDistance(startCoords, destCoords) {
     ) * radius;
   return distanceInKilometers;
 }
-
-
