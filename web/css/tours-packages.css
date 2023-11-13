@@ -3,7 +3,7 @@
 .tour-package {
   background: url(../images/tour1.jpg) no-repeat center center;
   background-size: cover;
-  height: 400px;
+  height: 500px;
   width: 300px;
   border-radius: 30px;
   margin: 10px auto;
@@ -18,7 +18,7 @@
 }
 
 .tour-package-details{
-    height: 80px;
+    height: 110px;
     width: 100%;
 }
 
