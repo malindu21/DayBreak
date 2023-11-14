@@ -62,12 +62,6 @@ html {
 	
 }
 
-@media (max-width : 1400px) {
-	.white-box {
-		margin-top: 3.5rem;
-	  }
-}
-
 body, p {
 	color: #787976; 
 	font: 400 1rem/1.5625rem "Open Sans", sans-serif;
@@ -318,7 +312,7 @@ strong {
 	background-color: rgba(78, 78, 78, 0.8);
 	transition: transform .2s; 
 	margin: 15px; 
-	margin-top: 12vh;
+	margin-top: 10%;
 	display: inline-flex;
 	border-radius: 10px;
 	align-items: center; 
@@ -1205,7 +1199,7 @@ input[type='checkbox'] {
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
 	background-size: cover;
 	border-radius: 20px;
-	height: 87vh;
+	height: 90%;
     width: 100%;
     margin: 0;
     padding: 0;
