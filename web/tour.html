@@ -63,6 +63,7 @@
                 </a>
                 <span>Go Back</span>
             </div>
+            
 
             <div class="container">
                 <div class="row">
@@ -77,8 +78,8 @@
 	<div id="details" class="accordion">
 		<div class="area-1">
             <div class="circle-buttons">
-                <button class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-left"></i></button>
-                <button class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-right"></i></button>
+                <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-left"></i></button>
+                <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-right"></i></button>
               </div>
 		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
           
@@ -328,16 +329,29 @@
         <script src="js/dummyData.js"></script>
 
         <script>
-  const area1 = document.querySelector('.area-1');
+            
+const area1 = document.querySelector('.area-1');
   const backgroundImageUrls = ['images/Sample_Image_of_Video_1.jpg', 'images/Sample_Image_of_Video_2.jpg']; // Add your image URLs
   let currentIndex = 0;
+  let intervalId;
 
   function changeBackground() {
     currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
-    area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
+    area1.style.opacity = 0; // Fade out the current image
+    setTimeout(() => {
+      area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
+      area1.style.opacity = 1; // Fade in the new image
+    }, 500);
+    resetInterval();
   }
 
-  setInterval(changeBackground, 7000);
+  function resetInterval() {
+    clearInterval(intervalId);
+    intervalId = setInterval(changeBackground, 7000);
+  }
+
+  intervalId = setInterval(changeBackground, 7000);
+
 
   function scrollToBottom() {
     // Scroll to the bottom of the element with class 'area-2'
