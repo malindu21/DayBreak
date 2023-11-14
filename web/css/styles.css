@@ -53,7 +53,14 @@ html {
 @media (max-width: 500px) { 
     body,html {
 		padding: 0 !important;
+		margin: 0;
     }
+	.cards-2 {
+		padding: 0 !important;
+		margin: 0;
+		
+	}
+	
 }
 
 body, p {
