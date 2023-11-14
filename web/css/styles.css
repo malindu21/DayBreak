@@ -318,7 +318,7 @@ strong {
 	background-color: rgba(78, 78, 78, 0.8);
 	transition: transform .2s; 
 	margin: 15px; 
-	margin-top: 10%;
+	margin-top: 12vh;
 	display: inline-flex;
 	border-radius: 10px;
 	align-items: center; 
