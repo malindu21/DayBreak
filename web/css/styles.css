@@ -1381,7 +1381,7 @@ input[type='checkbox'] {
 }
 
 .cards-2 .card {
-	margin-bottom: 5.625rem;
+	margin-bottom: 2.625rem;
 	border: none;
 	
 	background-color: transparent;
@@ -1398,11 +1398,11 @@ input[type='checkbox'] {
 		background: url('../images/Sample_Image_of_Video_2.jpg') center center no-repeat;
 		margin-left: 10%;
 		padding: 20px;
-		margin-top: 10vh;
+		margin-top: 5vh;
 		margin-bottom: 2rem;
 		border-radius: 30px;
 		height: 80vh;
-		width: 80%;
+		width: 85%;
 		opacity: 0.9;
 		padding: 2.25rem 2.5rem 2.125rem 2.5rem;
 		display: flex;
