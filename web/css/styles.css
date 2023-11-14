@@ -307,7 +307,7 @@ strong {
 
 /* Define a CSS class to style the white boxes */
 .white-box {
-	width: 220px; 
+	width: 200px; 
 	height: 120px; 
 	background-color: rgba(78, 78, 78, 0.8);
 	transition: transform .2s; 
@@ -325,11 +325,11 @@ strong {
   }
 
   .white-box i {
-	font-size: 1.5em; /* Adjust font size for heading */
+	font-size: 1.0em; /* Adjust font size for heading */
   }
 
   .white-box h3 {
-    font-size: 1.0em; /* Adjust font size for heading */
+    font-size: 0.5em; /* Adjust font size for heading */
 }
 
   .white-box-how-to-book {
@@ -406,13 +406,13 @@ strong {
 
 
 .white-box h3 {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
 	color: #ffff;
 }
 
 .white-box p {
-    font-size: 13px;
+    font-size: 11px;
 	width: 80%;
     font-style: normal;
 }
