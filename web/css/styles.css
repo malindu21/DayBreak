@@ -62,7 +62,7 @@ html {
 	
 }
 
-@media (max-width : 1366px) {
+@media (max-width : 1400px) {
 	.white-box {
 		margin-top: 3.5rem;
 	  }
@@ -318,7 +318,7 @@ strong {
 	background-color: rgba(78, 78, 78, 0.8);
 	transition: transform .2s; 
 	margin: 15px; 
-	margin-top: 6.5rem;
+	margin-top: 10%;
 	display: inline-flex;
 	border-radius: 10px;
 	align-items: center; 
