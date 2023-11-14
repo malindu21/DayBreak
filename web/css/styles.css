@@ -50,6 +50,48 @@ html {
 
 }
 
+@media (max-height: 738px) {
+	.white-box {
+		width: 220px; 
+		height: 120px; 
+		background-color: rgba(78, 78, 78, 0.8);
+		transition: transform .2s; 
+		margin: 15px; 
+		margin-top: 2%;
+		display: inline-flex;
+		border-radius: 10px;
+		align-items: center; 
+		text-align: center; 
+		padding:  5px;
+		border-radius: 15px;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(5px);
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	}
+}
+
+/* Media query for height greater than 738px */
+@media (min-height: 739px) {
+	.white-box {
+		width: 220px; 
+		height: 120px; 
+		background-color: rgba(78, 78, 78, 0.8);
+		transition: transform .2s; 
+		margin: 15px; 
+		margin-top: 10%;
+		display: inline-flex;
+		border-radius: 10px;
+		align-items: center; 
+		text-align: center; 
+		padding:  5px;
+		border-radius: 15px;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(5px);
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	}
+}
+
+
 @media (max-width: 500px) { 
     body,html {
 		padding: 0 !important;
@@ -306,23 +348,7 @@ strong {
 
 
 /* Define a CSS class to style the white boxes */
-.white-box {
-	width: 220px; 
-	height: 120px; 
-	background-color: rgba(78, 78, 78, 0.8);
-	transition: transform .2s; 
-	margin: 15px; 
-	margin-top: 10%;
-	display: inline-flex;
-	border-radius: 10px;
-	align-items: center; 
-	text-align: center; 
-	padding:  5px;
-	border-radius: 15px;
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(5px);
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
+
 
   .white-box i {
 	font-size: 1.5em; /* Adjust font size for heading */
