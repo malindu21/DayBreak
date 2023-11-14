@@ -12,6 +12,12 @@
   transition:transform  0.5s;
 }
 
+h5 {
+	color: #484a46;
+    opacity: 0.5;
+	font: 700 1.125rem/1.5rem "Montserrat", sans-serif;
+}
+
 .tour-package:hover{
     transform: scale(1.1);
    

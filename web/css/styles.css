@@ -224,7 +224,7 @@ h4 {
 }
 
 h5 {
-	color: #484a46;
+	color: #6f6f6f9b;
 	font: 700 1.125rem/1.5rem "Montserrat", sans-serif;
 }
 
@@ -1417,7 +1417,7 @@ input[type='checkbox'] {
 .cards-2 .card-body {
 	border-color: #111;
 	border-width: 2px;
-		background: url('../images/Sample_Image_of_Video_2.jpg') center center no-repeat;
+		background: url('../images/Sample_Image_of_Video_1.jpg') center center no-repeat;
 		margin-left: 10%;
 		padding: 20px;
 		margin-top: 5vh;
@@ -1428,29 +1428,33 @@ input[type='checkbox'] {
 		opacity: 0.9;
 		padding: 2.25rem 2.5rem 2.125rem 2.5rem;
 		display: flex;
+		background-position: 50% 50%;
 		flex-direction: column;
 		align-items: center;
 		color: #111;
 		justify-content: flex-end;
 }
 .cards-5 .card-body {
-	border-color: #111;
-	border-width: 2px;
-		background: url('../images/Sample_Image_of_Video_2.jpg') center center no-repeat;
-		margin-left: 10%;
-		padding: 20px;
-		margin-top: 5vh;
-		margin-bottom: 2rem;
-		border-radius: 30px;
-		height: 60vh;
-		width: 85%;
-		opacity: 0.9;
-		padding: 2.25rem 2.5rem 2.125rem 2.5rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		color: #111;
-		justify-content: flex-end;
+    border-color: #111;
+    border-width: 2px;
+    background: url('../images/Sample_Image_of_Video_2.jpg') center center no-repeat;
+    margin-left: 10%;
+    padding: 20px;
+    margin-top: 5vh;
+    margin-bottom: 2rem;
+    background-position: 50% 50%;
+    border-radius: 30px;
+    height: 60vh;
+    width: 85%;
+    opacity: 0.9;
+    padding: 2.25rem 2.5rem 2.125rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #111;
+    justify-content: flex-end;
+    /* Add the background-size property to scale the image */
+    background-size: cover; /
 }
 
 
@@ -2676,7 +2680,6 @@ a:hover.back-to-top {
 	}
 	
 	.form-2 h5 {
-		opacity: 0.5;
 		text-align: center;
 	}
 	
