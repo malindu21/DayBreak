@@ -10,11 +10,11 @@
   background-color: rgba(0, 0, 0, 0.3);
   background-blend-mode: darken;
   transition:transform  0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 h5 {
-	color: #484a46;
-    opacity: 0.5;
+	color: #6f6f6f9b;
 	font: 700 1.125rem/1.5rem "Montserrat", sans-serif;
 }
 
