@@ -330,24 +330,6 @@ insertSectionsIntoContainer();
             packageDuration.appendChild(packageDurationSection(package001.details.duration))
             
 
-        }else if (packageId == "002"){
-            for (const section of Object.values(package002.packageActivity)) {
-                container.appendChild(createSection(section.iconClass, section.title, section.description));
-            }
-    
-            for (const [index, section] of Object.entries(package002.package1Iternity)) {
-                itinerary.appendChild(createIterity(index, section.title, section.description, section.duration));
-            }
-    
-    
-            for (const section of Object.values(package002.packageCancellationPolicy)) {
-                cancellationPolicy.appendChild(cancellationPolicySection(section.value));
-            }        
-            meetAndPickUp.appendChild(meetAndPickUpSection(package002.packageMeetAndPickUp));
-            packageName.appendChild(packageNameSection(package002.details.title))
-            packageSubTitle.appendChild(packageSubTitleSection(package002.details.subTitle))
-            packageDesc.appendChild(packageDescSection(package002.details.desc))
-            packageDuration.appendChild(packageDurationSection(package002.details.duration))
         }
 
     }
