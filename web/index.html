@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
     <meta name="description" content="At Day Break, we offer a range of day trip tour packages in Victoria, Australia. Our tours are designed to showcase the best that Victoria has to offer, from stunning scenery to unique cultural experiences.
     Book your tour now and let us take you on an adventure you'll never forget.">
@@ -36,9 +35,12 @@
     <link href="css/tours-packages.css" rel="stylesheet">
     <link href="css/reviews.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
+
+
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -516,46 +518,58 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Card -->
-                    <div class="cards-2">
-                        <div class="card-body">
+                 
+                    <div class="scroll-element js-scroll slide-left">
+                         <div class="cards-2">
+                          
+                                <div class="card-body">
 
-
-
-                            <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="booking_form.html">Book a Tour</a>
-
-
-
-                            </div> <!-- end of button-container -->
-
-                        </div>
+                                    <div class="button-container">
+                                        <a class="btn-solid-reg page-scroll" href="booking_form.html">Book a Tour</a>
+        
+        
+        
+                                    </div> <!-- end of button-container -->
+        
+                                </div>
+                            </div>
+                     
                         <!-- end of card-body -->
                     </div>
+                    
+                       
+                  
+                 
                     <!-- end of card -->
                 </div> <!-- end of col -->
 
                 <div class="col-lg-6">
+                  
+
                     <h5>How to book with us</h5>
                     <h2>It’s time for a new Adventure ⛵</h2>
                     <!-- Container for the four boxes -->
 
                     <div class="boxes-container">
                         <!-- Box 1 -->
-                        <div class="white-box-how-to-book">
-                            <!-- Content for Box 1 -->
-                            <div class="box-icon">
-                                <!-- Left side icon -->
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="box-text">
-                                <!-- Right side title and subtitle -->
-                                <h4 class="box-title">Pick a Tour</h4>
-                                <p class="box-subtitle">Select the desired date to embark on a journey to discover your
-                                    dream destination, where adventure and relaxation await.
-
-                                </p>
+                        <div class="animate__animated animate__flipInX animate__faster">
+                            <div class="white-box-how-to-book">
+                                <!-- Content for Box 1 -->
+                                <div class="box-icon">
+                                    <!-- Left side icon -->
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="box-text">
+                                    <!-- Right side title and subtitle -->
+                                    <h4 class="box-title">Pick a Tour</h4>
+                                    <p class="box-subtitle">Select the desired date to embark on a journey to discover your
+                                        dream destination, where adventure and relaxation await.
+    
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                     
                         <!-- Box 2 -->
                         <div class="white-box-how-to-book ">
                             <!-- Content for Box 2 -->
@@ -728,23 +742,25 @@
         
             
                 <div class="col-lg-6">
-          
-                           <!-- Card -->
-                           <div class="cards-5">
-                            <div class="card-body">
-    
-    
-    
-                                <div class="button-container">
-                                    <a class="btn-solid-reg page-scroll" href="booking_form.html">Book a Tour</a>
-    
-    
-    
-                                </div> <!-- end of button-container -->
-    
-                            </div>
-                            <!-- end of card-body -->
-                        </div>
+                    <div class="scroll-element js-scroll slide-right">
+      <!-- Card -->
+      <div class="cards-5">
+        <div class="card-body">
+
+
+
+            <div class="button-container">
+                <a class="btn-solid-reg page-scroll" href="booking_form.html">Book a Tour</a>
+
+
+
+            </div> <!-- end of button-container -->
+
+        </div>
+        <!-- end of card-body -->
+    </div>
+                    </div>
+                     
                         <!-- end of card -->
                     </div> <!-- end of col -->
     
@@ -881,8 +897,50 @@ const sentences = [
   typeWriter(0);
 	
         </script>
+     
 
-        
+        <script>
+            const scrollElements = document.querySelectorAll(".js-scroll");
+
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
+};
+
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add("scrolled");
+};
+
+const hideScrollElement = (element) => {
+  element.classList.remove("scrolled");
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.25)) {
+      displayScrollElement(el);
+    } else if (elementOutofView(el)) {
+      hideScrollElement(el)
+    }
+  })
+}
+
+window.addEventListener("scroll", () => { 
+  handleScrollAnimation();
+});
+        </script>
 
 </body>
 
