@@ -1712,7 +1712,7 @@ input[type='checkbox'] {
     height: 27rem;
 	background: url('../images/package-demo.png') center center no-repeat;
     background-size: cover;
-	background: url('../images/Sample_Image_of_Video_1.jpg') center center no-repeat;
+	background: url('../images/Video.gif') center center no-repeat;
     position: relative;
     transition: all 1s ease-in-out;
 }
