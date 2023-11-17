@@ -1706,17 +1706,11 @@ input[type='checkbox'] {
 /*     08. Details 1     */
 /*************************/
 .accordion .area-1 {
-	height: 27rem;
-	height: 27rem;
-	background: url('../images/package-demo.png') center center no-repeat;
     height: 27rem;
-	background: url('../images/package-demo.png') center center no-repeat;
-    background-size: cover;
-	background: url('../images/into_the_forest/into_the_forest_1.jpg') center center no-repeat;
+    background: url('../images/into_the_forest/into_the_forest_1.jpg') center/cover;
     position: relative;
     transition: all 1s ease-in-out;
 }
-
 
   .area-1.fade-out {
     opacity: 0;
