@@ -356,7 +356,7 @@
                     
                     <div>
                        
-                        <a id = "bookPackageTwo" value = "002"  href="tour.html" class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3" >
+                        <a id = "bookPackageTwo" value = "002"  onclick = showAlert() class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3" >
                             Book Now
                         </a>
                     </div>
@@ -422,7 +422,7 @@
                         
                         <div>
                            
-                            <a id = "bookPackageThree" value = "003"  href="tour.html" class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3" >
+                            <a id = "bookPackageThree" value = "003"  onclick = showAlert()  class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3" >
                                 Book Now
                             </a>
                         </div>
@@ -485,7 +485,7 @@
                             
                             <div>
                                
-                                <a id = "bookPackageFour" value = "004"  href="tour.html" class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3" >
+                                <a id = "bookPackageFour" value = "004" onclick = showAlert() class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3" >
                                     Book Now
                                 </a>
                             </div>
@@ -552,7 +552,7 @@
 
                     <div class="boxes-container">
                         <!-- Box 1 -->
-                        <div class="animate__animated animate__flipInX animate__faster">
+                  
                             <div class="white-box-how-to-book">
                                 <!-- Content for Box 1 -->
                                 <div class="box-icon">
@@ -568,8 +568,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                     
+                   
                         <!-- Box 2 -->
                         <div class="white-box-how-to-book ">
                             <!-- Content for Box 2 -->
@@ -829,20 +828,20 @@
         localStorage.setItem('packageId', buttonValue);
       });
 
-        document.getElementById('bookPackageTwo').addEventListener('click', function() {
-        var buttonValue = this.getAttribute('value');
-        localStorage.setItem('packageId', buttonValue);
-      });
+    //     document.getElementById('bookPackageTwo').addEventListener('click', function() {
+    //     var buttonValue = this.getAttribute('value');
+    //     localStorage.setItem('packageId', buttonValue);
+    //   });
 
-        document.getElementById('bookPackageThree').addEventListener('click', function() {
-        var buttonValue = this.getAttribute('value');
-        localStorage.setItem('packageId', buttonValue);
-      });
+    //     document.getElementById('bookPackageThree').addEventListener('click', function() {
+    //     var buttonValue = this.getAttribute('value');
+    //     localStorage.setItem('packageId', buttonValue);
+    //   });
 
-        document.getElementById('bookPackageFour').addEventListener('click', function() {
-        var buttonValue = this.getAttribute('value');
-        localStorage.setItem('packageId', buttonValue);
-      });
+    //     document.getElementById('bookPackageFour').addEventListener('click', function() {
+    //     var buttonValue = this.getAttribute('value');
+    //     localStorage.setItem('packageId', buttonValue);
+    //   });
         </script>
         <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
         <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -940,6 +939,12 @@ const handleScrollAnimation = () => {
 window.addEventListener("scroll", () => { 
   handleScrollAnimation();
 });
+
+
+function showAlert() {
+    alert("Coming Soon!");
+}
+
         </script>
 
 </body>

@@ -7,7 +7,8 @@ const package001 = {
             title : "Into the forest",
             subTitle: "Black Spur Drive, rainforests & waterfalls",
             desc: "Embark on a picturesque journey through lush apple orchards, serene rainforests, and iconic Australian forests, all while savouring quick coffee breaks and exploring charming towns along the way. Be captivated by one of the state's tallest waterfalls, before concluding the day with a mesmerizing sunset, overlooking the majestic mountains.",
-            duration : "Duration: 11.00 Hours"
+            duration : "Duration: 11.00 Hours",
+            backgroundImageUrls : ['images/into_the_forest/into_the_forest_1.jpg', 'images/into_the_forest/into_the_forest_2.jpg' , 'images/into_the_forest/into_the_forest_3.jpg'],
 
         },
 
@@ -293,6 +294,12 @@ const package001 = {
     
   };
   
+    
+const area1 = document.querySelector('.area-1');
+const backgroundImageUrls = package001.details.backgroundImageUrls;
+let currentIndex = 0;
+let intervalId;
+
   
 
 insertSectionsIntoContainer();
@@ -476,3 +483,39 @@ insertSectionsIntoContainer();
         return div
     }
 
+    // tour.js
+
+intervalId = setInterval(changeBackground, 7000);
+
+function changeBackground() {
+    currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
+    area1.style.opacity = 0;
+    setTimeout(() => {
+        area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
+        area1.style.opacity = 1;
+    }, 500);
+    resetInterval();
+}
+
+function resetInterval() {
+    clearInterval(intervalId);
+    intervalId = setInterval(changeBackground, 7000);
+}
+
+
+
+function scrollToBottom() {
+    var area2Element = document.querySelector('.area-2');
+    area2Element.scrollTo({
+        top: area2Element.scrollHeight,
+        behavior: 'smooth'
+    });
+
+    area2Element.addEventListener('scroll', function () {
+        if (area2Element.scrollTop + area2Element.clientHeight === area2Element.scrollHeight) {
+            document.querySelector('.scroll-to-bottom').style.display = 'none';
+        } else {
+            document.querySelector('.scroll-to-bottom').style.display = 'block';
+        }
+    });
+}

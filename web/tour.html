@@ -328,56 +328,6 @@
         <script src="js/tour.js"></script>
         <script src="js/dummyData.js"></script>
 
-        <script>
-            
-const area1 = document.querySelector('.area-1');
-  const backgroundImageUrls = ['images/into_the_forest/into_the_forest_1.jpg', 'images/into_the_forest/into_the_forest_2.jpg' , 'images/into_the_forest/into_the_forest_3.jpg']; // Add your image URLs
-  let currentIndex = 0;
-  let intervalId;
-
-  function changeBackground() {
-    currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
-    area1.style.opacity = 0; // Fade out the current image
-    setTimeout(() => {
-      area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
-      area1.style.opacity = 1; // Fade in the new image
-    }, 500);
-    resetInterval();
-  }
-
-  function resetInterval() {
-    clearInterval(intervalId);
-    intervalId = setInterval(changeBackground, 7000);
-  }
-
-  intervalId = setInterval(changeBackground, 7000);
-
-
-  function scrollToBottom() {
-    // Scroll to the bottom of the element with class 'area-2'
-    var area2Element = document.querySelector('.area-2');
-    
-    area2Element.scrollTo({
-        top: area2Element.scrollHeight,
-        behavior: 'smooth'
-    });
-
-    // Add an event listener to check for scroll position changes
-    area2Element.addEventListener('scroll', function() {
-        // Check if the scroll position is at the bottom
-        if (area2Element.scrollTop + area2Element.clientHeight === area2Element.scrollHeight) {
-            // Hide the scroll-to-bottom button
-            document.querySelector('.scroll-to-bottom').style.display = 'none';
-        } else {
-            // Show the scroll-to-bottom button
-            document.querySelector('.scroll-to-bottom').style.display = 'block';
-        }
-    });
-}
-
-
-
-          </script>
     
 </body>
 </html>
