@@ -301,7 +301,7 @@ let currentIndex = 0;
 let intervalId;
 
   
-
+changeBackground();
 insertSectionsIntoContainer();
     function insertSectionsIntoContainer() {
         const packageName = document.getElementById("packageName")
@@ -485,37 +485,35 @@ insertSectionsIntoContainer();
 
     // tour.js
 
-intervalId = setInterval(changeBackground, 7000);
+    
 
-function changeBackground() {
-    currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
-    area1.style.opacity = 0;
-    setTimeout(() => {
-        area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
-        area1.style.opacity = 1;
-    }, 500);
-    resetInterval();
-}
+    function changeBackground() {
+        currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
+        area1.style.opacity = 0;
+        setTimeout(() => {
+            area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
+            area1.style.opacity = 1;
+        }, 250);
+        resetInterval();
+    }
 
-function resetInterval() {
-    clearInterval(intervalId);
-    intervalId = setInterval(changeBackground, 7000);
-}
+    function resetInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(changeBackground, 7000);
+    }
 
+    function scrollToBottom() {
+        var area2Element = document.querySelector('.area-2');
+        area2Element.scrollTo({
+            top: area2Element.scrollHeight,
+            behavior: 'smooth'
+        });
 
-
-function scrollToBottom() {
-    var area2Element = document.querySelector('.area-2');
-    area2Element.scrollTo({
-        top: area2Element.scrollHeight,
-        behavior: 'smooth'
-    });
-
-    area2Element.addEventListener('scroll', function () {
-        if (area2Element.scrollTop + area2Element.clientHeight === area2Element.scrollHeight) {
-            document.querySelector('.scroll-to-bottom').style.display = 'none';
-        } else {
-            document.querySelector('.scroll-to-bottom').style.display = 'block';
-        }
-    });
-}
+        area2Element.addEventListener('scroll', function () {
+            if (area2Element.scrollTop + area2Element.clientHeight === area2Element.scrollHeight) {
+                document.querySelector('.scroll-to-bottom').style.display = 'none';
+            } else {
+                document.querySelector('.scroll-to-bottom').style.display = 'block';
+            }
+        });
+    }
