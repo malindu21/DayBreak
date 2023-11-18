@@ -109,7 +109,7 @@
   
   .booking-form {
     min-height: 80vh;
-    width: 50%;
+    width: 70%;
     backdrop-filter: blur(20px) !important;
     color: #ffffff;
   }
