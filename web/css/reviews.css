@@ -1,13 +1,13 @@
 .review-bg {
   background: url(../images/review_bg.jpg) no-repeat;
-  width: 90%;
+  width: 98%;
   background-size: cover;
   background-blend-mode: darken;
   background-color: #75521a40;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding: 10vh 0vh ;
   background-position: 50% 50%;
   border-radius: 10px;
+  margin:auto
 }
 
 .review-list {

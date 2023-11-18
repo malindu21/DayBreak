@@ -846,7 +846,7 @@ input[type='checkbox'] {
 .form-control-submit-button {
 	display: inline-block;
 	align-self: center;
-	width: 90%;
+	width: 100%;
 	height: 3.125rem;
 	border: 0.005rem solid #000000;
 	border-radius: 0.25rem;
@@ -2020,8 +2020,7 @@ input[type='checkbox'] {
 .footer {
 	padding-top: 5rem;
 	background-color:  #111;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin:0px 20px;
 }
 
 .footer .text-container {
@@ -2043,16 +2042,7 @@ input[type='checkbox'] {
 /*************************/
 /*     18. Copyright     */
 /*************************/
-.copyright {
-	padding-top: 1rem;
-	padding-bottom: 0.5rem;
-	background-color:  #111;
-	text-align: center;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
+
 
 .copyright p,
 .copyright a {
