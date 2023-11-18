@@ -1,16 +1,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Day Break - Booking</title>
 
   <!-- Favicon  -->
-  <link rel="icon" href="images/favicon.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="css/booking.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="icon" href="images/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="css/booking.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                   <i class="fa-solid fa-user"></i>
                 </span>
                 <input type="text" class="form-control" id="full-name" placeholder="Michel Jackson"
-                  aria-describedby="full-name-addon">
+                  aria-describedby="full-name-addon" />
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
                   <i class="fa-solid fa-envelope"></i>
                 </span>
                 <input type="email" class="form-control" id="email-address" placeholder="michel@gmail.com"
-                  aria-describedby="email-address-addon">
+                  aria-describedby="email-address-addon" />
               </div>
             </div>
           </div>
@@ -58,11 +58,10 @@
                   <span class="input-group-text" id="email-address-addon">
                     <i class="fa-solid fa-location-dot"></i>
                   </span>
-                  <input type="search" class="form-control" id="city" placeholder="Melbourne , AU">
+                  <input type="search" class="form-control" id="city" placeholder="Melbourne , AU" />
                 </div>
               </div>
-              <ul class="list-group search-results d-none" id="search-results">
-              </ul>
+              <ul class="list-group search-results d-none" id="search-results"></ul>
             </div>
           </div>
           <div class="col-lg-6 col-md-12">
@@ -73,16 +72,15 @@
                   <i class="fa-solid fa-clock"></i>
                 </span>
                 <input type="datetime-local" class="form-control" id="schedule-date" placeholder="Choose a date"
-                  readonly aria-describedby="schedule-date-addon">
+                  readonly aria-describedby="schedule-date-addon" />
               </div>
-
             </div>
           </div>
           <div class="col-12">
             <div class="form-group text-area-form-group">
               <label for="checkin">Additional Message</label>
               <textarea class="form-control" id="checkin" placeholder="Michel Jackson" rows="5">
-            </textarea>
+                </textarea>
             </div>
           </div>
           <div class="col-12">
@@ -107,14 +105,14 @@
                 </div>
               </div>
               <div class="d-flex blur-bg p-3 flex-wrap">
-                <div class="booking-form-footer-item tour-price me-5  d-inline-flex flex-column justify-content-evenly">
+                <div class="booking-form-footer-item tour-price me-5 d-inline-flex flex-column justify-content-evenly">
                   <small class="text-light">Total Price</small>
                   <div class="h5 mb-0" id="price">$140.00</div>
                   <small class="text-light">All taxes and fees included</small>
                 </div>
                 <div class="booking-form-footer-item price-brakedown d-inline-flex flex-column justify-content-evenly">
                   <div class="text-white">Price breakdown</div>
-                  <div class="h5 mb-0"> 1 × $140</div>
+                  <div class="h5 mb-0">1 × $140</div>
                 </div>
                 <div class="booking-form-footer-item add-to-cart d-inline-flex flex-column justify-content-center">
                   <div id="myButton" class="btn btn-primary rounded-pill" onclick="validateCheckout()">
@@ -137,11 +135,11 @@
           <div style="--i: 3"></div>
           <div style="--i: 4"></div>
         </div>
-              <div id="widget-container" class="tt-widget">
-          
+        <div id="widget-container" class="tt-widget">
           <div class="tt-widget-fallback">
             <p>
-              <a href="https://www.tickettailor.com/all-tickets/malindu/?ref=website_widget&srch=into_the_forest_plus" target="_blank"></a><br />
+              <a href="https://www.tickettailor.com/all-tickets/malindu/?ref=website_widget&srch=into_the_forest_plus"
+                target="_blank"></a><br />
               <small>
                 <a href="https://www.tickettailor.com?rf=wdg_162152" class="tt-widget-powered"></a>
               </small>
@@ -149,10 +147,24 @@
           </div>
         </div>
       </div>
-  
-      </div>
-
+    </div>
   </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <!-- <img src="..." class="rounded me-2" alt="..."> -->
+        <strong class="me-auto bold">Oops!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+       <span class="mb-2"  id="toast-body"></span>
+        <a role="button" href="index.html#contactForm"  class="btn btn-sm btn-primary ">
+          Contact us
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/booking.js"></script>
 </body>

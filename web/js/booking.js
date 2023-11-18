@@ -90,9 +90,6 @@ function loadCityResult(address) {
       pachageCat = distance > 10 ? "plus" : "general";
       calculateValue(pachageCat);
     }
-    
-  
-
   });
 
   li.appendChild(citySpan);
@@ -127,9 +124,9 @@ function calcDistance(startCoords, destCoords) {
   return distanceInKilometers;
 }
 
-//enable custom datepicker 
+//enable custom datepicker
 
-flatpickr("input[type=datetime-local]" , {
+flatpickr("input[type=datetime-local]", {
   minDate: "today",
 });
 
@@ -156,13 +153,13 @@ closePopup.addEventListener("click", function () {
 });
 window.addEventListener("click", function (event) {
   if (event.target == myPopup) {
-      myPopup.classList.remove("show");
+    myPopup.classList.remove("show");
   }
 });
 
 function calculateValue(status) {
   // Get the element by its ID
-  var priceElement = document.getElementById('price');
+  var priceElement = document.getElementById("price");
 
   // Extract the text content and remove the dollar sign
   var priceText = 140;
@@ -171,64 +168,77 @@ function calculateValue(status) {
   var priceValue = parseFloat(priceText);
 
   // Perform calculations (e.g., double the value)
-  var result = 0
-  if (status == true){
+  var result = 0;
+  if (status == true) {
     result = priceValue + 50;
-  }else{
+  } else {
     result = priceValue;
   }
 
-
   // Display the result (you can modify this based on your requirements)
   //alert('The calculated value is: $' + result.toFixed(2));
-  priceElement.textContent = '$' +result.toFixed(2);
+  priceElement.textContent = "$" + result.toFixed(2);
 }
 
-
 function addTicketWidget(ref) {
+  var widgetContainer = document.getElementById("widget-container");
+  var scriptElement = document.createElement("script");
+  var url =
+    "https://www.tickettailor.com/all-tickets/malindu/?ref=" +
+    selectedDate +
+    "&srch=" +
+    ref;
 
-var widgetContainer = document.getElementById('widget-container');
-var scriptElement = document.createElement('script');
-var url = 'https://www.tickettailor.com/all-tickets/malindu/?ref=' +  selectedDate + '&srch=' + ref;
+  scriptElement.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
+  scriptElement.setAttribute("data-url", url);
+  scriptElement.setAttribute("data-type", "inline");
+  scriptElement.setAttribute("data-inline-minimal", "false");
+  scriptElement.setAttribute("data-inline-show-logo", "true");
+  scriptElement.setAttribute("data-inline-bg-fill", "true");
+  scriptElement.setAttribute(
+    "data-inline-inherit-ref-from-url-param",
+    "special"
+  );
+  scriptElement.setAttribute("data-inline-ref", "website_widget");
 
-scriptElement.src = 'https://cdn.tickettailor.com/js/widgets/min/widget.js';
-scriptElement.setAttribute('data-url', url);
-scriptElement.setAttribute('data-type', 'inline');
-scriptElement.setAttribute('data-inline-minimal', 'false');
-scriptElement.setAttribute('data-inline-show-logo', 'true');
-scriptElement.setAttribute('data-inline-bg-fill', 'true');
-scriptElement.setAttribute('data-inline-inherit-ref-from-url-param', 'special');
-scriptElement.setAttribute('data-inline-ref', 'website_widget');
-
-widgetContainer.appendChild(scriptElement);
+  widgetContainer.appendChild(scriptElement);
 }
 
 // Call the function to add the widget when the page loads
 // window.onload = addTicketWidget;
 
-
-getDate()
-function getDate(){
-  document.getElementById('schedule-date').addEventListener('change', function() {
-    // Get the selected date
-    selectedDate = this.value; 
-  });
+getDate();
+function getDate() {
+  document
+    .getElementById("schedule-date")
+    .addEventListener("change", function () {
+      // Get the selected date
+      selectedDate = this.value;
+    });
 }
 
 function myFunction() {
-console.log("Function executed after 2 seconds");
-addTicketWidget(pachageCat);
+  console.log("Function executed after 2 seconds");
+  addTicketWidget(pachageCat);
 
-// Add your code here
-document.getElementById('loader').style.display = 'none';
+  // Add your code here
+  document.getElementById("loader").style.display = "none";
 }
 
-
 function showDistanceExceedPopup() {
- 
-  alert("Pick-up location entered is outside our standard radius. Please contact booking team for support.");
+  showToast(
+    "Pick-up location entered is outside our standard radius. Please contact booking team for support."
+  );
 
-  var cityTxtField = document.getElementById('city');
-    
-  cityTxtField.value = '';
+  var cityTxtField = document.getElementById("city");
+
+  cityTxtField.value = "";
+}
+
+function showToast(message) {
+  const toastLiveExample = document.getElementById("liveToast");
+  const toastBody = document.getElementById("toast-body");
+  toastBody.innerHTML = message;
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+  toastBootstrap.show();
 }

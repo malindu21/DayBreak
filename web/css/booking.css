@@ -184,6 +184,10 @@
   .user-select{
     cursor: pointer;
   }
+
+  .bold{
+    font-weight: bold ;
+  }
   
   .blur-bg {
     padding: 1px 10px;
