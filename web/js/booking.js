@@ -176,8 +176,7 @@ function calculateValue(status) {
   }
 
   // Display the result (you can modify this based on your requirements)
-  //alert('The calculated value is: $' + result.toFixed(2));
-  priceElement.textContent = "$" + result.toFixed(2);
+  priceElement.innerHTML = "$" + result.toFixed(2);
 }
 
 function addTicketWidget(ref) {
