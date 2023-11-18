@@ -39,10 +39,10 @@ function searchLocations(text) {
           loadCityResult(address);
           addressList.push(address);
         });
-        console.log(addressList);
+       // console.log(addressList);
       }
     })
-    .catch((error) => console.log("error", error));
+    .catch((error) => console.error("error", error));
 }
 
 cityTextBox.addEventListener("input", function () {
@@ -80,7 +80,7 @@ function loadCityResult(address) {
       longitude: selectedAddress.lon,
     };
     distance = calcDistance(sCoords, dCoords);
-    console.log(distance, "Km");
+    //console.log(distance, "Km");
     cityTextBox.value = selectedAddress.formatted;
     citySearchResults.innerHTML = "";
     citySearchResults.classList.add("d-none");
@@ -88,7 +88,7 @@ function loadCityResult(address) {
       showDistanceExceedPopup();
     } else {
       pachageCat = distance > 10 ? "plus" : "general";
-      calculateValue(pachageCat);
+      calculateValue(distance > 10);
     }
   });
 
@@ -159,7 +159,7 @@ window.addEventListener("click", function (event) {
 
 function calculateValue(status) {
   // Get the element by its ID
-  var priceElement = document.getElementById("price");
+  var priceElement = document.querySelectorAll("#price");
 
   // Extract the text content and remove the dollar sign
   var priceText = 140;
@@ -174,9 +174,10 @@ function calculateValue(status) {
   } else {
     result = priceValue;
   }
-
   // Display the result (you can modify this based on your requirements)
-  priceElement.innerHTML = "$" + result.toFixed(2);
+  priceElement.forEach(element => {
+    element.innerHTML = "$" + result.toFixed(2);
+  })
 }
 
 function addTicketWidget(ref) {
