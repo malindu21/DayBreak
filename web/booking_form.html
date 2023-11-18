@@ -87,7 +87,7 @@
           </div>
           <div class="col-12">
             <div class="selected-tour-card mt-2 px-3 py-4">
-              <div class="h4">Name of chosen Tour</div>
+              <div class="h4">Into The Forest</div>
               <div class="d-flex flex-wrap mt-4 mb-3">
                 <div class="quick-info duration">
                   <i class="fa-solid fa-clock"></i>
@@ -109,7 +109,7 @@
               <div class="d-flex blur-bg p-3 flex-wrap">
                 <div class="booking-form-footer-item tour-price me-5  d-inline-flex flex-column justify-content-evenly">
                   <small class="text-light">Total Price</small>
-                  <div class="h5 mb-0">$140</div>
+                  <div class="h5 mb-0" id="price">$140.00</div>
                   <small class="text-light">All taxes and fees included</small>
                 </div>
                 <div class="booking-form-footer-item price-brakedown d-inline-flex flex-column justify-content-evenly">
@@ -117,7 +117,7 @@
                   <div class="h5 mb-0"> 1 × $140</div>
                 </div>
                 <div class="booking-form-footer-item add-to-cart d-inline-flex flex-column justify-content-center">
-                  <div class="btn btn-primary rounded-pill">
+                  <div id="myButton" class="btn btn-primary rounded-pill" onclick="validateCheckout()">
                     <i class="fa-solid fa-cart-shopping text-light"></i>
                     <span class="ms-2">Proceed to Checkout</span>
                   </div>
@@ -128,6 +128,30 @@
         </div>
       </form>
     </div>
+
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+        <div class="loader" id="loader">
+          <div style="--i: 1"></div>
+          <div style="--i: 2"></div>
+          <div style="--i: 3"></div>
+          <div style="--i: 4"></div>
+        </div>
+              <div id="widget-container" class="tt-widget">
+          
+          <div class="tt-widget-fallback">
+            <p>
+              <a href="https://www.tickettailor.com/all-tickets/malindu/?ref=website_widget&srch=into_the_forest_plus" target="_blank"></a><br />
+              <small>
+                <a href="https://www.tickettailor.com?rf=wdg_162152" class="tt-widget-powered"></a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      </div>
+
   </div>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/booking.js"></script>

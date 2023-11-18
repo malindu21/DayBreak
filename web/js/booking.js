@@ -3,6 +3,9 @@ const citySearchResults = document.getElementById("search-results");
 let addressList = [];
 let selectedAddress = {};
 let distance = 0;
+let packageName = "";
+let pachageCat = "";
+let selectedDate = "";
 
 let sCoords = {
   latitude: selectedAddress.lat,
@@ -81,9 +84,15 @@ function loadCityResult(address) {
     cityTextBox.value = selectedAddress.formatted;
     citySearchResults.innerHTML = "";
     citySearchResults.classList.add("d-none");
-    if(distance > 20){
-      console.log("Too far from melbourne")
+    if (distance > 20) {
+      showDistanceExceedPopup();
+    } else {
+      pachageCat = distance > 10 ? "plus" : "general";
+      calculateValue(pachageCat);
     }
+    
+  
+
   });
 
   li.appendChild(citySpan);
@@ -123,3 +132,103 @@ function calcDistance(startCoords, destCoords) {
 flatpickr("input[type=datetime-local]" , {
   minDate: "today",
 });
+
+function validateCheckoutV2() {
+  var isValid = pachageCat !== "";
+
+  if (isValid) {
+    showPopupWithDelay();
+  } else {
+    // Validation failed
+    alert("Validation failed! Please select a location & Date to continue.");
+  }
+}
+
+function showPopupWithDelay() {
+  myPopup.classList.add("show");
+  setTimeout(myFunction, 2000);
+}
+
+myButton.addEventListener("click", validateCheckoutV2);
+
+closePopup.addEventListener("click", function () {
+  myPopup.classList.remove("show");
+});
+window.addEventListener("click", function (event) {
+  if (event.target == myPopup) {
+      myPopup.classList.remove("show");
+  }
+});
+
+function calculateValue(status) {
+  // Get the element by its ID
+  var priceElement = document.getElementById('price');
+
+  // Extract the text content and remove the dollar sign
+  var priceText = 140;
+
+  // Parse the string to a floating-point number
+  var priceValue = parseFloat(priceText);
+
+  // Perform calculations (e.g., double the value)
+  var result = 0
+  if (status == true){
+    result = priceValue + 50;
+  }else{
+    result = priceValue;
+  }
+
+
+  // Display the result (you can modify this based on your requirements)
+  //alert('The calculated value is: $' + result.toFixed(2));
+  priceElement.textContent = '$' +result.toFixed(2);
+}
+
+
+function addTicketWidget(ref) {
+
+var widgetContainer = document.getElementById('widget-container');
+var scriptElement = document.createElement('script');
+var url = 'https://www.tickettailor.com/all-tickets/malindu/?ref=' +  selectedDate + '&srch=' + ref;
+
+scriptElement.src = 'https://cdn.tickettailor.com/js/widgets/min/widget.js';
+scriptElement.setAttribute('data-url', url);
+scriptElement.setAttribute('data-type', 'inline');
+scriptElement.setAttribute('data-inline-minimal', 'false');
+scriptElement.setAttribute('data-inline-show-logo', 'true');
+scriptElement.setAttribute('data-inline-bg-fill', 'true');
+scriptElement.setAttribute('data-inline-inherit-ref-from-url-param', 'special');
+scriptElement.setAttribute('data-inline-ref', 'website_widget');
+
+widgetContainer.appendChild(scriptElement);
+}
+
+// Call the function to add the widget when the page loads
+// window.onload = addTicketWidget;
+
+
+getDate()
+function getDate(){
+  document.getElementById('schedule-date').addEventListener('change', function() {
+    // Get the selected date
+    selectedDate = this.value; 
+  });
+}
+
+function myFunction() {
+console.log("Function executed after 2 seconds");
+addTicketWidget(pachageCat);
+
+// Add your code here
+document.getElementById('loader').style.display = 'none';
+}
+
+
+function showDistanceExceedPopup() {
+ 
+  alert("Pick-up location entered is outside our standard radius. Please contact booking team for support.");
+
+  var cityTxtField = document.getElementById('city');
+    
+  cityTxtField.value = '';
+}
