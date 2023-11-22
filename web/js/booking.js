@@ -6,6 +6,28 @@ let distance = 0;
 let packageName = "";
 let pachageCat = "";
 let selectedDate = "";
+("");
+
+getAllPackages();
+
+function getAllPackages() {
+  fetch("js/packages.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const activityList = document.getElementById("activity-list");
+      document.getElementById("package-title").innerHTML = data[0].title;
+      document.getElementById("main-bg").style.background = "url(" + data[0].backgroundImageUrls[0] + ") no-repeat center center"
+      activityList.innerHTML = "";
+      data[0].activities.map((e) => {
+        let element = `<div class="quick-info beverage-onboard">
+      <i class="${e.iconClass}"></i>
+      <span class="text ms-2">${e.title}</span>
+    </div>`;
+
+        activityList.innerHTML += element;
+      });
+    });
+}
 
 let sCoords = {
   latitude: selectedAddress.lat,
@@ -39,7 +61,7 @@ function searchLocations(text) {
           loadCityResult(address);
           addressList.push(address);
         });
-       // console.log(addressList);
+        // console.log(addressList);
       }
     })
     .catch((error) => console.error("error", error));
@@ -131,13 +153,13 @@ flatpickr("input[type=datetime-local]", {
 });
 
 function validateCheckoutV2() {
-  var isValid = pachageCat !== "";
-
-  if (isValid) {
-    showPopupWithDelay();
+  var isValid = pachageCat !== "" && selectedDate !== "";
+  if (pachageCat === "") {
+    alert("Please select your address to continue.");
+  } else if (selectedDate === "") {
+    alert("Please select your tour date to continue.");
   } else {
-    // Validation failed
-    alert("Validation failed! Please select a location & Date to continue.");
+    showPopupWithDelay();
   }
 }
 
@@ -169,20 +191,23 @@ function calculateValue(status) {
 
   // Perform calculations (e.g., double the value)
   var result = 0;
-  document.getElementById('price-breakdown').innerHTML = "$" + priceValue.toFixed(2)
+  document.getElementById("price-breakdown").innerHTML =
+    "$" + priceValue.toFixed(2);
   if (status == true) {
     result = priceValue + 50;
-    document.getElementById('pickup-charge').innerHTML = "$50"
-    document.getElementById('distance-msg').innerHTML = "(Outside of melbourne CBD, 10Km radius)"
+    document.getElementById("pickup-charge").innerHTML = "$50";
+    document.getElementById("distance-msg").innerHTML =
+      "(Outside of melbourne CBD, 10Km radius)";
   } else {
     result = priceValue;
-    document.getElementById('pickup-charge').innerHTML = "$0"
-    document.getElementById('distance-msg').innerHTML = "(With in Melbourne CBD 10km radius)"
+    document.getElementById("pickup-charge").innerHTML = "$0";
+    document.getElementById("distance-msg").innerHTML =
+      "(With in Melbourne CBD 10km radius)";
   }
   // Display the result (you can modify this based on your requirements)
-  priceElement.forEach(element => {
+  priceElement.forEach((element) => {
     element.innerHTML = "$" + result.toFixed(2);
-  })
+  });
 }
 
 function addTicketWidget(ref) {
