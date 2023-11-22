@@ -169,10 +169,15 @@ function calculateValue(status) {
 
   // Perform calculations (e.g., double the value)
   var result = 0;
+  document.getElementById('price-breakdown').innerHTML = "$" + priceValue.toFixed(2)
   if (status == true) {
     result = priceValue + 50;
+    document.getElementById('pickup-charge').innerHTML = "$50"
+    document.getElementById('distance-msg').innerHTML = "(Outside of melbourne CBD, 10Km radius)"
   } else {
     result = priceValue;
+    document.getElementById('pickup-charge').innerHTML = "$0"
+    document.getElementById('distance-msg').innerHTML = "(With in Melbourne CBD 10km radius)"
   }
   // Display the result (you can modify this based on your requirements)
   priceElement.forEach(element => {

@@ -152,7 +152,7 @@
   
   .booking-form-footer-item {
     height: 70px;
-    width: 250px;
+    min-width: 250px;
     margin-bottom: 10px;
   }
   
@@ -225,5 +225,19 @@
   @media only screen and (max-width: 600px) {
     .form-control {
       min-height: 50px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    
+    .booking-form-footer-item .breakdown {
+      flex-direction: column  !important;
+      align-items: flex-start !important;
+    }
+    .booking-form-footer-item .rounded-pill{
+      margin-top: 10px;
+    }
+
+    .booking-form{
+      width: 90% !important;
     }
   }
