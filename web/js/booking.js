@@ -6,7 +6,6 @@ let distance = 0;
 let packageName = "";
 let pachageCat = "";
 let selectedDate = "";
-("");
 
 getAllPackages();
 
