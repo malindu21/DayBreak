@@ -153,7 +153,6 @@ flatpickr("input[type=datetime-local]", {
 });
 
 function validateCheckoutV2() {
-  var isValid = pachageCat !== "" && selectedDate !== "";
   if (pachageCat === "") {
     alert("Please select your address to continue.");
   } else if (selectedDate === "") {
@@ -237,15 +236,12 @@ function addTicketWidget(ref) {
 // Call the function to add the widget when the page loads
 // window.onload = addTicketWidget;
 
-getDate();
-function getDate() {
-  document
-    .getElementById("schedule-date")
-    .addEventListener("change", function () {
-      // Get the selected date
-      selectedDate = this.value;
-    });
-}
+document
+.getElementById("schedule-date")
+.addEventListener("change", function (e) {
+  // Get the selected date
+  selectedDate = e.target.value;
+});
 
 function myFunction() {
   console.log("Function executed after 2 seconds");
