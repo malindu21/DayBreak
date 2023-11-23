@@ -33,14 +33,20 @@ function getAllPackages() {
     });
 }
 
-
+// ============= TICKET TYPE & NO OF TRAVELLERS =================
+const travellerDetailsBtn = document.getElementById("traveller-details-btn");
 const noOfTravellersEle = document.getElementById("no-of-travellers");
 
 noOfTravellersEle.addEventListener("input", function (e) {
-  if (e.target.value < minNoOfTravellers || e.target.value > maxNoOfTravellers) {
+  if (
+    e.target.value < minNoOfTravellers ||
+    e.target.value > maxNoOfTravellers
+  ) {
     noOfTravellersEle.value = undefined;
-  }else{
+  } else {
+    travellerDetailsBtn.removeAttribute("disabled");
     noOfTravellers = Number(e.target.value);
+    loadTravellersElements();
   }
 });
 
@@ -49,30 +55,54 @@ noOfTravellersEle.setAttribute(
   "placeholder",
   "Please Select Ticket type first"
 );
-document
-  .getElementById("package_type")
-  .addEventListener("change", function (e) {
-    noOfTravellersEle.removeAttribute("readonly");
-    if (e.target.value == "suv") {
-      minNoOfTravellers = 1;
-      maxNoOfTravellers = 4;
-      noOfTravellersEle.setAttribute("placeholder", "Maximum 4 Travellers");
-    } else if (e.target.value == "van") {
-      minNoOfTravellers = 1;
-      maxNoOfTravellers = 7;
-      noOfTravellersEle.setAttribute("placeholder", "Maximum 7 Travellers");
-    } else {
-      noOfTravellersEle.setAttribute("readonly", "true");
-    }
-    document.getElementById('max-passengers').innerHTML = maxNoOfTravellers;
-  });
+document.getElementById("ticket_type").addEventListener("change", function (e) {
+  noOfTravellersEle.removeAttribute("readonly");
+  if (e.target.value == "suv") {
+    minNoOfTravellers = 1;
+    maxNoOfTravellers = 4;
+    noOfTravellersEle.setAttribute("placeholder", "Maximum 4 Travellers");
+  } else if (e.target.value == "van") {
+    minNoOfTravellers = 1;
+    maxNoOfTravellers = 7;
+    noOfTravellersEle.setAttribute("placeholder", "Maximum 7 Travellers");
+  } else {
+    noOfTravellersEle.setAttribute("readonly", "true");
+  }
+  document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
+});
 
-document
-  .getElementById("traveller-details")
-  .addEventListener("click", function (event) {
-    $("#travellerModal").modal("show");
-  });
+// ============= TRAVELLERS DETAILS MODAL =================
 
+travellerDetailsBtn.addEventListener("click", function (event) {
+  $("#travellerModal").modal("show");
+});
+
+function loadTravellersElements() {
+  document.getElementById("travellers-list").innerHTML = "";
+  for (let i = 1; i <= noOfTravellers; i++) {
+    document.getElementById("travellers-list").innerHTML += `
+    <div class="col-lg-6">
+    <h6>Traveller ${i}</h6>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
+      <input type="text" class="form-control" name="username${i}" placeholder="Full Name" aria-label="fullName"
+        aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon2"><i class="fas fa-birthday-cake"></i></span>
+      <input type="number" class="form-control" placeholder="age${i}" aria-label="age"
+        aria-describedby="basic-addon2">
+    </div>
+  </div>`;
+  }
+}
+
+function onSubmitTravellerDetails(event) {
+  event.preventDefault();
+  console.log("Event " , event)
+}
+
+// ============= SEARCH LOCATIONS =================
 let sCoords = {
   latitude: selectedAddress.lat,
   longitude: selectedAddress.lon,
