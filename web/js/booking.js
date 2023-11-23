@@ -31,7 +31,7 @@ function getAllPackages() {
 
 const noOfTravellers = document.getElementById("no-of-travellers");
 noOfTravellers.setAttribute("readonly", "true");
-noOfTravellers.setAttribute('placeholder', 'Please Select Package type first')
+noOfTravellers.setAttribute('placeholder', 'Please Select Ticket type first')
 document
   .getElementById("package_type")
   .addEventListener("change", function (e) {
