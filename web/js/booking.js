@@ -23,6 +23,7 @@ function getAllPackages() {
       document.getElementById("package-title").innerHTML = data[0].title;
       document.getElementById("main-bg").style.background =
         "url(" + data[0].backgroundImageUrls[0] + ") no-repeat center center";
+      document.getElementById("main-bg").style.backgroundSize = "cover";
       activityList.innerHTML = "";
       data[0].activities.map((e) => {
         let element = `<div class="quick-info beverage-onboard">
