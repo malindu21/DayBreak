@@ -7,6 +7,10 @@ let packageName = "";
 let pachageCat = "";
 let selectedDate = "";
 
+let maxNoOfTravellers = 0;
+let minNoOfTravellers = 0;
+let noOfTravellers = 0;
+
 getAllPackages();
 
 function getAllPackages() {
@@ -29,24 +33,44 @@ function getAllPackages() {
     });
 }
 
-const noOfTravellers = document.getElementById("no-of-travellers");
-noOfTravellers.setAttribute("readonly", "true");
-noOfTravellers.setAttribute('placeholder', 'Please Select Ticket type first')
+
+const noOfTravellersEle = document.getElementById("no-of-travellers");
+
+noOfTravellersEle.addEventListener("input", function (e) {
+  if (e.target.value < minNoOfTravellers || e.target.value > maxNoOfTravellers) {
+    noOfTravellersEle.value = undefined;
+  }else{
+    noOfTravellers = Number(e.target.value);
+  }
+});
+
+noOfTravellersEle.setAttribute("readonly", "true");
+noOfTravellersEle.setAttribute(
+  "placeholder",
+  "Please Select Ticket type first"
+);
 document
   .getElementById("package_type")
   .addEventListener("change", function (e) {
-  noOfTravellers.removeAttribute("readonly");
+    noOfTravellersEle.removeAttribute("readonly");
     if (e.target.value == "suv") {
-      noOfTravellers.setAttribute("min", "1");
-      noOfTravellers.setAttribute("max", "4");
-      noOfTravellers.setAttribute('placeholder', 'Maximum 4 Travellers')
+      minNoOfTravellers = 1;
+      maxNoOfTravellers = 4;
+      noOfTravellersEle.setAttribute("placeholder", "Maximum 4 Travellers");
     } else if (e.target.value == "van") {
-      noOfTravellers.setAttribute("min", "1");
-      noOfTravellers.setAttribute("max", "7");
-      noOfTravellers.setAttribute('placeholder', 'Maximum 7 Travellers')
-    }else{
-      noOfTravellers.setAttribute("readonly" , "true");
+      minNoOfTravellers = 1;
+      maxNoOfTravellers = 7;
+      noOfTravellersEle.setAttribute("placeholder", "Maximum 7 Travellers");
+    } else {
+      noOfTravellersEle.setAttribute("readonly", "true");
     }
+    document.getElementById('max-passengers').innerHTML = maxNoOfTravellers;
+  });
+
+document
+  .getElementById("traveller-details")
+  .addEventListener("click", function (event) {
+    $("#travellerModal").modal("show");
   });
 
 let sCoords = {

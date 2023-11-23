@@ -55,7 +55,9 @@
           </div>
 
           <div class="col-lg-4 d-flex  align-items-center">
-            <button class="btn btn-lg btn-dark fs-6 mb-0 rounded-pill py-3">Click to Enter Traveller Details</button>
+            <button type="button" class="btn btn-lg btn-dark fs-6 mb-0 rounded-pill py-3" id="traveller-details">
+              Click to Enter Traveller Details
+            </button>
           </div>
           <div class="col-lg-6 col-md-12">
             <div class="location-wrapper">
@@ -146,7 +148,7 @@
                 <div class="booking-form-footer-item tour-price d-inline-flex flex-column justify-content-evenly">
                   <div class="quick-info max-passengers">
                     <i class="fa-solid fa-users"></i>
-                    <span class="text ms-2">3 Max Passengers</span>
+                    <span class="text ms-2"><span id="max-passengers">0</span> Max Passengers</span>
                   </div>
                 </div>
                 <div class="booking-form-footer-item  add-to-cart d-inline-flex flex-column justify-content-center ">
@@ -199,8 +201,42 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="travellerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="travellerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="travellerModalLabel">Travellers Details</h1>
+          <button type="button" class="btn-close rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-6">
+              <h6>Traveller 1</h6>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
+                <input type="text" class="form-control" placeholder="Full Name" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-birthday-cake"></i></span>
+                <input type="number" class="form-control" placeholder="Age" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-outline-danger rounded-pill">Reset</button>
+          <button type="submit" class="btn btn-dark rounded-pill">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="js/booking.js"></script>
 </body>
 
