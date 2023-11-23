@@ -11,6 +11,8 @@ let maxNoOfTravellers = 0;
 let minNoOfTravellers = 0;
 let noOfTravellers = 0;
 
+let isTravellerDetailsSubmitted = false;
+
 getAllPackages();
 
 function getAllPackages() {
@@ -36,13 +38,14 @@ function getAllPackages() {
 // ============= TICKET TYPE & NO OF TRAVELLERS =================
 const travellerDetailsBtn = document.getElementById("traveller-details-btn");
 const noOfTravellersEle = document.getElementById("no-of-travellers");
+const ticketTypeEle = document.getElementById("ticket_type");
 
 noOfTravellersEle.addEventListener("input", function (e) {
   if (
     e.target.value < minNoOfTravellers ||
     e.target.value > maxNoOfTravellers
   ) {
-    noOfTravellersEle.value = undefined;
+    noOfTravellersEle.value = "";
   } else {
     travellerDetailsBtn.removeAttribute("disabled");
     noOfTravellers = Number(e.target.value);
@@ -55,21 +58,26 @@ noOfTravellersEle.setAttribute(
   "placeholder",
   "Please Select Ticket type first"
 );
-document.getElementById("ticket_type").addEventListener("change", function (e) {
+ticketTypeEle.addEventListener("change", function (e) {
   noOfTravellersEle.removeAttribute("readonly");
   if (e.target.value == "suv") {
-    minNoOfTravellers = 1;
-    maxNoOfTravellers = 4;
-    noOfTravellersEle.setAttribute("placeholder", "Maximum 4 Travellers");
+    setMinMaxTravellers(1, 4);
   } else if (e.target.value == "van") {
-    minNoOfTravellers = 1;
-    maxNoOfTravellers = 7;
-    noOfTravellersEle.setAttribute("placeholder", "Maximum 7 Travellers");
+    setMinMaxTravellers(1, 7);
   } else {
     noOfTravellersEle.setAttribute("readonly", "true");
   }
   document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
 });
+
+function setMinMaxTravellers(minTravellers, maxTravellers) {
+  minNoOfTravellers = minTravellers;
+  maxNoOfTravellers = maxTravellers;
+  noOfTravellersEle.setAttribute(
+    "placeholder",
+    `Maximum ${maxTravellers} Travellers`
+  );
+}
 
 // ============= TRAVELLERS DETAILS MODAL =================
 
@@ -99,7 +107,7 @@ function loadTravellersElements() {
 
 function onSubmitTravellerDetails(event) {
   event.preventDefault();
-  console.log("Event " , event)
+  console.log("Event ", event);
 }
 
 // ============= SEARCH LOCATIONS =================
@@ -228,7 +236,13 @@ flatpickr("input[type=datetime-local]", {
 
 function validateCheckout() {
   selectedDate = document.getElementById("schedule-date").value;
-  if (pachageCat === "") {
+  if (ticketTypeEle.value === "") {
+    alert("Please select you ticket type to continue.");
+  } else if (noOfTravellersEle.value === "") {
+    alert("Please enter number of travellers to continue.");
+  }else if(!isTravellerDetailsSubmitted){
+    alert("Please submit all traveller's details to continue.");
+  } else if (pachageCat === "") {
     alert("Please select your address to continue.");
   } else if (selectedDate === "") {
     alert("Please select your tour date to continue.");
