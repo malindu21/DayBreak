@@ -29,6 +29,26 @@ function getAllPackages() {
     });
 }
 
+const noOfTravellers = document.getElementById("no-of-travellers");
+noOfTravellers.setAttribute("readonly", "true");
+noOfTravellers.setAttribute('placeholder', 'Please Select Package type first')
+document
+  .getElementById("package_type")
+  .addEventListener("change", function (e) {
+  noOfTravellers.removeAttribute("readonly");
+    if (e.target.value == "suv") {
+      noOfTravellers.setAttribute("min", "1");
+      noOfTravellers.setAttribute("max", "4");
+      noOfTravellers.setAttribute('placeholder', 'Maximum 4 Travellers')
+    } else if (e.target.value == "van") {
+      noOfTravellers.setAttribute("min", "1");
+      noOfTravellers.setAttribute("max", "7");
+      noOfTravellers.setAttribute('placeholder', 'Maximum 7 Travellers')
+    }else{
+      noOfTravellers.setAttribute("readonly" , "true");
+    }
+  });
+
 let sCoords = {
   latitude: selectedAddress.lat,
   longitude: selectedAddress.lon,
