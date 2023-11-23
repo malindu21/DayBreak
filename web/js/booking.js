@@ -15,7 +15,8 @@ function getAllPackages() {
     .then((data) => {
       const activityList = document.getElementById("activity-list");
       document.getElementById("package-title").innerHTML = data[0].title;
-      document.getElementById("main-bg").style.background = "url(" + data[0].backgroundImageUrls[0] + ") no-repeat center center"
+      document.getElementById("main-bg").style.background =
+        "url(" + data[0].backgroundImageUrls[0] + ") no-repeat center center";
       activityList.innerHTML = "";
       data[0].activities.map((e) => {
         let element = `<div class="quick-info beverage-onboard">
@@ -151,7 +152,8 @@ flatpickr("input[type=datetime-local]", {
   minDate: "today",
 });
 
-function validateCheckoutV2() {
+function validateCheckout() {
+  selectedDate = document.getElementById("schedule-date").value;
   if (pachageCat === "") {
     alert("Please select your address to continue.");
   } else if (selectedDate === "") {
@@ -166,7 +168,7 @@ function showPopupWithDelay() {
   setTimeout(myFunction, 2000);
 }
 
-myButton.addEventListener("click", validateCheckoutV2);
+myButton.addEventListener("click", validateCheckout);
 
 closePopup.addEventListener("click", function () {
   myPopup.classList.remove("show");
@@ -236,11 +238,13 @@ function addTicketWidget(ref) {
 // window.onload = addTicketWidget;
 
 document
-.getElementById("schedule-date")
-.addEventListener("change", function (e) {
-  // Get the selected date
-  selectedDate = e.target.value;
-});
+  .getElementById("schedule-date")
+  .addEventListener("change", function (e) {
+    debugger;
+    // Get the selected date
+    selectedDate = e.target.value;
+    console.log(selectedDate);
+  });
 
 function myFunction() {
   console.log("Function executed after 2 seconds");
