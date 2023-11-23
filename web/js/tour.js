@@ -13,62 +13,20 @@ const package001 = {
         },
 
 
-        packageActivity : {
-            section1: {
-                iconClass: "fas fa-window-close fa-inverse",
-                title: "Free Cancellation",
-                description: "Cancel up to 24 hours in advance for a full refund"
+        importantInformation : {
+            whatToWear: {
+                1: {value: "Full refund available with cancellation 24 hours before the road-trip start time"},
+                2: {value: "No refund for cancellations made within 24 hours of the road-trip start time"},
+                3: {value: "Changes requested within 24 hours of the road-trip start time will not be accommodated."},
+                4: {value: "Departure and destination times align with Melbourne local time"},
+                5: {value: "In case the road-trip is cancelled due to severe weather conditions, you will be offered either a full refund or an alternative date to travel"},
             },
-            section2: {
-                iconClass: "fas fa-clock fa-inverse",
-                title: "Duration",
-                description: "11 hours"
-            },
-            section3: {
-                iconClass: "fas fa-clock fa-inverse",
-                title: "Start & End time",
-                description: "between 8/9 AM & End between 7/9 PM"
-            },
-            section4: {
-                iconClass: "fas fa-map-marker fa-inverse",
-                title: "Pickup & Drop-off included",
-                description: "Pickup included from anywhere in Melbourne within 10km radius "
-            },
-            section5: {
-                iconClass: "fas fa-users fa-inverse",
-                title: "Smaller intimate group",
-                description: "Private tour for your group of maximum 4 people "
-            },
-            section6: {
-                iconClass: "fas fa-car fa-inverse",
-                title: "Designated chauffeur",
-                description: "Enjoy the convenience of having a dedicated chauffeur throughout the entire journey, ensuring a personalized and stress-free experience."
-            },
-            section7: {
-                iconClass: "fas fa-glass-martini fa-inverse",
-                title: "Beverages on-board",
-                description: "Stay refreshed with a selection of soft drinks, beers and ciders on the house!"
-            },
-            section8: {
-                iconClass: "fas fa-utensils fa-inverse",
-                title: "Lunch",
-                description: "Your trip includes a delicious lunch with locally sourced ingredients and picturesque views"
-            },
-            section9: {
-                iconClass: "fab fa-spotify fa-inverse",
-                title: "Spotify",
-                description: "Enhance your road trip experience & Set the mood with your favourite tunes using our Spotify access during the journey"
-            },
-            section10: {
-           
-                iconClass: "fas fa-table fa-inverse",
-                title: "Comfort items",
-                description: "Stay comfy with complimentary use of blankets, umbrellas & USB charging ports"
-            },
-            section11: {
-                iconClass: "fas fa-camera fa-inverse",
-                title: "Free Photography",
-                description: "Capture your memories effortlessly as photography is included and provided to you following the tour."
+            notAllowed: {
+                1: {value: "Full refund available with cancellation 24 hours before the road-trip start time"},
+                2: {value: "No refund for cancellations made within 24 hours of the road-trip start time"},
+                3: {value: "Changes requested within 24 hours of the road-trip start time will not be accommodated."},
+                4: {value: "Departure and destination times align with Melbourne local time"},
+                5: {value: "In case the road-trip is cancelled due to severe weather conditions, you will be offered either a full refund or an alternative date to travel"},
             }
         },
 
@@ -131,6 +89,64 @@ const package001 = {
         },
 
         
+        packageActivity : {
+            section1: {
+                iconClass: "fas fa-window-close fa-inverse",
+                title: "Free Cancellation",
+                description: "Cancel up to 24 hours in advance for a full refund"
+            },
+            section2: {
+                iconClass: "fas fa-clock fa-inverse",
+                title: "Duration",
+                description: "11 hours"
+            },
+            section3: {
+                iconClass: "fas fa-clock fa-inverse",
+                title: "Start & End time",
+                description: "between 8/9 AM & End between 7/9 PM"
+            },
+            section4: {
+                iconClass: "fas fa-map-marker fa-inverse",
+                title: "Pickup & Drop-off included",
+                description: "Pickup included from anywhere in Melbourne within 10km radius "
+            },
+            section5: {
+                iconClass: "fas fa-users fa-inverse",
+                title: "Smaller intimate group",
+                description: "Private tour for your group of maximum 4 people "
+            },
+            section6: {
+                iconClass: "fas fa-car fa-inverse",
+                title: "Designated chauffeur",
+                description: "Enjoy the convenience of having a dedicated chauffeur throughout the entire journey, ensuring a personalized and stress-free experience."
+            },
+            section7: {
+                iconClass: "fas fa-glass-martini fa-inverse",
+                title: "Beverages on-board",
+                description: "Stay refreshed with a selection of soft drinks, beers and ciders on the house!"
+            },
+            section8: {
+                iconClass: "fas fa-utensils fa-inverse",
+                title: "Lunch",
+                description: "Your trip includes a delicious lunch with locally sourced ingredients and picturesque views"
+            },
+            section9: {
+                iconClass: "fab fa-spotify fa-inverse",
+                title: "Spotify",
+                description: "Enhance your road trip experience & Set the mood with your favourite tunes using our Spotify access during the journey"
+            },
+            section10: {
+           
+                iconClass: "fas fa-table fa-inverse",
+                title: "Comfort items",
+                description: "Stay comfy with complimentary use of blankets, umbrellas & USB charging ports"
+            },
+            section11: {
+                iconClass: "fas fa-camera fa-inverse",
+                title: "Free Photography",
+                description: "Capture your memories effortlessly as photography is included and provided to you following the tour."
+            }
+        },
 
          packageCancellationPolicy : {
             1: {value: "Full refund available with cancellation 24 hours before the road-trip start time"},
@@ -295,7 +311,8 @@ const package001 = {
   };
   
     
-const area1 = document.querySelector('.area-1');
+const area1 = document.querySelector('.accordion');
+const area2 = document.querySelector('.area-1');
 const backgroundImageUrls = package001.details.backgroundImageUrls;
 let currentIndex = 0;
 let intervalId;
@@ -312,34 +329,43 @@ insertSectionsIntoContainer();
         const itinerary = document.getElementById("itinerary");
         const meetAndPickUp = document.getElementById("meetAndPickUp")
         const cancellationPolicy = document.getElementById("cancellationPolicy")
+        const importantInfomation = document.getElementById("importantInfomation")
 
         var packageId = localStorage.getItem("packageId");
        // const packageId = "001"
 
        
         if (packageId == "001"){
+
+            //aboutThisActivity();
+            
             for (const section of Object.values(package001.packageActivity)) {
-                container.appendChild(createSection(section.iconClass, section.title, section.description));
+                aboutThisActivity(section.description);
             }
     
             for (const [index, section] of Object.entries(package001.package1Iternity)) {
                 itinerary.appendChild(createIterity(index, section.title, section.description, section.duration));
             }
     
-    
+            for (const section of Object.values(package001.importantInformation.whatToWear)) {
+                importantInfomation.appendChild(importantInfomationSection(section.value));
+            }   
             for (const section of Object.values(package001.packageCancellationPolicy)) {
                 cancellationPolicy.appendChild(cancellationPolicySection(section.value));
             }        
             meetAndPickUp.appendChild(meetAndPickUpSection(package001.packageMeetAndPickUp));
-            packageName.appendChild(packageNameSection(package001.details.title))
-            packageSubTitle.appendChild(packageSubTitleSection(package001.details.subTitle))
-            packageDesc.appendChild(packageDescSection(package001.details.desc))
-            packageDuration.appendChild(packageDurationSection(package001.details.duration))
+            packageName.appendChild(packageNameSection(package001.details.title));
+            packageSubTitle.appendChild(packageSubTitleSection(package001.details.subTitle));
+            packageDesc.appendChild(packageDescSection(package001.details.desc));
+            packageDuration.appendChild(packageDurationSection(package001.details.duration));
             
 
         }
 
     }
+
+
+    
 
     var data = {
         whatToWear: ["Comfortable clothing", "Walking shoes", "Sunscreen", "Jacket"],
@@ -380,26 +406,57 @@ insertSectionsIntoContainer();
     
 	
     function createSection(iconClass, title, description) {
+
         const div = document.createElement("div");
-        div.className = "white-box-about-activity";
+        div.className = "white-box-tours";
     
         div.innerHTML = `
-            <div class="custom-col-wider-about-activity">
-                <i class="${iconClass}"></i>
+            <div class="custom-col-wider">
+            <h3> m </h3>
             </div>
             <pre></pre>
-            <div class="custom-col-narrower-about-activity">
+            <div class="custom-col-narrower">
                 <h3>${title}</h3>
                 <p>${description}</p>
+            
             </div>
         `;
     
-        return div;
+        return div; 
     }
+    function aboutThisActivity(desc) {
+        const container = document.getElementById('dynamic-boxes-container');
+        const whiteBox = document.createElement('div');
+        whiteBox.className = 'white-box-tours';
+    
+        const customColWider = document.createElement('div');
+        customColWider.className = 'custom-col-wider';
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-car fa-inverse';
+        customColWider.appendChild(icon);
+    
+        const customColNarrower = document.createElement('div');
+        customColNarrower.className = 'custom-col-narrower';
+        const title = document.createElement('h3');
+        title.textContent = 'Pickup & Drop-off';
+        const description = document.createElement('p');
+        description.textContent = desc;
+        customColNarrower.appendChild(title);
+        customColNarrower.appendChild(description);
+    
+        whiteBox.appendChild(customColWider);
+        whiteBox.appendChild(customColNarrower);
+    
+        // Don't set the height here, let it be dynamic
+    
+        container.appendChild(whiteBox);
+    }
+    
+    
     
     function createIterity(iconClass, title, description,duration) {
         const div = document.createElement("div");
-        div.className = "white-box-about-activity";
+        div.className = "white-box-tours";
     
         div.innerHTML = `
             <div class="custom-col-wider-about-activity">
@@ -418,20 +475,32 @@ insertSectionsIntoContainer();
 
     function meetAndPickUpSection(description) {
         const div = document.createElement("div");
-        div.className = "white-box-about-activity";
+        div.className = "white-box-tours";
     
         div.innerHTML = `
             <div >
-            <p>${description}</p
+            <p>${description}</p>
             </div>
         `;
     
         return div;
     }
 
+    function importantInfomationSection(description) {
+        const div = document.createElement("div");
+        div.className = "white-box-tours";
+    
+        div.innerHTML = `
+            <div >
+            <p>${description}</p>
+            </div>
+        `;
+    
+        return div;
+    }
     function cancellationPolicySection(description) {
         const div = document.createElement("div");
-        div.className = "white-box-about-activity";
+        div.className = "white-box-tours";
     
         div.innerHTML = `
             <div >
@@ -485,18 +554,26 @@ insertSectionsIntoContainer();
 
     // tour.js
 
-    
-
     function changeBackground() {
         currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
-        area1.style.opacity = 0;
-        setTimeout(() => {
-            area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}')`;
-            area1.style.opacity = 1;
-        }, 250);
+    
+        // Set a smooth transition for background-image
+        area1.style.transition = 'background-image 0.5s';
+    
+        // Crossfade effect
+        area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+         // Set a smooth transition for background-image
+         area2.style.transition = 'background-image 0.5s';
+    
+         // Crossfade effect
+         area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+    
         resetInterval();
     }
-
+    
+    
+    
     function resetInterval() {
         clearInterval(intervalId);
         intervalId = setInterval(changeBackground, 7000);

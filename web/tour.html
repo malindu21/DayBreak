@@ -29,7 +29,9 @@
     <link href="css/swiper.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+    <link href="css/tours-packages.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
 </head>
@@ -52,31 +54,19 @@
 
 
     <!-- Header -->
-    <header id="header2" class="header2">
 
-        
-        <div class="header-content-tour">
-
+                    
+           
+  
+                        <!-- Details 1 -->
+	<div id="details" class="accordion">
+		<div class="area-1">
             <div class="button-container-left">
                 <a href="index.html" class="circle-button" aria-label="Next Button">
                     <i class="fas fa-arrow-left"></i>
                 </a>
                 <span>Go Back</span>
             </div>
-            
-
-            <div class="container">
-                <div class="row">
-                  
-                    <div class="col-lg-12">
-
-                    
-              <pre></pre>    
-              <pre></pre>    
-  
-                        <!-- Details 1 -->
-	<div id="details" class="accordion">
-		<div class="area-1">
             <div class="circle-buttons">
                 <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-left"></i></button>
                 <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-right"></i></button>
@@ -99,17 +89,29 @@
 
             <div class="accordion-container" id="accordionOne">
 
-                <div id="packageName"></div>
-             
-                <div id = "packageSubTitle"> </div>
+              
                
               
 
-                <pre></pre>
-                <pre></pre>
+                <div class="containerTourDesc">
+                    <div class="left-div">
+                        <div id="packageName"></div>
+             
+                        <div id = "packageSubTitle"> </div>
+                            <!-- Content for the left div goes here -->
+                     
+                        <!-- Content for the left div goes here -->
+                    </div>
+                    <div class="right-div">
+                        <!-- Content for the right div goes here -->
+                        <div class="d-flex align-items-center justify-content-center"
+                        style="width: 75px; height: 75px;">
 
-                <div id = "packageDesc"> </div>
-          
+                        <i class="fas fa-tree fa-inverse fa-2x"></i>
+
+                    </div>
+                    </div>
+                </div>
 
                 <!-- <div class="white-box-time" style="float: right">
                     <div id = "packageDuration"> </div>
@@ -117,176 +119,267 @@
                 </div> -->
 
                 <pre></pre>
-             
                 <hr class="item-divider">
 
-                
-                <div class="item">
-                    <div id="headingOne">
-                        <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                            <span class="circle-numbering">+</span><span class="accordion-title">About this activity</span>
-                        </span>
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
-                        <div id="container"></div>
-                         
-                       
-                    </div>
-                </div> <!-- end of item -->
-            
-
+                <div id = "packageDesc"> </div>
                 <hr class="item-divider">
-                <div class="item">
-                    <div id="headingTwo">
-                        <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                            <span class="circle-numbering">+</span><span class="accordion-title">Itinerary & What to expect</span>
-                        </span>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
-                       
-                        <div id="itinerary"></div> 
+                <div class="tour-package-details blur-bg d-flex flex-column justify-content-center text-white">
+                    <div class="d-inline-flex justify-content-between text-large fw-medium">
+                        <!-- First Column -->
+                        <div>
+                            <i class="fas fa-truck-monster"></i>
+                            <div class="text-small fw-light text-start"> Max 4 travelers</div>
+                        </div>
 
+                        <!-- Second Column -->
+                        <div>
+                            $220
+                            <div class="text-small fw-light text-start">Per Person</div>
+                        </div>
+                        <div class="border-end pe-3"></div>
 
-                    </div>
-                </div> <!-- end of item -->
-            
-
-                <hr class="item-divider">
-                <div class="item">
-                    <div id="headingThree">
-                        <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
-                            <span class="circle-numbering">+</span><span class="accordion-title">Meeting & Pickup</span>
-                        </span>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
-                        <div class="accordion-body">
-                            <div id="meetAndPickUp"></div>      
+                        <!-- Third Column -->
+                        <div class="ms-2">
+                            <!-- Customize content for the third column -->
+                            <i class="fas fa-car-side"></i>
+                            <div class="text-small fw-light text-start"> Max 7 travelers</div>
+                        </div>
+                        <!-- Second Column -->
+                        <div>
+                            $250
+                            <div class="text-small fw-light text-start">Per Person</div>
                         </div>
                     </div>
-                </div> <!-- end of item -->
+                </div>
 
                 <hr class="item-divider">
 
-
-
-                <div class="item">
-                    <div id="headingFour">
-                        <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="button">
-                            <span class="circle-numbering">+</span><span class="accordion-title">Important information</span>
-                        </span>
+                  <h3><b>Highlights</b></h3>
+                    <div class="content">
+                      <ul>
+                        <li>Drive through <b>Arthuur's Creek apple orchards</b></li>
+                        <li><b>Kinglake</b>town exploration</li>
+                        <li><b>Wirrawilla Rainforest walk</b></li>
+                        <li>Scenic journey through <b>Black Spur</b> Drive</li>
+                        <li><b>Redwood Forest</b> walk</li>
+                        <li><b>Warburton</b> town exploration</li>
+                        <li><b>Steavenson Falls</b></li>
+                        <li><b>Marysville</b> town exploration</li>
+                        <li><b>Keppel Lookout</b></li>
+                      </ul>
                     </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionOne">
-                        <div class="accordion-body">
-                            
-                            <div class="collapsible">
-                                <h3>What to Wear</h3>
-                                <div class="content">
-                                  <ul>
-                                    <li>Comfortable clothing</li>
-                                    <li>Walking shoes</li>
-                                    <li>Sunscreen</li>
-                                    <li>Jacket</li>
-                                  </ul>
-                                </div>
-                              </div>
-                              
-                              <div class="collapsible">
-                                <h3>Not Allowed</h3>
-                                <div class="content">
-                                  <ul>
-                                    <li>Luggage and large bags</li>
-                                    <li>Pets</li>
-                                    <li>Smoking on-board</li>
-                                    <li>More than 4 passengers per booking</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            
-                              <div class="collapsible">
-                                <h3>Know Before You Go</h3>
-                                <div class="content">
-                                  <ul>
-                                    <li>You will receive confirmation at the time of booking</li>
-                                    <li>You must be at least 18 years old to drink alcohol</li>
-                                    <li>Please note that a moderate amount of walking is involved</li>
-                                    <li>Destination entrance fees and nature walk fees are included</li>
-                                    <li>Beverages will be provided</li>
-                                    <li>Breakfast will not be provided (stop to purchase at your own expense)</li>
-                                    <li>Lunch will be provided</li>
-                                    <li>Child car seat available for toddlers and kids under the age of 7</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            
-                              <div class="collapsible">
-                                <h3>Not Suitable For</h3>
-                                <div class="content">
-                                  <ul>
-                                    <li>Wheelchair users</li>
-                                    <li>Travelers with heart problems or other serious medical conditions</li>
-                                    <li>Pregnant women</li>
-                                  </ul>
-                                </div>
-                              </div>
-
-                        </div>
-                    </div>
-                </div> <!-- end of item -->
-                <hr class="item-divider">
-
-                <div class="item">
-                    <div id="headingFive">
-                        <span class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" role="button">
-                            <span class="circle-numbering">+</span><span class="accordion-title"> Cancellation Policy</span>
-                        </span>
-                    </div>
-                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionOne">
-                        <div id="cancellationPolicy"></div> 
-                    </div>
-                </div> <!-- end of item -->
-
-                <hr class="item-divider">
-
-                <div class="button-container">
-                    <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
-                </div> <!-- end of button-container -->
-
-                <pre></pre>
-                <pre></pre>  <pre></pre>
-                <pre></pre>
-            </div> <!-- end of accordion-container -->
+       
             <!-- end of accordion -->
 
 		</div> <!-- end of area-2 -->
-    </div> <!-- end of accordion -->
-    <!-- end of details 1 -->
 
+        
+
+
+  
     <div class="centerc" onclick= "scrollToBottom()" >
         <div class="chevron"></div>
         <div class="chevron"></div>
         <div class="chevron"></div>
     </div>
 
-      <pre></pre>
-      
-      <pre></pre>
-      <pre></pre>
-      <pre></pre>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-1 -->
+   
+              
+            
+
+ 
     <!-- end of description -->
 
 </div> <!-- end of col -->
+
+
 </div> <!-- end of row -->
-</div> <!-- end of container -->
-</div> <!-- end of header-content -->
 
 
 
-</header> <!-- end of header -->
+
+</div> <!-- end of row -->
+
+
+
+
+
+
+
 <!-- end of header -->
+
+  
+   
+<div id="howToBook" class="cards-2" >
+
+    <div id="packageName"></div>
+ 
+    <div id = "packageSubTitle"> </div>
+   
+  
+
+    <pre></pre>
+    <pre></pre>
+
+    <div id = "packageDesc"> </div>
+
+
+    <!-- <div class="white-box-time" style="float: right">
+        <div id = "packageDuration"> </div>
+
+    </div> -->
+
+    <pre></pre>
+
+  
+
+    <hr class="item-divider">
+
+    
+    <div class="item">
+        <div id="headingOne">
+            <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                <span class="circle-numbering"></span><span class="accordion-title">  <h2 class="tour_title">+ About this activity </h2></span>
+            </span>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
+            
+      
+                <!-- Your dynamically created sections will be appended here -->
+                <div class="accordion-body">
+                    <div id="dynamic-boxes-container"></div>
+                  
+                </div>
+              
+             
+            
+               
+         
+             
+           
+        </div>
+    </div> <!-- end of item -->
+
+
+    <hr class="item-divider">
+    <div class="item">
+        <div id="headingTwo">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                <span class="circle-numbering"></span><span class="accordion-title"><h2>+ Itinerary & What to expect</h2></span>
+            </span>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+            <div class="accordion-body">
+                <div id="itinerary"></div> 
+            </div>
+      
+
+
+        </div>
+    </div> <!-- end of item -->
+
+
+    <hr class="item-divider">
+    <div class="item">
+        <div id="headingThree">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+                <span class="circle-numbering"></span><span class="accordion-title"><h2>+ Meeting & Pickup</h2></span>
+            </span>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
+            <div class="accordion-body">
+                <div id="meetAndPickUp"></div>      
+            </div>
+        </div>
+    </div> <!-- end of item -->
+
+    <hr class="item-divider">
+
+
+
+    <div class="item">
+        <div id="headingFour">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="button">
+                <span class="circle-numbering"></span><span class="accordion-title"><h2>+ Important information</h2> </span>
+            </span>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionOne">
+            <div class="accordion-body">
+                
+
+                <h4>What To Wear</h4>
+                <div id="importantInfomation"></div> 
+                    
+                 
+                  
+                  <div class="collapsible">
+                    <h3>Not Allowed</h3>
+                    <div class="content">
+                      <ul>
+                        <li>Luggage and large bags</li>
+                        <li>Pets</li>
+                        <li>Smoking on-board</li>
+                        <li>More than 4 passengers per booking</li>
+                      </ul>
+                    </div>
+                  </div>
+                
+                  <div class="collapsible">
+                    <h3>Know Before You Go</h3>
+                    <div class="content">
+                      <ul>
+                        <li>You will receive confirmation at the time of booking</li>
+                        <li>You must be at least 18 years old to drink alcohol</li>
+                        <li>Please note that a moderate amount of walking is involved</li>
+                        <li>Destination entrance fees and nature walk fees are included</li>
+                        <li>Beverages will be provided</li>
+                        <li>Breakfast will not be provided (stop to purchase at your own expense)</li>
+                        <li>Lunch will be provided</li>
+                        <li>Child car seat available for toddlers and kids under the age of 7</li>
+                      </ul>
+                    </div>
+                  </div>
+                
+                  <div class="collapsible">
+                    <h3>Not Suitable For</h3>
+                    <div class="content">
+                      <ul>
+                        <li>Wheelchair users</li>
+                        <li>Travelers with heart problems or other serious medical conditions</li>
+                        <li>Pregnant women</li>
+                      </ul>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </div> <!-- end of item -->
+    <hr class="item-divider">
+
+    <div class="item">
+        <div id="headingFive">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" role="button">
+                <span class="circle-numbering"></span><span class="accordion-title"><h2>+ Cancellation Policy</h2> </span>
+            </span>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionOne">
+            <div class="accordion-body">
+                <div id="cancellationPolicy"></div> 
+            </div>
+        </div>
+    </div> <!-- end of item -->
+
+    <hr class="item-divider">
+
+    <div class="button-container">
+        <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
+    </div> <!-- end of button-container -->
+
+    <pre></pre>
+    <pre></pre>  <pre></pre>
+    <pre></pre>
+</div> <!-- end of accordion-container -->
+
 
   
 
@@ -302,6 +395,9 @@
     <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
     <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+
+<script src="js/tour.js"></script>
+<script src="js/dummyData.js"></script>
     <script>
   
 
@@ -323,6 +419,10 @@
     });
     
         </script>
+        </script>
+        <script src="js/tour.js"></script>
+        <script src="js/dummyData.js"></script>
+</script>
         <script src="js/tour.js"></script>
         <script src="js/dummyData.js"></script>
 

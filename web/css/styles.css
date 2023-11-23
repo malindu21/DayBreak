@@ -52,10 +52,16 @@ html {
 }
 
 
+
+
 .white-box{
 	display: none;
 }
 
+.accordion {
+	
+	width: 100% !important;
+}
 
 
 
@@ -282,14 +288,16 @@ html {
 	}
 
 	#header2 {
-		background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
+	
 		background-size: cover;
 		border-radius: 0px;
-		height: min-content;
+		
 		width: 100%;
 		margin: 0;
 		padding: 0;
 	}
+
+
 	
 }
 
@@ -593,6 +601,9 @@ strong {
 
   }
 
+
+
+
   .custom-col-wider {
     width: 30%; /* Adjust the width as needed */
 }
@@ -609,6 +620,8 @@ strong {
     padding:  0; /* Add padding as needed to control the spacing */
 	text-align: start;
 }
+
+
 
 
   .white-box:hover {
@@ -674,8 +687,32 @@ strong {
 }
 
 
+.white-box-tours h2 {
+    font-size: 14px;
+    font-weight: bold;
+	color: #ffff;
+}
 
+.white-box-tours h3 {
+    font-size: 13px;
+    font-style: normal;
+    color: #ffffff; /* Adjusted from #ffff to #ffffff for proper hex color notation */
+    text-align: left; /* Align the text to the left */
+}
 
+.white-box-tours p {
+    font-size: 13px;
+    font-style: normal;
+	color: #ffff;
+}
+
+.white-box-tours h3,
+.white-box-tours h2,
+.white-box-tours p{
+    margin: 0; /* Remove any margin */
+    padding:  0; /* Add padding as needed to control the spacing */
+	text-align: start;
+}
 
   
 .btn-solid-lg {
@@ -1372,7 +1409,7 @@ input[type='checkbox'] {
 	}
 
 	.accordion {
-		height: min-content;
+	
 		border-radius: 20px;
 		background-color: rgba(255, 255, 255, 0.09);
 		backdrop-filter: blur(10px);
@@ -1543,10 +1580,9 @@ input[type='checkbox'] {
 
 
 .header2 {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
+
 	background-size: cover;
 	border-radius: 20px;
-	height: min-content;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -1717,7 +1753,7 @@ input[type='checkbox'] {
 /*************************/
 .accordion .area-1 {
     height: 27rem;
-    background: url('../images/into_the_forest/into_the_forest_1.jpg') center/cover;
+    background: center/cover;
     position: relative;
     transition: all 1s ease-in-out;
 }
@@ -1726,14 +1762,23 @@ input[type='checkbox'] {
     opacity: 0;
   }
 
-.circle-buttons {
-	position: absolute;
-	bottom: 20px; /* Adjust the distance from the bottom as needed */
-	right: 20px; /* Adjust the distance from the right as needed */
-	display: flex;
-	gap: 5px; /* Adjust the spacing between the buttons as needed */
-	align-items: center; /* Vertically align buttons */
-  }
+  	.accordion .area-2 {
+	
+		
+		backdrop-filter: blur(40px); /* Adjust the blur intensity here */
+		-webkit-backdrop-filter: blur(40px);
+		
+	}
+	.circle-buttons {
+		position: fixed;
+		bottom: 20px; /* Adjust the distance from the bottom as needed */
+		right: 20px; /* Adjust the distance from the right as needed */
+		display: flex;
+		gap: 5px; /* Adjust the spacing between the buttons as needed */
+		align-items: center; /* Vertically align buttons */
+	}
+	
+
   
   .circle-button {
 	width: 30px;
@@ -1791,7 +1836,7 @@ input[type='checkbox'] {
 
 .accordion .accordion-container {
 	max-width: 90%;
-	height: min-content;
+	
 	margin-right: auto;
 	margin-left: auto;
 	padding-top: 4.375rem;
@@ -1841,6 +1886,11 @@ input[type='checkbox'] {
 	transition: all 0.2s ease;
 }
 
+.tour_title:hover {
+	/* Hover state styles */
+	color: #068b33; /* Change the color to a different one on hover */
+  }
+
 .accordion span[aria-expanded="false"] .circle-numbering {
 	background-color: transparent;
 	color: #fff;
@@ -1849,6 +1899,11 @@ input[type='checkbox'] {
 .accordion .item:hover span[aria-expanded="false"] .circle-numbering {
 
 	color: #fff;
+}
+
+.accordion-title h2{
+	margin-top: 0rem;
+	margin-left: 1rem;
 }
 
 .accordion .accordion-title {
@@ -1871,8 +1926,22 @@ input[type='checkbox'] {
 	color: #fff;
 }
 
-.accordion .accordion-body {
-	margin-left: 3.125rem;
+
+
+.containerTourDesc {
+	display: flex;
+	justify-content: space-between;
+	text-align: left; /* Optional: Align text in the center of each div */
+}
+
+.left-div {
+	width: 85%;
+	/* Adjust any other styles for the left div here */
+}
+
+.right-div {
+	width: 15%;
+	/* Adjust any other styles for the right div here */
 }
 
 .collapsible {
@@ -2341,7 +2410,7 @@ a:hover.back-to-top {
 
 	/* Details 2 */
 	.tabs .tabs-container {
-		max-width: 70%;
+		max-width: 90%;
 	}
 
 	.tabs #tab-2 .list-unstyled {
@@ -2532,18 +2601,16 @@ a:hover.back-to-top {
 	/* Details 1 */
 	
 	.accordion {
-		height: 44.625rem;
-		margin-top: 3rem;
-		margin-bottom: 6rem;
+
+		background: url('../images/into_the_forest/into_the_forest_1.jpg') center/cover;
 		border-radius: 20px;
-		backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(10px); /* Adjust the blur intensity here */
+		-webkit-backdrop-filter: blur(5px);
 		background-color: rgba(255, 255, 255, 0.09);
-	
 	}
 	
 	.accordion .area-1 {
-		width: 60%;
+		width: 65%;
 		height: 100%;
 		display: inline-block;
 		border-top-left-radius: 10px;
@@ -2551,25 +2618,28 @@ a:hover.back-to-top {
 	}
 	
 	.accordion .area-2 {
-		width: 40%;
+		width: 35%;
 		height: 100%;
 		display: inline-block;
 		vertical-align: top;
 	
 
-		border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
-		overflow-x: hidden;
-        overflow-y: auto;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+	
+		
+		backdrop-filter: blur(40px); /* Adjust the blur intensity here */
+		-webkit-backdrop-filter: blur(40px);
+		background-color: rgba(255, 255, 255, 0.09);
 	}
 	
-	.accordion .accordion-container {
+	.accordion-container {
 		max-width: 88%;
 		margin-left: 2rem;
 		padding-bottom: 0;
 	}
 
-	.accordion .accordion-title {
+.accordion-title {
 		width: 85%;
 	}
 	/* end of details 1 */
@@ -2794,7 +2864,7 @@ a:hover.back-to-top {
 	/* Details 1 */
 	.accordion .accordion-container {
 		max-width: 28rem;
-		margin-left: 5rem;
+	
 	}
 	/* end of details 1 */
 
@@ -2960,7 +3030,42 @@ a:hover.back-to-top {
 /******************************/
 /*     22. Extra Animations     */
 /******************************/
+#dynamic-boxes-container {
+    height: auto; /* Set to 'auto' or remove this line */
+    /* Other styles */
+}
 
+ul, li, b {
+    color: white;
+  }
+.white-box-tours{
+	width: 290px; 
+	height: auto !important;
+	background-color: rgba(78, 78, 78, 0.8);
+	transition: transform .2s; 
+	margin: 15px; 
+	display: inline-flex;
+	border-radius: 10px;
+	align-items: top; 
+	text-align: center; 
+	padding:  5px;
+	border-radius: 15px;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(5px);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.white-box-tours i{
+	align-items: center;
+	margin-top: 50%;
+	margin-bottom: 50%;
+}
+.scrolling-wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+  
+  }
+  
 .scroll-container {
 	height: 100vh;
 	min-height: 450px;
