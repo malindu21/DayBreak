@@ -60,3 +60,13 @@ h5 {
     font-size: 18px;
 }
 
+#bookPackageOne {
+    /* Your existing styles */
+    display: inline-block; /* Ensures the hover styles apply correctly */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+#bookPackageOne:hover {
+    background-color: white;
+    color: black;
+}
