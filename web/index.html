@@ -127,7 +127,7 @@
                             <pre></pre>
                             <!-- //<h1>Private day tours for families & small groups</h1> -->
 
-                            <h2 class="header-h2">Explore Road Trip Adventures in Victoria</h2>
+                            <h2 class="header-h2">Exclusive Road Trip Adventures in Victoria</h2>
 
                             <p class="user-friendly-paragraph">
                                 Your dream road trip awaits!
@@ -149,7 +149,8 @@
                             </div>
                             <pre></pre>
                             <div class="custom-col-narrower">
-                                <h3>Pickup & Drop-off</h3>
+                                <h3 id="typewriter-text-box-1" ></h3>
+                                   
                                 <p>Included in all our tours</p>
                             </div>
                         </div>
@@ -160,7 +161,8 @@
                             </div>
                             <pre></pre>
                             <div class="custom-col-narrower">
-                                <h3>Private group</h3>
+                                <h3 id="typewriter-text-box-2" ></h3>
+                                
                                 <p>Max 7 travellers for booking</p>
                             </div>
                         </div>
@@ -171,7 +173,7 @@
                             </div>
                             <pre></pre>
                             <div class="custom-col-narrower">
-                                <h3>Chauffeur service</h3>
+                                <h3 id="typewriter-text-box-3" ></h3>
                                 <p>Personal driver by your side</p>
                             </div>
                         </div>
@@ -182,7 +184,7 @@
                             </div>
                             <pre></pre>
                             <div class="custom-col-narrower">
-                                <h3>Free Photography</h3>
+                                <h3 id="typewriter-text-box-4" ></h3>
                                 <p>Fashion bloggers friendly</p>
                             </div>
                         </div>
@@ -193,7 +195,7 @@
                             </div>
                             <pre></pre>
                             <div class="custom-col-narrower">
-                                <h3>Beverages on-board</h3>
+                                <h3 id="typewriter-text-box-5" ></h3>
                                 <p>Drinks are on the house</p>
                             </div>
                         </div>
@@ -204,7 +206,7 @@
                             </div>
                             <pre></pre>
                             <div class="custom-col-narrower">
-                                <h3>Lunch Included</h3>
+                                <h3 id="typewriter-text-box-6" ></h3>
                                 <p>Indulge in local flavors</p>
                             </div>
                         </div>
@@ -536,23 +538,21 @@
     <div id="howToBook" class="cards-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-lg-1 order-2">
                     <!-- Card -->
 
                     <div class="scroll-element js-scroll slide-left">
-                        <div class="cards-2">
+                        
 
                             <div class="card-body">
 
                                 <div class="button-container">
                                     <a class="btn-solid-reg page-scroll" href="#tours">Book a Tour</a>
-
-
-
+    
                                 </div> <!-- end of button-container -->
 
                             </div>
-                        </div>
+                    
 
                         <!-- end of card-body -->
                     </div>
@@ -563,7 +563,7 @@
                     <!-- end of card -->
                 </div> <!-- end of col -->
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-lg-2 order-1 ">
 
 
                     <h5>How to book with us</h5>
@@ -648,8 +648,11 @@
                     </div>
                     <!-- End of boxes-container -->
                 </div> <!-- right side content -->
+               
             </div> <!-- end of row -->
         </div> <!-- end of container -->
+        <pre></pre>
+        <pre></pre>
     </div> <!-- end of cards-2 -->
 
     <!-----Reviews start-->
@@ -792,7 +795,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-container about">
-                        <h4>Travel, Explore, Repeat!</h4>
+                        <h4 class="user-friendly-paragraph">Travel, Explore, Repeat!</h4>
                         <p class="white"></p>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -860,51 +863,101 @@
     <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
     <script src="js/reviews.js"></script>
+
+    <script>
+        $(document).ready(function(){
+    $(this).scrollTop(0);
+});
+    </script>
     <script>
 
-
-        const sentences = [
+const sentences1 = [
             "Private day tours",
             "For families & small groups",
-            "Travel, Explore, Repeat",
+            "Travel, Explore, Repeat!",
             "#daybreak",
-        ];
-        const speed = 150; // typing speed in milliseconds
-        const typewriterElement = document.getElementById('typewriter-text');
-        const cursorElement = document.getElementById('cursor');
+    ];
+ 
 
-        function typeWriter(sentenceIndex) {
-            let i = 0;
-            const currentSentence = sentences[sentenceIndex];
+    const Box1 = [
+        "Pickup & Drop-off"
+    ];
 
-            function type() {
-                if (i < currentSentence.length) {
-                    typewriterElement.innerHTML += currentSentence.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                } else {
-                    // Move to the next sentence after typing
-                    cursorElement.style.display = 'none'; // hide cursor while waiting
-                    setTimeout(() => {
-                        typewriterElement.innerHTML = '';
-                        cursorElement.style.display = 'inline'; // show cursor before starting the next sentence
-                        const nextSentenceIndex = (sentenceIndex + 1) % sentences.length;
-                        typeWriter(nextSentenceIndex);
-                    }, 1000); // wait for 1 second before starting the next sentence
-                }
+    const Box2 = [
+       "Private group"
+    ];
+
+    const Box3 = [
+       "Chauffeur service"
+    ];
+
+    const Box4 = [
+       "Free Photography"
+    ];
+
+    const Box5 = [
+       "Beverages on-board"
+    ];
+
+    const Box6 = [
+       "Lunch Included"
+    ];
+    const speed = 150; // typing speed in milliseconds
+
+    // First Typewriter
+    const typewriterElement1 = document.getElementById('typewriter-text');
+    const cursorElement1 = document.getElementById('cursor');
+
+    // Second Typewriter
+    const typewriterElementBox1 = document.getElementById('typewriter-text-box-1');
+    const typewriterElementBox2 = document.getElementById('typewriter-text-box-2');
+    const typewriterElementBox3 = document.getElementById('typewriter-text-box-3');
+    const typewriterElementBox4 = document.getElementById('typewriter-text-box-4');
+    const typewriterElementBox5 = document.getElementById('typewriter-text-box-5');
+    const typewriterElementBox6 = document.getElementById('typewriter-text-box-6');
+   
+    function typeWriter(sentenceIndex, sentences, typewriterElement, cursorElement) {
+        let i = 0;
+        const currentSentence = sentences[sentenceIndex];
+
+        function type() {
+            if (i < currentSentence.length) {
+                typewriterElement.innerHTML += currentSentence.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else {
+                // Move to the next sentence after typing
+                cursorElement.style.display = 'none'; // hide cursor while waiting
+                setTimeout(() => {
+                    typewriterElement.innerHTML = '';
+                    cursorElement.style.display = 'inline'; // show cursor before starting the next sentence
+                    const nextSentenceIndex = (sentenceIndex + 1) % sentences.length;
+                    typeWriter(nextSentenceIndex, sentences, typewriterElement, cursorElement);
+                }, 1000); // wait for 1 second before starting the next sentence
             }
-
-            cursorElement.style.display = 'inline'; // show cursor
-            type();
         }
 
-        // Start with the first sentence
-        typeWriter(0);
+        cursorElement.style.display = 'inline'; // show cursor
+        type();
+    }
+
+    // Start the first typewriter
+    typeWriter(0, sentences1, typewriterElement1, cursorElement1);
+
+    // Start the second typewriter
+    typeWriter(0, Box1, typewriterElementBox1, cursorElement1);
+    typeWriter(0, Box2, typewriterElementBox2, cursorElement1);
+    typeWriter(0, Box3, typewriterElementBox3, cursorElement1);
+    typeWriter(0, Box4, typewriterElementBox4, cursorElement1);
+    typeWriter(0, Box5, typewriterElementBox5, cursorElement1);
+    typeWriter(0, Box6, typewriterElementBox6, cursorElement1);
 
     </script>
 
 
     <script>
+
+        
         const scrollElements = document.querySelectorAll(".js-scroll");
 
         const elementInView = (el, dividend = 1) => {
