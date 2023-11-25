@@ -115,6 +115,7 @@ document.getElementById('travellers-form').addEventListener('submit', function(e
   for (let index = 1; index < elementList.length-2; index++) {
     travellerDetails.push({name: elementList[index].name, value: elementList[index].value})
   }
+  $("#travellerModal").modal("hide");
 });
 
 
@@ -252,8 +253,8 @@ function validateCheckout() {
   } else if (!isTravellerDetailsSubmitted) {
     showToast("Please submit all traveller's details to continue.");
   } else if (pachageCat === "") {
-    showToast("Please select your address to continue.");
-  } else if (selectedDate === "") {
+    showToast("Address invalid please input your address correctly. Alternatively contact booking team for support")
+  }else if (selectedDate === "") {
     showToast("Please select your tour date to continue.");
   } else {
     showPopupWithDelay();
