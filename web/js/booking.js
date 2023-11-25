@@ -10,6 +10,7 @@ let selectedDate = "";
 let maxNoOfTravellers = 0;
 let minNoOfTravellers = 0;
 let noOfTravellers = 0;
+let travellerDetails = [];
 
 let isTravellerDetailsSubmitted = false;
 
@@ -99,17 +100,24 @@ function loadTravellersElements() {
     </div>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon2"><i class="fas fa-birthday-cake"></i></span>
-      <input type="number" class="form-control" placeholder="age${i}" aria-label="age"
+      <input type="number" class="form-control" name="age${i}" placeholder="Age" aria-label="age"
         aria-describedby="basic-addon2">
     </div>
   </div>`;
   }
 }
 
-function onSubmitTravellerDetails(event) {
+document.getElementById('travellers-form').addEventListener('submit', function(event) {
   event.preventDefault();
-  console.log("Event ", event);
-}
+  travellerDetails = [];
+  isTravellerDetailsSubmitted = true;
+  let elementList = event.target;
+  for (let index = 1; index < elementList.length-2; index++) {
+    travellerDetails.push({name: elementList[index].name, value: elementList[index].value})
+  }
+});
+
+
 
 // ============= SEARCH LOCATIONS =================
 let sCoords = {
@@ -238,15 +246,15 @@ flatpickr("input[type=datetime-local]", {
 function validateCheckout() {
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketTypeEle.value === "") {
-    alert("Please select you ticket type to continue.");
+    showToast("Please select your ticket type to continue.");
   } else if (noOfTravellersEle.value === "") {
-    alert("Please enter number of travellers to continue.");
-  }else if(!isTravellerDetailsSubmitted){
-    alert("Please submit all traveller's details to continue.");
+    showToast("Please enter number of travellers to continue.");
+  } else if (!isTravellerDetailsSubmitted) {
+    showToast("Please submit all traveller's details to continue.");
   } else if (pachageCat === "") {
-    alert("Please select your address to continue.");
+    showToast("Please select your address to continue.");
   } else if (selectedDate === "") {
-    alert("Please select your tour date to continue.");
+    showToast("Please select your tour date to continue.");
   } else {
     showPopupWithDelay();
   }

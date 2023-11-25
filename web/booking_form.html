@@ -88,8 +88,8 @@
           </div>
           <div class="col-12">
             <div class="form-group text-area-form-group">
-              <label for="checkin">Additional Message</label>
-              <textarea class="form-control" id="checkin" placeholder="Michel Jackson" rows="5">
+              <label for="additional_details">Additional Message</label>
+              <textarea class="form-control" id="additional_details" placeholder="..." rows="3">
                 </textarea>
             </div>
           </div>
@@ -207,7 +207,7 @@
   <div class="modal fade" id="travellerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="travellerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <form class="modal-content" onsubmit="onSubmitTravellerDetails($event)">
+      <form class="modal-content" id="travellers-form">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="travellerModalLabel">Travellers Details</h1>
           <button type="button" class="btn-close rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
