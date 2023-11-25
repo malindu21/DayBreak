@@ -459,12 +459,10 @@ insertSectionsIntoContainer();
         div.className = "white-box-tours";
     
         div.innerHTML = `
-            <div class="custom-col-wider-about-activity">
-            <h3> ${iconClass} </h3>
-            </div>
-            <pre></pre>
+            
+           
             <div class="custom-col-narrower-about-activity">
-                <h3>${title}</h3>
+                <h3>${iconClass}. ${title}</h3>
                 <p>${description}</p>
                 <h3>${duration}</h3>
             </div>

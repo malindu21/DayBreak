@@ -22,6 +22,10 @@
     <title>DAY BREAK </title>
     
     <!-- Styles -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/reviews.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -30,6 +34,7 @@
 	<link href="css/magnific-popup.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
     <link href="css/tours-packages.css" rel="stylesheet">
+    <link href="css/booking.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
 	<!-- Favicon  -->
@@ -61,22 +66,34 @@
                         <!-- Details 1 -->
 	<div id="details" class="accordion">
 		<div class="area-1">
+           
+              
+             
             <div class="button-container-left">
-                <a href="index.html" class="circle-button" aria-label="Next Button">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
-                <span>Go Back</span>
+                <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
+                    <i class="fa-solid fa-arrow-left me-2"></i>
+                    <span>Go Back</span>
+                  </a>
+                
+
             </div>
+            <div class="button-container-right">
+              
+                
+            </div>
+
+          
+           
+		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
+          
+
             <div class="circle-buttons">
                 <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-left"></i></button>
                 <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-right"></i></button>
               </div>
-		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
-          
+             
 
-        
-
-
+           
             <div class="button-container-right">
               
                 <button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button>
@@ -123,7 +140,7 @@
 
                 <div id = "packageDesc"> </div>
                 <hr class="item-divider">
-                <div class="tour-package-details blur-bg d-flex flex-column justify-content-center text-white">
+                <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white">
                     <div class="d-inline-flex justify-content-between text-large fw-medium">
                         <!-- First Column -->
                         <div>
@@ -158,7 +175,7 @@
                     <div class="content">
                       <ul>
                         <li>Drive through <b>Arthuur's Creek apple orchards</b></li>
-                        <li><b>Kinglake</b>town exploration</li>
+                        <li><b>Kinglake</b> town exploration</li>
                         <li><b>Wirrawilla Rainforest walk</b></li>
                         <li>Scenic journey through <b>Black Spur</b> Drive</li>
                         <li><b>Redwood Forest</b> walk</li>
@@ -171,6 +188,13 @@
        
             <!-- end of accordion -->
 
+            <div class="button-container">
+                <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
+            </div> <!-- end of button-container -->
+        
+            <pre></pre>
+            <pre></pre>
+            <pre></pre>
 		</div> <!-- end of area-2 -->
 
         
@@ -210,7 +234,7 @@
 
   
    
-<div id="howToBook" class="cards-2" >
+<div id="howToBook"  >
 
     <div id="packageName"></div>
  
@@ -247,8 +271,9 @@
       
                 <!-- Your dynamically created sections will be appended here -->
                 <div class="accordion-body">
+             
                     <div id="dynamic-boxes-container"></div>
-                  
+
                 </div>
               
              
@@ -371,12 +396,9 @@
 
     <hr class="item-divider">
 
-    <div class="button-container">
-        <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
-    </div> <!-- end of button-container -->
-
+    
     <pre></pre>
-    <pre></pre>  <pre></pre>
+    <pre></pre> 
     <pre></pre>
 </div> <!-- end of accordion-container -->
 
