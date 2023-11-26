@@ -1641,7 +1641,7 @@ input[type='checkbox'] {
 
 
   
-@media (max-width: 1350px) { 
+@media (max-width: 1500px) { 
 	
 	.header {height: min-content;}
 	
@@ -2208,6 +2208,7 @@ input[type='checkbox'] {
 	padding-top: 5rem;
 	background-color:  #111;
 	margin:0px 20px;
+	border-radius: 20px;
 }
 
 .footer .text-container {
@@ -3385,3 +3386,58 @@ ul, li, b {
 	border-radius: 20px;
 	border: 3px solid transparent;
   }
+
+/*****************************/
+/*    Terms & Conditions    */
+/*****************************/	
+
+  .boxTc {
+	background-color: black;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.boxTc p {
+	font-size: 17px;
+	align-items: center;
+}
+.boxTc a {
+	display: inline-block;
+	background-color: #fff;
+	padding: 15px;
+	border-radius: 3px;
+}
+.modalboxTc {
+	align-items: center;
+	display: flex;
+	justify-content: center; 
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: all 0.4s;
+	visibility: hidden;
+	opacity: 0;
+}
+.contentboxTc {
+	position: absolute;
+	background: white;
+	width: 90%;
+	padding: 1em 2em;
+	border-radius: 4px;
+} 
+.modalboxTc:target {
+	visibility: visible;
+	opacity: 1;
+}
+.boxTc-close {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	color: #fe0606;
+	text-decoration: none;
+	font-size: 30px;
+}
