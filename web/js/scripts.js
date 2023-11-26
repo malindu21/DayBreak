@@ -317,6 +317,9 @@
         });
     });
     
+    $(document).ready(function(){
+        $(this).scrollTop(0);
+    });
 
     // closes the responsive menu on menu item click
     $(".navbar-nav li a").on("click", function(event) {

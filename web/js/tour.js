@@ -340,7 +340,7 @@ insertSectionsIntoContainer();
             //aboutThisActivity();
             
             for (const section of Object.values(package001.packageActivity)) {
-                aboutThisActivity(section.description);
+                aboutThisActivity(section.title, section.description);
             }
     
             for (const [index, section] of Object.entries(package001.package1Iternity)) {
@@ -358,8 +358,6 @@ insertSectionsIntoContainer();
             packageSubTitle.appendChild(packageSubTitleSection(package001.details.subTitle));
             packageDesc.appendChild(packageDescSection(package001.details.desc));
             packageDuration.appendChild(packageDurationSection(package001.details.duration));
-            
-
         }
 
     }
@@ -424,7 +422,7 @@ insertSectionsIntoContainer();
     
         return div; 
     }
-    function aboutThisActivity(desc) {
+    function aboutThisActivity(topic,desc) {
         const container = document.getElementById('dynamic-boxes-container');
         const whiteBox = document.createElement('div');
         whiteBox.className = 'white-box-tours';
@@ -438,7 +436,7 @@ insertSectionsIntoContainer();
         const customColNarrower = document.createElement('div');
         customColNarrower.className = 'custom-col-narrower';
         const title = document.createElement('h3');
-        title.textContent = 'Pickup & Drop-off';
+        title.textContent = topic;
         const description = document.createElement('p');
         description.textContent = desc;
         customColNarrower.appendChild(title);
