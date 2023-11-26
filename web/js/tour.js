@@ -488,9 +488,13 @@ insertSectionsIntoContainer();
         let thisTitle = "";
     
         if (title === "whatToWear") {
-            thisTitle = "What To Wear";
-        } else {
-            thisTitle = "Default Title"; // Provide a default title for other cases
+            thisTitle = " 1. What To Wear";
+        } else if (title === "notAllowed") {
+            thisTitle = " 2. Not Allowed"; // Provide a default title for other cases
+        }else if (title === "knowBeforeYouGo") {
+            thisTitle = " 3. Know Before You Go"; // Provide a default title for other cases
+        }else if (title === "notSuitableFor") {
+            thisTitle = " 4. Not Suitable For"; // Provide a default title for other cases
         }
     
         // Title at the top

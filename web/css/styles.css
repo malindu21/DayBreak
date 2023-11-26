@@ -345,7 +345,9 @@ html {
 		margin-left: 20px;
 	
 	}
+
 }
+
 
 body, p {
 	color: #787976; 
@@ -781,16 +783,16 @@ strong {
 }
 
 #dynamic-boxes-container {
-    display: flex;
+    display: inline-table;
     overflow-x: auto;
     width: 100%;
     box-sizing: border-box; 
 }
 
 #itinerary{
-    display: flex;
+    display:  inline-table;
     overflow-x: auto;
-    white-space:break-spaces;
+
     width: 100%;
     box-sizing: border-box; 
 }
@@ -805,11 +807,12 @@ strong {
 
 .accordion-body {
     display: grid;
-    place-items: center !important;
+    place-items: start !important;
     margin: 0 !important; 
     padding: 0 !important; 
     text-align: start !important;
 }
+
 
 .accordion-body-imp {
     display: grid;
@@ -822,7 +825,7 @@ strong {
 
 /* If the items inside .accordion-body need to be centered individually */
 .accordion-body > * {
-    text-align: center;
+    text-align: left;
 }
 
 /* Adjust the styles based on your specific requirements */
@@ -3179,7 +3182,7 @@ ul, li, b {
     margin: 15px; 
     display: inline-flex;
     border-radius: 10px;
-	align-items: center; /* Vertically center the content */
+	align-items: top; /* Vertically center the content */
 
     text-align: center; 
     padding: 5px;
@@ -3192,6 +3195,7 @@ ul, li, b {
 
 .white-box-tours-imp h3{
 	color: white;
+	font-size: 13px;
 }
 
 .white-box-tours-imp {
@@ -3199,11 +3203,11 @@ ul, li, b {
     background-color: rgba(78, 78, 78, 0.8);
     transition: transform .2s; 
     margin: 15px; 
-    display:flexbox;
+    display: inline-table;
     border-radius: 10px;
-	align-items: center; /* Vertically center the content */
-
-    text-align: center; 
+	align-items: self-start; /* Vertically center the content */
+	padding: 10px;
+    text-align: left; 
     padding: 5px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -3213,7 +3217,8 @@ ul, li, b {
 }
 
 .white-box-tours i{
-	align-items: center;
+	align-items: center !important;
+	margin-top: 7.5px;
 
 }
 
