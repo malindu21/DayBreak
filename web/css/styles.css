@@ -816,6 +816,15 @@ strong {
     text-align: start !important;
 }
 
+.accordion-body-imp {
+    display: grid;
+    place-items: start !important;
+    margin: 0 !important; 
+    padding: 0 !important; 
+    text-align: start !important;
+}
+
+
 /* If the items inside .accordion-body need to be centered individually */
 .accordion-body > * {
     text-align: center;
@@ -3163,6 +3172,7 @@ a:hover.back-to-top {
 
 ul, li, b {
     color: white;
+	text-align: left;
   }
 
   
@@ -3172,6 +3182,28 @@ ul, li, b {
     transition: transform .2s; 
     margin: 15px; 
     display: inline-flex;
+    border-radius: 10px;
+	align-items: center; /* Vertically center the content */
+
+    text-align: center; 
+    padding: 5px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex-shrink: 0; /* Ensure that the boxes don't shrink */
+}
+
+.white-box-tours-imp h3{
+	color: white;
+}
+
+.white-box-tours-imp {
+    width: auto !important; 
+    background-color: rgba(78, 78, 78, 0.8);
+    transition: transform .2s; 
+    margin: 15px; 
+    display:flexbox;
     border-radius: 10px;
 	align-items: center; /* Vertically center the content */
 
