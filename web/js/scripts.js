@@ -59,7 +59,7 @@ const typewriterElementBox6 = document.getElementById('typewriter-text-box-6');
 
 /* Preloader */
     $(window).on('load', function() {
-        var preloaderFadeOutTime = 250; 
+        var preloaderFadeOutTime = 500; 
 
         function hidePreloader() {
             var preloader = $('.spinner-wrapper');
