@@ -11,19 +11,65 @@
 
 (function($) {
 
+
+const sentences1 = [
+        "Private day tours",
+        "For families & small groups",
+        "Travel, Explore, Repeat!",
+        "#daybreak",
+];
+
+
+const Box1 = [
+    "Pickup & Drop-off"
+];
+
+const Box2 = [
+   "Private group"
+];
+
+const Box3 = [
+   "Chauffeur service"
+];
+
+const Box4 = [
+   "Free Photography"
+];
+
+const Box5 = [
+   "Beverages on-board"
+];
+
+const Box6 = [
+   "Lunch Included"
+];
+const speed = 150; // typing speed in milliseconds
+
+// First Typewriter
+const typewriterElement1 = document.getElementById('typewriter-text');
+const cursorElement1 = document.getElementById('cursor');
+
+// Second Typewriter
+const typewriterElementBox1 = document.getElementById('typewriter-text-box-1');
+const typewriterElementBox2 = document.getElementById('typewriter-text-box-2');
+const typewriterElementBox3 = document.getElementById('typewriter-text-box-3');
+const typewriterElementBox4 = document.getElementById('typewriter-text-box-4');
+const typewriterElementBox5 = document.getElementById('typewriter-text-box-5');
+const typewriterElementBox6 = document.getElementById('typewriter-text-box-6');
+
 /* Preloader */
-$(window).on('load', function() {
-    var preloaderFadeOutTime = 200; 
+    $(window).on('load', function() {
+        var preloaderFadeOutTime = 200; 
 
-    function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        setTimeout(function() {
-            preloader.fadeOut(preloaderFadeOutTime);
-        }, 500);
-    }
+        function hidePreloader() {
+            var preloader = $('.spinner-wrapper');
+            setTimeout(function() {
+                preloader.fadeOut(preloaderFadeOutTime);
+            }, 500);
+        }
 
-    hidePreloader();
-});
+        hidePreloader();
+    });
 
 
     
@@ -56,60 +102,6 @@ $(window).on('load', function() {
         $(".navbar-collapse").collapse('hide');
     });
 
-
-    /* Rotating Text - Morphtext */
-	$("#js-rotating").Morphext({
-		// The [in] animation type. Refer to Animate.css for a list of available animations.
-		animation: "fadeIn",
-		// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-		separator: ",",
-		// The delay between the changing of each phrase in milliseconds.
-		speed: 2000,
-		complete: function () {
-			// Called after the entrance animation is executed.
-		}
-    });
-    
-
-    /* Card Slider - Swiper */
-	var cardSlider = new Swiper('.card-slider', {
-		autoplay: {
-            delay: 4000,
-            disableOnInteraction: false
-		},
-        loop: true,
-        navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
-		},
-		slidesPerView: 3,
-		spaceBetween: 20,
-        breakpoints: {
-            // when window is <= 992px
-            992: {
-                slidesPerView: 2
-            },
-            // when window is <= 768px
-            768: {
-                slidesPerView: 1
-            } 
-        }
-    });
-
-    
-    /* Lightbox - Magnific Popup */
-	$('.popup-with-move-anim').magnificPopup({
-		type: 'inline',
-		fixedContentPos: false, /* keep it false to avoid html tag shift with margin-right: 17px */
-		fixedBgPos: true,
-		overflowY: 'auto',
-		closeBtnInside: true,
-		preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-slide-bottom'
-    });
-    
 
     /* Filter - Isotope */
     var $grid = $('.grid').isotope({
@@ -177,63 +169,48 @@ $(window).on('load', function() {
     });
 
 
-    /* Call Me Form */
-    $("#callMeForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            lformError();
-            lsubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            lsubmitForm();
-        }
-    });
 
-    function lsubmitForm() {
-        // initiate variables with form content
-		var name = $("#lname").val();
-		var phone = $("#lphone").val();
-		var email = $("#lemail").val();
-		var select = $("#lselect").val();
-        var terms = $("#lterms").val();
-        
-        $.ajax({
-            type: "POST",
-            url: "php/callmeform-process.php",
-            data: "name=" + name + "&phone=" + phone + "&email=" + email + "&select=" + select + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    lformSuccess();
-                } else {
-                    lformError();
-                    lsubmitMSG(false, text);
-                }
+    typeWritterHomePage();
+    
+    function typeWritterHomePage(){
+
+    // Start the first typewriter
+    typeWriter(0, sentences1, typewriterElement1, cursorElement1);
+
+    // Start the second typewriter
+    typeWriter(0, Box1, typewriterElementBox1, cursorElement1);
+    typeWriter(0, Box2, typewriterElementBox2, cursorElement1);
+    typeWriter(0, Box3, typewriterElementBox3, cursorElement1);
+    typeWriter(0, Box4, typewriterElementBox4, cursorElement1);
+    typeWriter(0, Box5, typewriterElementBox5, cursorElement1);
+    typeWriter(0, Box6, typewriterElementBox6, cursorElement1);
+    }
+
+    function typeWriter(sentenceIndex, sentences, typewriterElement, cursorElement) {
+        let i = 0;
+        const currentSentence = sentences[sentenceIndex];
+
+        function type() {
+            if (i < currentSentence.length) {
+                typewriterElement.innerHTML += currentSentence.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else {
+                // Move to the next sentence after typing
+                cursorElement.style.display = 'none'; // hide cursor while waiting
+                setTimeout(() => {
+                    typewriterElement.innerHTML = '';
+                    cursorElement.style.display = 'inline'; // show cursor before starting the next sentence
+                    const nextSentenceIndex = (sentenceIndex + 1) % sentences.length;
+                    typeWriter(nextSentenceIndex, sentences, typewriterElement, cursorElement);
+                }, 1000); // wait for 1 second before starting the next sentence
             }
-        });
-	}
-
-    function lformSuccess() {
-        $("#callMeForm")[0].reset();
-        lsubmitMSG(true, "Request Submitted!");
-        $("input").removeClass('notEmpty'); // resets the field label after submission
-    }
-
-    function lformError() {
-        $("#callMeForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $(this).removeClass();
-        });
-	}
-
-    function lsubmitMSG(valid, msg) {
-        if (valid) {
-            var msgClasses = "h3 text-center tada animated";
-        } else {
-            var msgClasses = "h3 text-center";
         }
-        $("#lmsgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
 
+        cursorElement.style.display = 'inline'; // show cursor
+        type();
+    }
+    
 
     /* Contact Form */
     $("#contactForm").validator().on("submit", function(event) {
@@ -291,64 +268,6 @@ $(window).on('load', function() {
         $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
     }
 
-
-
-    /* Privacy Form */
-    $("#privacyForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            pformError();
-            psubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            psubmitForm();
-        }
-    });
-
-    function psubmitForm() {
-        // initiate variables with form content
-		var name = $("#pname").val();
-		var email = $("#pemail").val();
-        var select = $("#pselect").val();
-        var terms = $("#pterms").val();
-        
-        $.ajax({
-            type: "POST",
-            url: "php/privacyform-process.php",
-            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    pformSuccess();
-                } else {
-                    pformError();
-                    psubmitMSG(false, text);
-                }
-            }
-        });
-	}
-
-    function pformSuccess() {
-        $("#privacyForm")[0].reset();
-        psubmitMSG(true, "Request Submitted!");
-        $("input").removeClass('notEmpty'); // resets the field label after submission
-    }
-
-    function pformError() {
-        $("#privacyForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $(this).removeClass();
-        });
-	}
-
-    function psubmitMSG(valid, msg) {
-        if (valid) {
-            var msgClasses = "h3 text-center tada animated";
-        } else {
-            var msgClasses = "h3 text-center";
-        }
-        $("#pmsgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
-    
 
     /* Back To Top Button */
     // create the back to top button

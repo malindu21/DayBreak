@@ -51,9 +51,6 @@ html {
 
 }
 
-
-
-
 .white-box{
 	display: none;
 }
@@ -62,8 +59,6 @@ html {
 	
 	width: 100% !important;
 }
-
-
 
 @media (min-height: 600px) and (max-height: 675px) {
 
