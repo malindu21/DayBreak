@@ -11,17 +11,20 @@
 
 (function($) {
 
-	/* Preloader */
-	$(window).on('load', function() {
-		var preloaderFadeOutTime = 200;
-		function hidePreloader() {
-			var preloader = $('.spinner-wrapper');
-			setTimeout(function() {
-				preloader.fadeOut(preloaderFadeOutTime);
-			}, 200);
-		}
-		hidePreloader();       
-	});
+/* Preloader */
+$(window).on('load', function() {
+    var preloaderFadeOutTime = 200; 
+
+    function hidePreloader() {
+        var preloader = $('.spinner-wrapper');
+        setTimeout(function() {
+            preloader.fadeOut(preloaderFadeOutTime);
+        }, 500);
+    }
+
+    hidePreloader();
+});
+
 
     
     $(window).on('scroll load', function() {
