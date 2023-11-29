@@ -26,7 +26,7 @@
         <div class="h2">Checkout</div>
         <div class="text-light">It’s time for a Break</div>
         <div class="row my-3">
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <div class="form-group">
               <label for="package-type">Ticket Type</label>
               <div class="input-group">
@@ -40,8 +40,8 @@
                 </select>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4">
+          </div> -->
+          <div class="col-lg-6">
             <div class="form-group">
               <label for="no-of-travellers">No of Travellers</label>
               <div class="input-group">
@@ -54,7 +54,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 d-flex  align-items-center">
+          <div class="col-lg-6 d-flex  align-items-center">
             <button type="button" class="btn btn-lg btn-dark fs-6 mb-0 rounded-pill py-3" disabled
               id="traveller-details-btn">
               Click to Enter Traveller Details
@@ -151,9 +151,14 @@
                     <i class="fa-solid fa-users"></i>
                     <span class="text ms-2"><span id="max-passengers">0</span> Max Passengers</span>
                   </div>
+                  <div class="quick-info max-passengers">
+                    <span id="ticket-type-icon"></span>
+                    <span class="text ms-2"><span id="ticket-type-text">0</span> Ticket</span>
+                  </div>
                 </div>
                 <div class="booking-form-footer-item  add-to-cart d-inline-flex flex-column justify-content-center ">
-                  <small class="mb-1 fw-light">By Continuing you accept the <a href="./index.html" target="_blank" class="fw-bold text-white">terms & conditions</a> </small>
+                  <small class="mb-1 fw-light">By Continuing you accept the <a href="./index.html" target="_blank"
+                      class="fw-bold text-white">terms & conditions</a> </small>
                   <div id="myButton" class="btn btn-dark rounded-pill py-3">
                     <i class="fa-solid fa-cart-shopping text-light"></i>
                     <span class="ms-2">Proceed to Checkout</span>

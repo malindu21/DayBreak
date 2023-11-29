@@ -40,14 +40,14 @@ function getAllPackages() {
 // ============= TICKET TYPE & NO OF TRAVELLERS =================
 const travellerDetailsBtn = document.getElementById("traveller-details-btn");
 const noOfTravellersEle = document.getElementById("no-of-travellers");
-const ticketTypeEle = document.getElementById("ticket_type");
+const ticketType = "suv";
 
 noOfTravellersEle.addEventListener("input", function (e) {
   if (
     e.target.value < minNoOfTravellers ||
     e.target.value > maxNoOfTravellers
   ) {
-    noOfTravellersEle.value = "";
+    noOfTravellersEle.value = 1;
   } else {
     travellerDetailsBtn.removeAttribute("disabled");
     noOfTravellers = Number(e.target.value);
@@ -55,30 +55,51 @@ noOfTravellersEle.addEventListener("input", function (e) {
   }
 });
 
+//const ticketTypeEle = document.getElementById("ticket_type");
+// noOfTravellersEle.setAttribute("readonly", "true");
+// noOfTravellersEle.setAttribute(
+//   "placeholder",
+//   "Please Select Ticket type first"
+// );
+// ticketTypeEle.addEventListener("change", function (e) {
+//   noOfTravellersEle.removeAttribute("readonly");
+//   if (e.target.value == "suv") {
+//     setMinMaxTravellers(1, 4);
+//   } else if (e.target.value == "van") {
+//     setMinMaxTravellers(1, 7);
+//   } else {
+//     noOfTravellersEle.setAttribute("readonly", "true");
+//   }
+//   document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
+// });
+
 noOfTravellersEle.setAttribute("readonly", "true");
 noOfTravellersEle.setAttribute(
   "placeholder",
   "Please Select Ticket type first"
 );
-ticketTypeEle.addEventListener("change", function (e) {
-  noOfTravellersEle.removeAttribute("readonly");
-  if (e.target.value == "suv") {
-    setMinMaxTravellers(1, 4);
-  } else if (e.target.value == "van") {
-    setMinMaxTravellers(1, 7);
-  } else {
-    noOfTravellersEle.setAttribute("readonly", "true");
-  }
-  document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
-});
+
+if (ticketType == "suv") {
+  setMinMaxTravellers(1, 4);
+  document.getElementById("ticket-type-icon").innerHTML = `<i class="fa-solid fa-car"></i>`
+document.getElementById("ticket-type-text").innerHTML = "SUV"
+} else if (ticketType == "van") {
+  setMinMaxTravellers(1, 7);
+  document.getElementById("ticket-type-icon").innerHTML = `<i class="fa-solid fa-car"></i>`
+  document.getElementById("ticket-type-text").innerHTML = "Van"
+} else {
+  noOfTravellersEle.setAttribute("readonly", "true");
+}
 
 function setMinMaxTravellers(minTravellers, maxTravellers) {
   minNoOfTravellers = minTravellers;
   maxNoOfTravellers = maxTravellers;
+  noOfTravellersEle.removeAttribute("readonly");
   noOfTravellersEle.setAttribute(
     "placeholder",
     `Maximum ${maxTravellers} Travellers`
   );
+  document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
 }
 
 // ============= TRAVELLERS DETAILS MODAL =================
@@ -107,18 +128,21 @@ function loadTravellersElements() {
   }
 }
 
-document.getElementById('travellers-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  travellerDetails = [];
-  isTravellerDetailsSubmitted = true;
-  let elementList = event.target;
-  for (let index = 1; index < elementList.length-2; index++) {
-    travellerDetails.push({name: elementList[index].name, value: elementList[index].value})
-  }
-  $("#travellerModal").modal("hide");
-});
-
-
+document
+  .getElementById("travellers-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    travellerDetails = [];
+    isTravellerDetailsSubmitted = true;
+    let elementList = event.target;
+    for (let index = 1; index < elementList.length - 2; index++) {
+      travellerDetails.push({
+        name: elementList[index].name,
+        value: elementList[index].value,
+      });
+    }
+    $("#travellerModal").modal("hide");
+  });
 
 // ============= SEARCH LOCATIONS =================
 let sCoords = {
@@ -246,15 +270,17 @@ flatpickr("input[type=datetime-local]", {
 
 function validateCheckout() {
   selectedDate = document.getElementById("schedule-date").value;
-  if (ticketTypeEle.value === "") {
+  if (ticketType === "") {
     showToast("Please select your ticket type to continue.");
   } else if (noOfTravellersEle.value === "") {
     showToast("Please enter number of travellers to continue.");
   } else if (!isTravellerDetailsSubmitted) {
     showToast("Please submit all traveller's details to continue.");
   } else if (pachageCat === "") {
-    showToast("Address invalid please input your address correctly. Alternatively contact booking team for support")
-  }else if (selectedDate === "") {
+    showToast(
+      "Address invalid please input your address correctly. Alternatively contact booking team for support"
+    );
+  } else if (selectedDate === "") {
     showToast("Please select your tour date to continue.");
   } else {
     showPopupWithDelay();
