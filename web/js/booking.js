@@ -40,7 +40,7 @@ function getAllPackages() {
 // ============= TICKET TYPE & NO OF TRAVELLERS =================
 const travellerDetailsBtn = document.getElementById("traveller-details-btn");
 const noOfTravellersEle = document.getElementById("no-of-travellers");
-const ticketType = "suv";
+const ticketType = "van";
 
 noOfTravellersEle.addEventListener("input", function (e) {
   if (
@@ -89,7 +89,7 @@ if (ticketType == "suv") {
   setMinMaxTravellers(1, 7);
   document.getElementById(
     "ticket-type-icon"
-  ).innerHTML = `<i class="fa-solid fa-car"></i>`;
+  ).innerHTML = `<i class="fas fa-shuttle-van"></i>`;
   document.getElementById("ticket-type-text").innerHTML = "Van";
 } else {
   noOfTravellersEle.setAttribute("readonly", "true");
