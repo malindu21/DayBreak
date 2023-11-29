@@ -8,26 +8,25 @@ const package001 = {
             subTitle: "Black Spur Drive, rainforests & waterfalls",
             desc: "Embark on a picturesque journey through lush apple orchards, serene rainforests, and iconic Australian forests, all while savouring quick coffee breaks and exploring charming towns along the way. Be captivated by one of the state's tallest waterfalls, before concluding the day with a mesmerizing sunset, overlooking the majestic mountains.",
             duration : "Duration: 11.00 Hours",
-            backgroundImageUrls : ['images/into_the_forest/into_the_forest_1.jpg', 'images/into_the_forest/into_the_forest_2.jpg' , 'images/into_the_forest/into_the_forest_3.jpg'],
+            backgroundImageUrls : ['images/into_the_forest/into_the_forest_1.jpg', 'images/into_the_forest/into_the_forest_2.jpg'],
 
         },
 
 
         importantInformation : {
-            whatToWear: {
-                1: {value: "Full refund available with cancellation 24 hours before the road-trip start time"},
-                2: {value: "No refund for cancellations made within 24 hours of the road-trip start time"},
-                3: {value: "Changes requested within 24 hours of the road-trip start time will not be accommodated."},
-                4: {value: "Departure and destination times align with Melbourne local time"},
-                5: {value: "In case the road-trip is cancelled due to severe weather conditions, you will be offered either a full refund or an alternative date to travel"},
-            },
-            notAllowed: {
-                1: {value: "Full refund available with cancellation 24 hours before the road-trip start time"},
-                2: {value: "No refund for cancellations made within 24 hours of the road-trip start time"},
-                3: {value: "Changes requested within 24 hours of the road-trip start time will not be accommodated."},
-                4: {value: "Departure and destination times align with Melbourne local time"},
-                5: {value: "In case the road-trip is cancelled due to severe weather conditions, you will be offered either a full refund or an alternative date to travel"},
-            }
+            whatToWear: ["Comfortable clothing", "Walking shoes", "Sunscreen", "Jacket"],
+            notAllowed: ["Luggage and large bags", "Pets", "Smoking on-board", "More than 4 passengers per booking"],
+            knowBeforeYouGo: [
+                "You will receive confirmation at the time of booking",
+                "You must be at least 18 years old to drink alcohol",
+                "Please note that a moderate amount of walking is involved",
+                "Destination entrance fees and nature walk fees are included",
+                "Beverages will be provided",
+                "Breakfast will not be provided (stop to purchase at own expenses)",
+                "Lunch will be provided",
+                "Child car seat available for Toddler and kids under the age of 7",
+            ],
+            notSuitableFor: ["Wheelchair users", "Travelers with heart problems or other serious medical conditions", "Pregnant women"],
         },
 
 
@@ -340,16 +339,17 @@ insertSectionsIntoContainer();
             //aboutThisActivity();
             
             for (const section of Object.values(package001.packageActivity)) {
-                aboutThisActivity(section.description);
+                aboutThisActivity(section.title, section.description, section.iconClass);
             }
     
             for (const [index, section] of Object.entries(package001.package1Iternity)) {
                 itinerary.appendChild(createIterity(index, section.title, section.description, section.duration));
             }
     
-            for (const section of Object.values(package001.importantInformation.whatToWear)) {
-                importantInfomation.appendChild(importantInfomationSection(section.value));
-            }   
+            for (const [title, items] of Object.entries(package001.importantInformation)) {
+                importantInfomation.appendChild(importantInfomationSection(title, items));
+            }
+            
             for (const section of Object.values(package001.packageCancellationPolicy)) {
                 cancellationPolicy.appendChild(cancellationPolicySection(section.value));
             }        
@@ -358,8 +358,6 @@ insertSectionsIntoContainer();
             packageSubTitle.appendChild(packageSubTitleSection(package001.details.subTitle));
             packageDesc.appendChild(packageDescSection(package001.details.desc));
             packageDuration.appendChild(packageDurationSection(package001.details.duration));
-            
-
         }
 
     }
@@ -424,7 +422,7 @@ insertSectionsIntoContainer();
     
         return div; 
     }
-    function aboutThisActivity(desc) {
+    function aboutThisActivity(topic,desc,iconClass) {
         const container = document.getElementById('dynamic-boxes-container');
         const whiteBox = document.createElement('div');
         whiteBox.className = 'white-box-tours';
@@ -432,13 +430,13 @@ insertSectionsIntoContainer();
         const customColWider = document.createElement('div');
         customColWider.className = 'custom-col-wider';
         const icon = document.createElement('i');
-        icon.className = 'fas fa-car fa-inverse';
+        icon.className = iconClass;
         customColWider.appendChild(icon);
     
         const customColNarrower = document.createElement('div');
         customColNarrower.className = 'custom-col-narrower';
         const title = document.createElement('h3');
-        title.textContent = 'Pickup & Drop-off';
+        title.textContent = topic;
         const description = document.createElement('p');
         description.textContent = desc;
         customColNarrower.appendChild(title);
@@ -484,18 +482,41 @@ insertSectionsIntoContainer();
         return div;
     }
 
-    function importantInfomationSection(description) {
+    function importantInfomationSection(title, items) {
         const div = document.createElement("div");
-        div.className = "white-box-tours";
+        div.className = `white-box-tours-imp`;
+        let thisTitle = "";
     
-        div.innerHTML = `
-            <div >
-            <p>${description}</p>
-            </div>
-        `;
+        if (title === "whatToWear") {
+            thisTitle = " 1. What To Wear";
+        } else if (title === "notAllowed") {
+            thisTitle = " 2. Not Allowed"; // Provide a default title for other cases
+        }else if (title === "knowBeforeYouGo") {
+            thisTitle = " 3. Know Before You Go"; // Provide a default title for other cases
+        }else if (title === "notSuitableFor") {
+            thisTitle = " 4. Not Suitable For"; // Provide a default title for other cases
+        }
+    
+        // Title at the top
+        const titleElement = document.createElement("h3");
+        titleElement.textContent = thisTitle;
+        div.appendChild(titleElement);
+    
+        // List items at the bottom
+        const itemList = document.createElement("ul");
+        for (const item of items) {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;
+            itemList.appendChild(listItem);
+        }
+        div.appendChild(itemList);
     
         return div;
     }
+    
+    
+    
+    
     function cancellationPolicySection(description) {
         const div = document.createElement("div");
         div.className = "white-box-tours";
