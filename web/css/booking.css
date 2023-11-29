@@ -7,8 +7,6 @@
   padding: 0;
 }
 
-
-
 .loader {
   position: fixed; /* Change to fixed for full screen overlay */
   top: 50%;
@@ -18,7 +16,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 .loader::before {
   content: "";
@@ -47,7 +44,6 @@
   margin: 0.2em;
 }
 
-
 @keyframes anim {
   0%,
   100% {
@@ -71,7 +67,7 @@
 .popup {
   position: fixed;
   z-index: 1;
-  
+
   left: 0;
   top: 0;
   width: 100%;
@@ -82,7 +78,6 @@
   display: none;
 }
 .popup-content {
-
   margin: 10% auto;
   width: 40%;
   font-weight: bolder;
@@ -96,100 +91,101 @@
 }
 
 .main {
-    background: url(../images/booking_bg.jpg) no-repeat center center;
-    background-size: cover;
-    min-height: 100vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    background-blend-mode: darken;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .booking-form {
-    min-height: 80vh;
-    width: 70%;
-    backdrop-filter: blur(20px) !important;
-    color: #ffffff;
-  }
-  
-  .form-group {
-    margin-bottom: 10px;
-  }
-  
-  .text-area-form-group {
-    width: 100% !important;
-    margin-right: 0 !important;
-  }
-  
-  .form-control {
-    box-shadow: none !important;
-    min-height: 60px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  .selected-tour-card {
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .quick-info {
-    width: 200px;
-    margin-bottom: 10px;
-    display: inline-flex;
-  }
-  
-  .quick-info .text {
-    line-height: 0.9;
-  }
-  
-  .booking-form-footer-item {
-    height: 70px;
-    min-width: 250px;
-    margin-bottom: 10px;
-  }
-  
-  .booking-form-footer-item .btn {
-    width: auto;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  background: url(../images/booking_bg.jpg) no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .booking-form-footer-item:nth-child(4){
-    width: 250px !important;
-  }
-  
-  .location-wrapper {
-    position: relative;
-  }
-  
-  .search-results {
-    top: 85px;
-    position: absolute;
-    width: 100%;
-    background-color: #ffffff;
-    z-index: 9999999999;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 0px 0px 10px 10px;
-    border: solid 1px #58545490;
-    border-top: 0px !important;
-    transition: 0.5s;
-  }
-  
-  .user-select{
-    cursor: pointer;
-  }
+.booking-form {
+  min-height: 80vh;
+  width: 70%;
+  backdrop-filter: blur(20px) !important;
+  color: #ffffff;
+}
 
-  /* .close-button{
+.form-group {
+  margin-bottom: 10px;
+}
+
+.text-area-form-group {
+  width: 100% !important;
+  margin-right: 0 !important;
+}
+
+.form-control {
+  box-shadow: none !important;
+  min-height: 60px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.selected-tour-card {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.quick-info {
+  width: 200px;
+  height: 40px;
+  /* margin-bottom: 10px; */
+  display: inline-flex;
+}
+
+.quick-info .text {
+  line-height: 0.9;
+}
+
+.booking-form-footer-item {
+  height: 70px;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.booking-form-footer-item .btn {
+  width: auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-form-footer-item:nth-child(4) {
+  width: 250px !important;
+}
+
+.location-wrapper {
+  position: relative;
+}
+
+.search-results {
+  top: 85px;
+  position: absolute;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 9999999999;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 10px 10px;
+  border: solid 1px #58545490;
+  border-top: 0px !important;
+  transition: 0.5s;
+}
+
+.user-select {
+  cursor: pointer;
+}
+
+/* .close-button{
     position: absolute;
     top: 19%;
     left: 68%;
@@ -202,66 +198,66 @@
     justify-content: center;
   } */
 
-  .bold{
-    font-weight: bold !important;
-  }
-  
-  .blur-bg {
-    padding: 1px 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-  
-  .text-grey {
-    color: #7f8c8d;
-    font-weight: 400;
-  }
-  
-  .text-small {
-    font-size: 12px;
-  }
-  .text-regular {
-    font-size: 14px;
-  }
-  .text-medium {
-    font-size: 16px;
-  }
-  .text-large {
-    font-size: 18px;
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    .booking-form {
-      width: 80%;
-    }
-  }
-  @media only screen and (max-width: 1400px) {
-    .booking-form {
-      width: 90%;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .form-control {
-      min-height: 50px;
-    }
+.bold {
+  font-weight: bold !important;
+}
 
-    .booking-form-footer-item .breakdown {
-      flex-direction: column  !important;
-      align-items: flex-start !important;
-    }
-    .booking-form-footer-item .rounded-pill{
-      margin-top: 10px;
-    }
+.blur-bg {
+  padding: 1px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+}
 
-    .booking-form{
-      width: 90% !important;
-    }
+.text-grey {
+  color: #7f8c8d;
+  font-weight: 400;
+}
 
-    .rounded-pill{
-      margin-bottom: 15px !important;
-    }
+.text-small {
+  font-size: 12px;
+}
+.text-regular {
+  font-size: 14px;
+}
+.text-medium {
+  font-size: 16px;
+}
+.text-large {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .booking-form {
+    width: 80%;
   }
+}
+@media only screen and (max-width: 1400px) {
+  .booking-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form-control {
+    min-height: 50px;
+  }
+
+  .booking-form-footer-item .breakdown {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .booking-form-footer-item .rounded-pill {
+    margin-top: 10px;
+  }
+
+  .booking-form {
+    width: 90% !important;
+  }
+
+  .rounded-pill {
+    margin-bottom: 15px !important;
+  }
+}

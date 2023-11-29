@@ -27,7 +27,7 @@ function getAllPackages() {
       document.getElementById("main-bg").style.backgroundSize = "cover";
       activityList.innerHTML = "";
       data[0].activities.map((e) => {
-        let element = `<div class="quick-info beverage-onboard">
+        let element = `<div class="quick-info">
       <i class="${e.iconClass}"></i>
       <span class="text ms-2">${e.title}</span>
     </div>`;
@@ -81,12 +81,16 @@ noOfTravellersEle.setAttribute(
 
 if (ticketType == "suv") {
   setMinMaxTravellers(1, 4);
-  document.getElementById("ticket-type-icon").innerHTML = `<i class="fa-solid fa-car"></i>`
-document.getElementById("ticket-type-text").innerHTML = "SUV"
+  document.getElementById(
+    "ticket-type-icon"
+  ).innerHTML = `<i class="fa-solid fa-car"></i>`;
+  document.getElementById("ticket-type-text").innerHTML = "SUV";
 } else if (ticketType == "van") {
   setMinMaxTravellers(1, 7);
-  document.getElementById("ticket-type-icon").innerHTML = `<i class="fa-solid fa-car"></i>`
-  document.getElementById("ticket-type-text").innerHTML = "Van"
+  document.getElementById(
+    "ticket-type-icon"
+  ).innerHTML = `<i class="fa-solid fa-car"></i>`;
+  document.getElementById("ticket-type-text").innerHTML = "Van";
 } else {
   noOfTravellersEle.setAttribute("readonly", "true");
 }
