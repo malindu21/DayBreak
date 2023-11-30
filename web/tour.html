@@ -67,18 +67,27 @@
 	<div id="details" class="accordion">
 		<div class="area-1">
            
+           
+              
+             
+             
               
              
             <div class="button-container-left">
                 <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
                     <i class="fa-solid fa-arrow-left me-2"></i>
                     <span>Go Back</span>
-                  </a>
-                
+                  </a>    
 
             </div>
             <div class="button-container-right">
               
+                <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
+                    <i class="fa-solid fa-share me-2"></i>
+                  
+                    <span>Share</span>
+                  </a>
+                <!-- //<button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button> -->
                 
             </div>
 
@@ -96,7 +105,7 @@
            
             <div class="button-container-right">
               
-                <button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button>
+                
                 
             </div>
 
@@ -136,32 +145,39 @@
                 <div id = "packageDesc"> </div>
                 <hr class="item-divider">
                 <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white">
-                    <div class="d-inline-flex justify-content-between text-large fw-medium">
-                        <!-- First Column -->
-                        <div>
-                            <i class="fa-solid fa-truck-pickup"></i>
-                            <div class="text-small fw-light text-start"> Max 4 travelers</div>
-                        </div>
-
-                        <!-- Second Column -->
-                        <div>
-                            $220
-                            <div class="text-small fw-light text-start">Per Person</div>
-                        </div>
-                        <div class="border-end pe-3"></div>
-
-                        <!-- Third Column -->
-                        <div class="ms-2">
-                            <!-- Customize content for the third column -->
-                            <i class="fa-solid fa-van-shuttle"></i>
-                            <div class="text-small fw-light text-start"> Max 7 travelers</div>
-                        </div>
-                        <!-- Second Column -->
-                        <div>
-                            $250
-                            <div class="text-small fw-light text-start">Per Person</div>
-                        </div>
-                    </div>
+                 
+                        <div class="row"  style="align-items: center;" >
+                            <div class="column"  style="justify-content: center;">
+                                <div class="switch-container" style="justify-content: center;">
+                                    <label class="switch-label-left">Van</label>
+                                    <div class="switch">
+                                       <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                       <label for="cmn-toggle-4"></label>
+                                    </div>
+                                    <label class="switch-label-right">Suv</label>
+                                 </div>
+                            </div>
+                            <div class="column" >
+                               
+                                    <div class="column">
+                                        
+                                            <!-- Customize content for the third column -->
+                                            <i class="fa-solid fa-van-shuttle"></i>
+                                            <div class="text-medium fw-semibold text-start">$880</div>
+                                        
+                                         
+                                    </div>
+                                    <div class="column" >
+                                      <!-- Second Column -->
+                                      <div>
+                                        <div class="text-small fw-light text-start">Max 7 travellers</div>
+                                        <div class="text-small fw-light text-start">Per Person</div>
+                                     </div>
+                                    </div>
+                                 
+                            </div>
+                          </div>
+                   
                 </div>
 
                 <hr class="item-divider">
@@ -231,28 +247,8 @@
    
 <div id="howToBook"  >
 
-    <div id="packageName"></div>
- 
-    <div id = "packageSubTitle"> </div>
    
-  
-
     <pre></pre>
-    <pre></pre>
-
-    <div id = "packageDesc"> </div>
-
-
-    <!-- <div class="white-box-time" style="float: right">
-        <div id = "packageDuration"> </div>
-
-    </div> -->
-
-    <pre></pre>
-
-  
-
-    <hr class="item-divider">
 
     
     <div class="item">
@@ -263,14 +259,11 @@
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
             
-      
-                <!-- Your dynamically created sections will be appended here -->
-                <div class="accordion-body">
-             
-                    <div id="dynamic-boxes-container"></div>
-
-                </div>
-              
+         
+<!-- Your dynamically created sections will be appended here -->
+                <div id="dynamic-boxes-container"></div>
+       
+                
              
             
                
@@ -289,9 +282,22 @@
             </span>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
-            <div class="accordion-body">
-                <div id="itinerary"></div> 
-            </div>
+           
+          
+                   
+                        
+                            
+    
+                      
+                          <div id="itinerary" ></div> 
+                       
+                   
+           
+
+            
+               
+                
+                 
          
            
 
@@ -340,7 +346,7 @@
         </div>
         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionOne">
            
-                <div id="cancellationPolicy"></div> 
+                <div id="cancellationPolicy" ></div> 
            
         </div>
     </div> <!-- end of item -->
@@ -352,7 +358,68 @@
     <pre></pre> 
     <pre></pre>
 </div> <!-- end of accordion-container -->
-
+     <!-- Footer -->
+     <div class="footer" style="margin:0px 0px;">
+        <div class="container" >
+           <div class="row">
+              <div class="col-md-6">
+                 <div class="text-container about">
+                    <h4 class="user-friendly-paragraph">Travel, Explore, Repeat!</h4>
+                    <p class="white"></p>
+                 </div>
+                 <!-- end of text-container -->
+              </div>
+              <!-- end of col -->
+              <div class="col-md-3 offset-md-3">
+                 <!-- added offset-md-4 class -->
+                 <div class="d-flex justify-content-center">
+                    <div class="social-media-icon">
+                       <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-media-icon">
+                       <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                    <div class="social-media-icon">
+                       <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="social-media-icon">
+                       <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                 </div>
+              </div>
+              <!-- end of col -->
+              <pre></pre>
+              <pre></pre>
+           </div>
+           <!-- end of row -->
+           <div class="row">
+              <div class="col-lg-12 p-small text-center copyright">
+                 <a href="#popup-box">Terms &
+                 Conditions</a>
+                 <p class="p-small">© 2023 DayBreak | All rights Reserved </a></p>
+              </div>
+              <!-- end of col -->
+           </div>
+           <!-- enf of row -->
+        </div>
+        <!-- end of container -->
+     </div>
+     <!-- end of footer -->
+     <!-- end of footer -->
+     <div id="popup-box" class="modalboxTc">
+        <div class="contentboxTc">
+           <h1 style="color: rgb(0, 0, 0);">
+              Terms & Conditions
+           </h1>
+           <b>
+              <p>Lorem ipsum</p>
+           </b>
+           <a href="#"
+              class="boxTc-close">
+           ×
+           </a>
+        </div>
+     </div>
 
   
 
