@@ -147,36 +147,33 @@
                 <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white">
                  
                         <div class="row"  style="align-items: center;" >
-                            <div class="column"  style="justify-content: center;">
-                                <div class="switch-container" style="justify-content: center;">
-                                    <label class="switch-label-left">Van</label>
-                                    <div class="switch">
-                                       <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
-                                       <label for="cmn-toggle-4"></label>
+                            <div class="column d-flex justify-content-center">
+                                
+                                <div class="btn-group" role="group" aria-label="Button group" style="justify-content: center;">
+                                    <button type="button" class="btn btn-primary active" onclick="selectButton(this)"> <img class="tourIcon" src="images/van.png" alt="Icon" style="margin-left:auto; width: 30px; height: 30px;"> <div>Van</div></button>
+                                    <button type="button" class="btn btn-primary" onclick="selectButton(this)">  <img class="tourIcon" src="images/suv.png" alt="Icon" style="margin-left:auto; width: 30px; height: 30px;"> <div>Suv</div></button>
+                                </div>
+                            </div>
+                            
+                            <div class="column ">
+                                <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center">
+                                    <div>
+                                        <div id="maxTravelers" class="text-small fw-semibold text-start">
+                                            Max <span id="maxNumber">7</span> travelers
+                                        </div>
+                                        <span style="display: inline-block; font-size: large; font-weight: bold; ">$880</span>
+                                        <span style="display: inline-block; font-size: small; "> ( per person )</span>
+                                      
+                                      </div>
+                                      <div id="iconContainer" class="d-flex align-items-center justify-content-center" style="width: 75px; height: 75px;">
+                                        <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon" style="margin-left:auto; width: 70%; height: 70%;">
                                     </div>
-                                    <label class="switch-label-right">Suv</label>
+                                    
                                  </div>
                             </div>
-                            <div class="column" >
-                               
-                                    <div class="column">
-                                        
-                                            <!-- Customize content for the third column -->
-                                            <i class="fa-solid fa-van-shuttle"></i>
-                                            <div class="text-medium fw-semibold text-start">$880</div>
-                                        
-                                         
-                                    </div>
-                                    <div class="column" >
-                                      <!-- Second Column -->
-                                      <div>
-                                        <div class="text-small fw-light text-start">Max 7 travellers</div>
-                                        <div class="text-small fw-light text-start">Per Person</div>
-                                     </div>
-                                    </div>
-                                 
-                            </div>
-                          </div>
+                            
+                        </div>
+                          
                    
                 </div>
 
@@ -277,11 +274,11 @@
     <hr class="item-divider">
     <div class="item">
         <div id="headingTwo">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">
                 <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Itinerary & What to expect</h2></span>
             </span>
         </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionOne">
            
           
                    
@@ -393,13 +390,13 @@
            </div>
            <!-- end of row -->
            <div class="row">
-              <div class="col-lg-12 p-small text-center copyright">
-                 <a href="#popup-box">Terms &
-                 Conditions</a>
-                 <p class="p-small">© 2023 DayBreak | All rights Reserved </a></p>
-              </div>
-              <!-- end of col -->
-           </div>
+            <div class="col-lg-12 p-small text-center copyright">
+                <div href="#popup-box" ><a>Privacy Policy</a></div>
+               <a href="#popup-box">Terms & Conditions</a>
+               <p class="p-small">© 2023 DayBreak | All rights Reserved </a></p>
+            </div>
+            <!-- end of col -->
+         </div>
            <!-- enf of row -->
         </div>
         <!-- end of container -->
@@ -465,7 +462,50 @@
 </script>
         <script src="js/tour.js"></script>
         <script src="js/dummyData.js"></script>
+<script>
 
+  function selectButton(button) {
+   // Remove 'active' class from all buttons
+   $('.btn-group button').removeClass('active');
+
+// Add 'active' class to the selected button
+$(button).addClass('active');
+
+// Check if it's the first button
+if ($(button).is(':first-child')) {
+    // Logic for the first button
+    console.log("This is the first button. Do something special.");
+    var iconImage = document.getElementById('iconImage');
+        iconImage.src = 'images/van.png'; // Change the path accordingly
+        updateMaxTravelers(7);
+} else {
+    // Logic for other buttons
+    console.log("This is not the first button. Do something else.");
+    var iconImage = document.getElementById('iconImage');
+        iconImage.src = 'images/suv.png'; // Change the path accordingly
+        updateMaxTravelers(4);
+}
+  }
+
+ 
+    // Function to change the image source dynamically
+    // function changeImage() {
+    //     var iconImage = document.getElementById('iconImage');
+    //     iconImage.src = 'images/van.png'; // Change the path accordingly
+    // }
+
+    // // Call the function to change the image (you can trigger this function based on user interactions, events, etc.)
+    // // For example, calling it after a delay of 3 seconds using setTimeout:
+    // setTimeout(changeImage, 1000); // Change the delay time (in milliseconds) as needed
+
+    function updateMaxTravelers(maxNumber) {
+    // Update the content of the span element with the new max number
+    document.getElementById('maxNumber').innerText = maxNumber;
+}
+
+
+</script>
+</script>
     
 </body>
 </html>
