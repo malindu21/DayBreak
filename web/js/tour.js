@@ -346,14 +346,14 @@ insertSectionsIntoContainer();
                 itinerary.appendChild(createIterity(index, section.title, section.description, section.duration));
             }
     
-            for (const [title, items] of Object.entries(package001.importantInformation)) {
-                importantInfomation.appendChild(importantInfomationSection(title, items));
+            for (const [index,title, items] of Object.entries(package001.importantInformation)) {
+                importantInfomation.appendChild(importantInfomationSection(index,title, items));
             }
             
-            for (const section of Object.values(package001.packageCancellationPolicy)) {
-                cancellationPolicy.appendChild(cancellationPolicySection(section.value));
+            for (const [index, section] of Object.entries(package001.packageCancellationPolicy)) {
+                cancellationPolicy.appendChild(cancellationPolicySection(index,section.value));
             }        
-            meetAndPickUp.appendChild(meetAndPickUpSection(package001.packageMeetAndPickUp));
+            meetAndPickUp.appendChild(meetAndPickUpSection(1,package001.packageMeetAndPickUp));
             packageName.appendChild(packageNameSection(package001.details.title));
             packageSubTitle.appendChild(packageSubTitleSection(package001.details.subTitle));
             packageDesc.appendChild(packageDescSection(package001.details.desc));
@@ -426,9 +426,12 @@ insertSectionsIntoContainer();
         const container = document.getElementById('dynamic-boxes-container');
         const whiteBox = document.createElement('div');
         whiteBox.className = 'white-box-tours';
-    
+
+     
+        whiteBox.style.height = 'auto';
         const customColWider = document.createElement('div');
         customColWider.className = 'custom-col-wider';
+        customColWider.style.width = '15%';
         const icon = document.createElement('i');
         icon.className = iconClass;
         customColWider.appendChild(icon);
@@ -448,6 +451,16 @@ insertSectionsIntoContainer();
         // Don't set the height here, let it be dynamic
     
         container.appendChild(whiteBox);
+
+         // Media query for screens with a maximum width of 767px (typical mobile devices)
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+    // Apply different width for mobile devices
+    if (mediaQuery.matches) {
+        whiteBox.style.width = '90%';
+    } else {
+        whiteBox.style.width = '40%';
+    }
     }
     
     
@@ -493,14 +506,27 @@ function createIterity(iconClass, title, description, duration) {
 }
 
 
-    function meetAndPickUpSection(description) {
+    function meetAndPickUpSection(index,description) {
         const div = document.createElement("div");
-        div.className = "white-box-tours";
-    
+      
+
         div.innerHTML = `
-            <div >
-            <p>${description}</p>
-            </div>
+
+        <div class="comment-container">
+        <div class="chain chain-top"></div>
+        <div class="circle-tours">${index}</div>
+        <div class="white-box-tours" style="width: 90vw; height: auto;" >
+        <div class="comment">
+        
+        
+ 
+        <p>${description}</p>
+  
+        </div>
+        </div>
+        <div class="chain chain-bottom"></div>
+      </div>
+      
         `;
     
         return div;
@@ -549,7 +575,7 @@ function createIterity(iconClass, title, description, duration) {
     
     
     
-    function cancellationPolicySection(description) {
+    function cancellationPolicySection(index,description) {
         const div = document.createElement("div");
       
 
@@ -558,7 +584,7 @@ function createIterity(iconClass, title, description, duration) {
 
         <div class="comment-container">
         <div class="chain chain-top"></div>
-        <div class="circle-tours"></div>
+        <div class="circle-tours">${index}</div>
         <div class="white-box-tours" style="width: 90vw; height: auto;" >
         <div class="comment">
         

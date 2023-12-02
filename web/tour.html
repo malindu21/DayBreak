@@ -155,22 +155,26 @@
                                 </div>
                             </div>
                             
-                            <div class="column ">
-                                <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center">
+                            <div class="column">
+                                <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center" style="width: 100%;">
                                     <div>
                                         <div id="maxTravelers" class="text-small fw-semibold text-start">
                                             Max <span id="maxNumber">7</span> travelers
                                         </div>
-                                        <span style="display: inline-block; font-size: large; font-weight: bold; ">$880</span>
-                                        <span style="display: inline-block; font-size: small; "> ( per person )</span>
-                                      
-                                      </div>
-                                      <div id="iconContainer" class="d-flex align-items-center justify-content-center" style="width: 75px; height: 75px;">
-                                        <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon" style="margin-left:auto; width: 70%; height: 70%;">
+                                        <div style="white-space: nowrap;">
+                                            <span style="display: inline-block; font-size: large; font-weight: bold; padding-bottom: -10px; ">$880</span>
+                                            <span style="display: inline-block; font-size: x-small; "> ( per person )</span>
+                                        </div>
+                                        
                                     </div>
-                                    
-                                 </div>
+                            
+                                    <div id="iconContainer" class="d-flex align-items-center justify-content-end" style="width: 75px; height: 75px;">
+
+                                        <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon" style="width: 70%; height: 70%; float: right; margin: auto;">
+                                    </div>
+                                </div>
                             </div>
+                            
                             
                         </div>
                           
@@ -207,14 +211,6 @@
 
         
 
-
-  
-    <div class="centerc" onclick= "scrollToBottom()" >
-        <div class="chevron"></div>
-        <div class="chevron"></div>
-        <div class="chevron"></div>
-    </div>
-
    
               
             
@@ -241,6 +237,14 @@
 <!-- end of header -->
 
   
+
+  
+    <div class="centerc" onclick= "scrollToBottom()" >
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+    </div>
+
    
 <div id="howToBook"  >
 
@@ -256,9 +260,9 @@
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
             
-         
+            <div id="dynamic-boxes-container"></div>
 <!-- Your dynamically created sections will be appended here -->
-                <div id="dynamic-boxes-container"></div>
+              
        
                 
              
@@ -306,14 +310,12 @@
     <hr class="item-divider">
     <div class="item">
         <div id="headingThree">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" role="button">
                 <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Meeting & Pickup</h2></span>
             </span>
         </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
-            <div class="accordion-body">
-                <div id="meetAndPickUp"></div>      
-            </div>
+        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionOne">
+            <div id="meetAndPickUp"></div>   
         </div>
     </div> <!-- end of item -->
 
@@ -323,11 +325,11 @@
 
     <div class="item">
         <div id="headingFour">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="button">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" role="button">
                 <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Important information</h2> </span>
             </span>
         </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionOne">
+        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionOne">
         
             <div id="importantInfomation"></div> 
 
@@ -337,11 +339,11 @@
 
     <div class="item">
         <div id="headingFive">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" role="button">
+            <span class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" role="button">
                 <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Cancellation Policy</h2> </span>
             </span>
         </div>
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionOne">
+        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionOne">
            
                 <div id="cancellationPolicy" ></div> 
            
