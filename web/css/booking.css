@@ -43,6 +43,38 @@
   transform: translateY(5px);
   margin: 0.2em;
 }
+.scroll-right-wrapper{
+  background-color: #ffffff30;
+  z-index: 9999 !important;
+}
+
+.scroll-right-btn{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  width: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 @keyframes anim {
   0%,
@@ -111,6 +143,15 @@
 
 .form-group {
   margin-bottom: 10px;
+}
+
+.add_traveller_details{
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .text-area-form-group {

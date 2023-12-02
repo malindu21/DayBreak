@@ -14,7 +14,10 @@ let travellerDetails = [];
 
 let isTravellerDetailsSubmitted = false;
 
+const travellersEl = document.getElementById("travellers-list");
+
 getAllPackages();
+onAddTravellerDetails("add_details", 0);
 
 function getAllPackages() {
   fetch("js/packages.json")
@@ -38,22 +41,22 @@ function getAllPackages() {
 }
 
 // ============= TICKET TYPE & NO OF TRAVELLERS =================
-const travellerDetailsBtn = document.getElementById("traveller-details-btn");
-const noOfTravellersEle = document.getElementById("no-of-travellers");
+//const travellerDetailsBtn = document.getElementById("traveller-details-btn");
+//const noOfTravellersEle = document.getElementById("no-of-travellers");
 const ticketType = "van";
 
-noOfTravellersEle.addEventListener("input", function (e) {
-  if (
-    e.target.value < minNoOfTravellers ||
-    e.target.value > maxNoOfTravellers
-  ) {
-    noOfTravellersEle.value = 1;
-  } else {
-    travellerDetailsBtn.removeAttribute("disabled");
-    noOfTravellers = Number(e.target.value);
-    loadTravellersElements();
-  }
-});
+// noOfTravellersEle.addEventListener("input", function (e) {
+//   if (
+//     e.target.value < minNoOfTravellers ||
+//     e.target.value > maxNoOfTravellers
+//   ) {
+//     noOfTravellersEle.value = 1;
+//   } else {
+//     travellerDetailsBtn.removeAttribute("disabled");
+//     noOfTravellers = Number(e.target.value);
+//     loadTravellersElements();
+//   }
+// });
 
 //const ticketTypeEle = document.getElementById("ticket_type");
 // noOfTravellersEle.setAttribute("readonly", "true");
@@ -73,11 +76,11 @@ noOfTravellersEle.addEventListener("input", function (e) {
 //   document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
 // });
 
-noOfTravellersEle.setAttribute("readonly", "true");
-noOfTravellersEle.setAttribute(
-  "placeholder",
-  "Please Select Ticket type first"
-);
+// noOfTravellersEle.setAttribute("readonly", "true");
+// noOfTravellersEle.setAttribute(
+//   "placeholder",
+//   "Please Select Ticket type first"
+// );
 
 if (ticketType == "suv") {
   setMinMaxTravellers(1, 4);
@@ -92,32 +95,50 @@ if (ticketType == "suv") {
   ).innerHTML = `<i class="fas fa-shuttle-van"></i>`;
   document.getElementById("ticket-type-text").innerHTML = "Van";
 } else {
-  noOfTravellersEle.setAttribute("readonly", "true");
+  // noOfTravellersEle.setAttribute("readonly", "true");
 }
 
 function setMinMaxTravellers(minTravellers, maxTravellers) {
   minNoOfTravellers = minTravellers;
   maxNoOfTravellers = maxTravellers;
-  noOfTravellersEle.removeAttribute("readonly");
-  noOfTravellersEle.setAttribute(
-    "placeholder",
-    `Maximum ${maxTravellers} Travellers`
-  );
+  //noOfTravellersEle.removeAttribute("readonly");
+  // noOfTravellersEle.setAttribute(
+  //   "placeholder",
+  //   `Maximum ${maxTravellers} Travellers`
+  // );
   document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
 }
 
 // ============= TRAVELLERS DETAILS MODAL =================
 
-travellerDetailsBtn.addEventListener("click", function (event) {
-  $("#travellerModal").modal("show");
+// travellerDetailsBtn.addEventListener("click", function (event) {
+//   $("#travellerModal").modal("show");
+// });
+document.getElementById("scroll-right").addEventListener("click", function () {
+  travellersEl.scrollLeft += 200;
 });
 
+showHideScrollBtn();
+
+function showHideScrollBtn() {
+  console.log(travellersEl.clientWidth, travellersEl.scrollWidth);
+  if (travellersEl.clientWidth < travellersEl.scrollWidth) {
+    document.getElementById("scroll-right").classList.remove("d-none");
+  } else {
+    document.getElementById("scroll-right").classList.add("d-none");
+  }
+}
+
 function loadTravellersElements() {
-  document.getElementById("travellers-list").innerHTML = "";
-  for (let i = 1; i <= noOfTravellers; i++) {
-    document.getElementById("travellers-list").innerHTML += `
-    <div class="col-lg-6">
-    <h6>Traveller ${i}</h6>
+  travellersEl.innerHTML = "";
+  for (let i = 0; i < travellerDetails.length; i++) {
+    if (travellerDetails[i].name != "add_details") {
+      travellersEl.innerHTML += `
+    <div class="col-lg-3">
+    <div class="d-flex align-items-center justify-content-between">
+      <h6>Traveller ${i}</h6>
+      <i class="fa-solid fa-circle-xmark text-danger" onclick="removeTraveller(${i})"></i>
+    </div>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
       <input type="text" class="form-control" name="username${i}" placeholder="Full Name" aria-label="fullName"
@@ -129,24 +150,49 @@ function loadTravellersElements() {
         aria-describedby="basic-addon2">
     </div>
   </div>`;
+    }
   }
 }
 
+function removeTraveller(i) {
+  travellerDetails.splice(i, 1);
+  loadTravellersElements();
+  showHideScrollBtn();
+}
+
+
+
 document
-  .getElementById("travellers-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    travellerDetails = [];
-    isTravellerDetailsSubmitted = true;
-    let elementList = event.target;
-    for (let index = 1; index < elementList.length - 2; index++) {
-      travellerDetails.push({
-        name: elementList[index].name,
-        value: elementList[index].value,
-      });
-    }
-    $("#travellerModal").modal("hide");
+  .getElementById("add_traveller_btn")
+  .addEventListener("click", function () {
+    console.log("Clicked");
+    onAddTravellerDetails("", 0);
   });
+
+function onAddTravellerDetails(name, age) {
+  travellerDetails.push({
+    name: name,
+    age: age,
+  });
+  loadTravellersElements();
+  showHideScrollBtn();
+}
+
+// document
+//   .getElementById("travellers-form")
+//   .addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     travellerDetails = [];
+//     isTravellerDetailsSubmitted = true;
+//     let elementList = event.target;
+//     for (let index = 1; index < elementList.length - 2; index++) {
+//       travellerDetails.push({
+//         name: elementList[index].name,
+//         value: elementList[index].value,
+//       });
+//     }
+//     $("#travellerModal").modal("hide");
+//   });
 
 // ============= SEARCH LOCATIONS =================
 let sCoords = {
@@ -276,9 +322,11 @@ function validateCheckout() {
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketType === "") {
     showToast("Please select your ticket type to continue.");
-  } else if (noOfTravellersEle.value === "") {
-    showToast("Please enter number of travellers to continue.");
-  } else if (!isTravellerDetailsSubmitted) {
+  }
+  //  else if (noOfTravellersEle.value === "") {
+  //   showToast("Please enter number of travellers to continue.");
+  // }
+  else if (!isTravellerDetailsSubmitted) {
     showToast("Please submit all traveller's details to continue.");
   } else if (pachageCat === "") {
     showToast(
@@ -368,7 +416,6 @@ function addTicketWidget(ref) {
 document
   .getElementById("schedule-date")
   .addEventListener("change", function (e) {
-    debugger;
     // Get the selected date
     selectedDate = e.target.value;
     console.log(selectedDate);
