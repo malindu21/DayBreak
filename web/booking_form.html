@@ -54,24 +54,30 @@
             </div>
           </div> -->
           <div class="col-12">
-           <div class="position-relative">
-            <div class="row m-0 p-0 mb-2 align-items-center">
-              <div role="button"
-                class="col-2 add_traveller_details d-inline-flex flex-column align-items-center justify-content-center fw-bold"
-                id="add_traveller_btn">
-                <i class="fa-solid fa-plus fs-3 mb-1"></i>
-                <div>Add traveller detail</div>
-                <small>Max <span id="max-passengers">0</span> travellers</small>
+            <div class="position-relative">
+              <div class="row m-0 p-0 mb-2 align-items-center">
+                <div role="button"
+                  class="col-2 add_traveller_details d-inline-flex flex-column align-items-center justify-content-center fw-bold"
+                  id="add_traveller_btn">
+                  <i class="fa-solid fa-plus fs-3 mb-1"></i>
+                  <div>Add traveller detail</div>
+                  <small>Max <span id="max-passengers">0</span> travellers</small>
+                </div>
+                <div class="col-9 row m-0 p-0 flex-nowrap overflow-x-auto px-2" id="travellers-list">
+                </div>
               </div>
-              <div class="col-9 row m-0 p-0 flex-nowrap overflow-x-auto px-2" id="travellers-list">
-              </div>
-            </div>
-            <div class="position-absolute top-0 bottom-0 end-0 pe-2  d-flex align-items-center justify-content-center">
-                <div role="button" id="scroll-right" class="scroll-right-btn bg-black d-flex align-items-center justify-content-center p-3">
+              <div id="scroll-indicators"
+                class="position-absolute top-0 bottom-0 end-0 pe-2  d-flex flex-column align-items-center justify-content-center">
+                <div role="button" id="scroll-right"
+                  class="scroll-right-btn bg-black d-flex align-items-center justify-content-center p-3 mb-2">
                   <i class="fa-solid fa-chevron-right"></i>
                 </div>
+                <div role="button" id="scroll-left"
+                  class="scroll-right-btn bg-black d-flex align-items-center justify-content-center p-3">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </div>
+              </div>
             </div>
-           </div>
           </div>
 
           <!-- <div class="col-lg-6 d-flex  align-items-center">

@@ -17,7 +17,6 @@ let isTravellerDetailsSubmitted = false;
 const travellersEl = document.getElementById("travellers-list");
 
 getAllPackages();
-onAddTravellerDetails("add_details", 0);
 
 function getAllPackages() {
   fetch("js/packages.json")
@@ -106,7 +105,9 @@ function setMinMaxTravellers(minTravellers, maxTravellers) {
   //   "placeholder",
   //   `Maximum ${maxTravellers} Travellers`
   // );
-  document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
+  document.querySelectorAll("#max-passengers").forEach((element) => {
+   element.innerHTML = maxNoOfTravellers
+  });
 }
 
 // ============= TRAVELLERS DETAILS MODAL =================
@@ -117,17 +118,21 @@ function setMinMaxTravellers(minTravellers, maxTravellers) {
 document.getElementById("scroll-right").addEventListener("click", function () {
   travellersEl.scrollLeft += 200;
 });
+document.getElementById("scroll-left").addEventListener("click", function () {
+  travellersEl.scrollLeft -= 200;
+});
 
 showHideScrollBtn();
 
 function showHideScrollBtn() {
-  console.log(travellersEl.clientWidth, travellersEl.scrollWidth);
   if (travellersEl.clientWidth < travellersEl.scrollWidth) {
-    document.getElementById("scroll-right").classList.remove("d-none");
+    document.getElementById("scroll-indicators").classList.remove("d-none");
   } else {
-    document.getElementById("scroll-right").classList.add("d-none");
+    document.getElementById("scroll-indicators").classList.add("d-none");
   }
 }
+
+loadTravellersElements();
 
 function loadTravellersElements() {
   travellersEl.innerHTML = "";
@@ -136,7 +141,7 @@ function loadTravellersElements() {
       travellersEl.innerHTML += `
     <div class="col-lg-3">
     <div class="d-flex align-items-center justify-content-between">
-      <h6>Traveller ${i}</h6>
+      <h6>Traveller ${i+1}</h6>
       <i class="fa-solid fa-circle-xmark text-danger" onclick="removeTraveller(${i})"></i>
     </div>
     <div class="input-group mb-3">
@@ -152,6 +157,12 @@ function loadTravellersElements() {
   </div>`;
     }
   }
+  // console.log(travellerDetails.length < maxNoOfTravellers);
+  // if (travellerDetails.length < maxNoOfTravellers) {
+  //   document.getElementById('add_traveller_btn').classList.remove('d-none');
+  // }else{
+  //   document.getElementById('add_traveller_btn').classList.add('d-none');
+  // }
 }
 
 function removeTraveller(i) {
@@ -159,8 +170,6 @@ function removeTraveller(i) {
   loadTravellersElements();
   showHideScrollBtn();
 }
-
-
 
 document
   .getElementById("add_traveller_btn")
@@ -170,12 +179,16 @@ document
   });
 
 function onAddTravellerDetails(name, age) {
-  travellerDetails.push({
-    name: name,
-    age: age,
-  });
-  loadTravellersElements();
-  showHideScrollBtn();
+  if (travellerDetails.length < maxNoOfTravellers) {
+    travellerDetails.push({
+      name: name,
+      age: age,
+    });
+    loadTravellersElements();
+    showHideScrollBtn();
+  }else{
+    showToast("Maximum Travellers reached");
+  }
 }
 
 // document
