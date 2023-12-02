@@ -159,12 +159,31 @@
                 </div>
 
               </div>
-              <small class="fw-light">By Continuing you accept the <a href="./index.html" target="_blank"
+              <small class="fw-light">By Continuing you accept the <a role="button" data-bs-toggle="modal" data-bs-target="#termsConditionModal"
                   class="fw-bold text-white">terms & conditions</a> </small>
             </div>
           </div>
         </div>
       </form>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="termsConditionModal" tabindex="-1" aria-labelledby="termsConditionModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="termsConditionModalLabel">Terms & Conditions</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur quod facere nemo accusantium cum quae corporis omnis illum obcaecati expedita praesentium dolorem vel ullam est consequuntur provident voluptatibus, sunt voluptatum!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="myPopup" class="popup">
@@ -202,7 +221,7 @@
           <a role="button" onclick="$('#liveToast').toast('hide')" class="btn btn-sm btn-dark me-2 ">
             Okey
           </a>
-          <a role="button" href="index.html#contactForm" class="btn btn-sm btn-dark ">
+          <a role="button" target="_blank" href="index.html#contactForm" class="btn btn-sm btn-dark ">
             Contact us
           </a>
         </div>
