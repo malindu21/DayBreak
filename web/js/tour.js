@@ -452,22 +452,46 @@ insertSectionsIntoContainer();
     
     
     
-    function createIterity(iconClass, title, description,duration) {
-        const div = document.createElement("div");
-        div.className = "white-box-tours";
+function createIterity(iconClass, title, description, duration) {
+    const div = document.createElement("div");
+
+
+    // div.innerHTML = `
+    //     <div class="custom-col-narrower-about-activity">
+    //         <div class="circle">${iconClass}</div>
+    //         <h3>${title}</h3>
+    //         <p>${description}</p>
+    //         <h3>${duration}</h3>
+    //     </div>
+    // `;
     
-        div.innerHTML = `
-            
-           
-            <div class="custom-col-narrower-about-activity">
-                <h3>${iconClass}. ${title}</h3>
-                <p>${description}</p>
-                <h3>${duration}</h3>
-            </div>
-        `;
+
+    div.innerHTML = `
     
-        return div;
-    }
+    <div class="comment-container">
+    <div class="chain chain-top"></div>
+    <div class="circle-tours">${iconClass}</div>
+
+    <div class="white-box-tours" style="width: 90vw; height: auto;" >  
+    <div class="comment">
+
+
+    <h3>${title}</h3>
+    <p>${description}</p>
+    <h3>${duration}</h3>
+    </div>
+
+    
+    </div>
+    <div class="chain chain-bottom"></div>
+  </div>
+  
+    `;
+
+
+    return div;
+}
+
 
     function meetAndPickUpSection(description) {
         const div = document.createElement("div");
@@ -484,34 +508,42 @@ insertSectionsIntoContainer();
 
     function importantInfomationSection(title, items) {
         const div = document.createElement("div");
-        div.className = `white-box-tours-imp`;
-        let thisTitle = "";
-    
-        if (title === "whatToWear") {
-            thisTitle = " 1. What To Wear";
-        } else if (title === "notAllowed") {
-            thisTitle = " 2. Not Allowed"; // Provide a default title for other cases
-        }else if (title === "knowBeforeYouGo") {
-            thisTitle = " 3. Know Before You Go"; // Provide a default title for other cases
-        }else if (title === "notSuitableFor") {
-            thisTitle = " 4. Not Suitable For"; // Provide a default title for other cases
-        }
-    
-        // Title at the top
-        const titleElement = document.createElement("h3");
-        titleElement.textContent = thisTitle;
-        div.appendChild(titleElement);
-    
-        // List items at the bottom
-        const itemList = document.createElement("ul");
-        for (const item of items) {
-            const listItem = document.createElement("li");
-            listItem.textContent = item;
-            itemList.appendChild(listItem);
-        }
-        div.appendChild(itemList);
-    
+        div.innerHTML = `
+
+        
+        
+            <div class="comment-container">
+            <div class="chain chain-top"></div>
+            <div class="circle-tours"></div>
+            <div class="white-box-tours" style="width: 90vw; height: auto;" >
+            <div class="comment">
+            
+            <h3>${getTitle(title)}</h3>
+            <ul>
+                ${items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            </div>
+            </div>
+            <div class="chain chain-bottom"></div>
+          </div>
+          
+            `;
         return div;
+    }
+    
+    function getTitle(title) {
+        switch (title) {
+            case "whatToWear":
+                return " 1. What To Wear";
+            case "notAllowed":
+                return " 2. Not Allowed";
+            case "knowBeforeYouGo":
+                return " 3. Know Before You Go";
+            case "notSuitableFor":
+                return " 4. Not Suitable For";
+            default:
+                return ""; // Provide a default title for other cases
+        }
     }
     
     
@@ -519,13 +551,26 @@ insertSectionsIntoContainer();
     
     function cancellationPolicySection(description) {
         const div = document.createElement("div");
-        div.className = "white-box-tours";
-    
+      
+
+
         div.innerHTML = `
-            <div >
-            <ul>
-            <li><p>${description}</p</li>
-            </div>
+
+        <div class="comment-container">
+        <div class="chain chain-top"></div>
+        <div class="circle-tours"></div>
+        <div class="white-box-tours" style="width: 90vw; height: auto;" >
+        <div class="comment">
+        
+        
+ 
+        <p>${description}</p>
+  
+        </div>
+        </div>
+        <div class="chain chain-bottom"></div>
+      </div>
+      
         `;
     
         return div;
