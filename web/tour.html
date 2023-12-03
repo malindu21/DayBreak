@@ -480,31 +480,26 @@ if ($(button).is(':first-child')) {
     var iconImage = document.getElementById('iconImage');
         iconImage.src = 'images/van.png'; // Change the path accordingly
         updateMaxTravelers(7);
+        addTourType("VAN");
 } else {
     // Logic for other buttons
     console.log("This is not the first button. Do something else.");
     var iconImage = document.getElementById('iconImage');
         iconImage.src = 'images/suv.png'; // Change the path accordingly
         updateMaxTravelers(4);
-}
+        addTourType("SUV");
+    }
   }
 
- 
-    // Function to change the image source dynamically
-    // function changeImage() {
-    //     var iconImage = document.getElementById('iconImage');
-    //     iconImage.src = 'images/van.png'; // Change the path accordingly
-    // }
-
-    // // Call the function to change the image (you can trigger this function based on user interactions, events, etc.)
-    // // For example, calling it after a delay of 3 seconds using setTimeout:
-    // setTimeout(changeImage, 1000); // Change the delay time (in milliseconds) as needed
-
     function updateMaxTravelers(maxNumber) {
-    // Update the content of the span element with the new max number
-    document.getElementById('maxNumber').innerText = maxNumber;
-}
+    document.getElementById('maxNumber').innerText = maxNumber;}
 
+    function addTourType(type){
+        localStorage.setItem('tourType', type);
+    }
+
+    // const retrievedTourType = localStorage.getItem('tourType');
+    // console.log(retrievedTourType);
 
 </script>
 </script>
