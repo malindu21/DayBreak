@@ -101,6 +101,36 @@
          border-color: #000;
     }
 }
+
+@media (min-height: 600px) and (max-height: 675) {
+    .header .header-content {
+        padding-top: 5rem;
+        padding-bottom: 2.125rem;
+        text-align: center;
+   }
+    .header .text-container {
+        margin-bottom: 3rem;
+   }
+    .white-box {
+        width: 200px;
+        height: 120px;
+        background-color: rgba(78, 78, 78, 0.8);
+        transition: transform .2s;
+        margin: 15px;
+        margin-top: -1%;
+       /* Adjust as needed */
+        display: inline-flex;
+        border-radius: 10px;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   }
+}
+
  @media (min-height: 676px) and (max-height: 699px) {
      .header .header-content {
          padding-top: 5rem;
@@ -271,7 +301,7 @@
 }
 
 
- @media (max-width: 500px) {
+ @media (max-width: 700px) {
      body,html {
          padding: 0 !important;
          margin: 0;
@@ -1658,6 +1688,7 @@
     /* Adjust the spacing between the buttons as needed */
      align-items: center;
     /* Vertically align buttons */
+    z-index: 5;
 }
  .circle-button {
      width: 30px;
@@ -1687,6 +1718,19 @@
      align-items: center;
     /* Vertically align buttons */
 }
+
+.button-container-bottom{
+    position: absolute;
+    margin-bottom: 20px;
+    margin-right: 18px;
+    right: 15px;
+   /* Adjust the distance from the right as needed */
+    display: flex;
+    gap: 5px;
+    align-items: center;
+   /* Vertically align buttons */
+}
+
 
 
  .button-container-left {
@@ -1750,11 +1794,18 @@
      cursor: pointer;
      transition: all 0.2s ease;
 }
- .tour_title:hover {
-    /* Hover state styles */
-     color: #068b33;
-    /* Change the color to a different one on hover */
+
+
+.tour_title:hover {
+    /* Apply hover state styles */
+    color: #068b33;
+    animation: flash;
+    animation-duration:2s; /* don't forget to set a duration! */
+   
 }
+
+
+
  .accordion span[aria-expanded="false"] .circle-numbering {
      background-color: transparent;
      color: #fff;
@@ -2625,34 +2676,8 @@
     }
     /* end of min-width width 1200px */
 }
- @media (min-height: 600px) and (max-height: 675px) {
-     .header .header-content {
-         padding-top: 10rem;
-         padding-bottom: 2.125rem;
-         text-align: center;
-    }
-     .header .text-container {
-         margin-bottom: 3rem;
-    }
-     .white-box {
-         width: 200px;
-         height: 120px;
-         background-color: rgba(78, 78, 78, 0.8);
-         transition: transform .2s;
-         margin: 15px;
-         margin-top: -1%;
-        /* Adjust as needed */
-         display: inline-flex;
-         border-radius: 10px;
-         align-items: center;
-         text-align: center;
-         padding: 5px;
-         border-radius: 15px;
-         backdrop-filter: blur(10px);
-         -webkit-backdrop-filter: blur(5px);
-         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-}
+
+
 /******************************/
 /* 22. Extra Animations */
 /******************************/
@@ -3002,6 +3027,8 @@
   .btn-group button:hover {
     background-color:  #ffffff; 
     border-color: #ffffff;
+     animation: headShake; /* referring directly to the animation's @keyframe declaration */
+  animation-duration:2s; /* don't forget to set a duration! */
     color: #000000; /* You can adjust the text color if needed */
   }
 
