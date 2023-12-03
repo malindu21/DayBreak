@@ -318,16 +318,22 @@
          padding: 0;
     }
      .white-box {
-         width: 140px;
-         height: 80px;
-         margin: 10px;
+         width: 110px;
+         height: 70px;
+         margin: 5px;
          padding: 3px;
     }
      .white-box h3, .white-box p {
-         font-size: 0.5rem!important;
+         font-size: 0.4rem!important;
     }
      .white-box p {
-         line-height: 15px!important;
+       
+         line-height: 10px!important;
+    }
+
+    .white-box h3{
+    margin-bottom: 3px !important; /* Adjust the value as needed */
+        line-height: 10px!important;
     }
      .white-box i {
          font-size: 0.8rem!important;
@@ -2003,7 +2009,7 @@
      width: 28px;
      position: fixed;
      bottom: 8%;
-     right: 2%;
+     right: 5%;
      align-items: center;
      height: 8px;
      opacity: 0;

@@ -23,9 +23,24 @@ h5 {
    
 }
 
-.tour-package-details{
+.tour-package-details-middle{
     height: 110px;
     width: 100%;
+}
+
+.tour-package-details{
+    height: auto;
+    width: 100%;
+    gap: 10px; /* Adjust the gap value as needed */
+}
+
+.tour-package-details > * {
+    margin-bottom: 10px; /* Adjust the margin value as needed */
+    margin-top: 10px; /* Adjust the margin value as needed */
+}
+
+.tour-package-details .text-small {
+    line-height: 1rem !important;
 }
 
 .tour-package-details-page{
