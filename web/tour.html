@@ -393,10 +393,11 @@
            <!-- end of row -->
            <div class="row">
             <div class="col-lg-12 p-small text-center copyright">
-                <div href="#popup-box" ><a>Privacy Policy</a></div>
-               <a href="#popup-box">Terms & Conditions</a>
-               <p class="p-small">© 2023 DayBreak | All rights Reserved </a></p>
-            </div>
+                <div> <a role="button" data-toggle="modal" data-target="#privacyPolicyModal">Privacy Policy</a></div>
+                <a role="button" data-toggle="modal" data-target="#termsConditionModal">Terms &
+                   Conditions</a>
+                <p class="p-small">© 2023 DayBreak | All rights Reserved </a></p>
+             </div>
             <!-- end of col -->
          </div>
            <!-- enf of row -->
@@ -420,7 +421,45 @@
         </div>
      </div>
 
-  
+   <!-- Modal -->
+   <div class="modal fade" id="termsConditionModal" tabindex="-1" aria-labelledby="termsConditionModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h1 class="modal-title fs-5" id="termsConditionModalLabel">Terms & Conditions</h1>
+               <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur quod facere nemo accusantium cum
+               quae corporis omnis illum obcaecati expedita praesentium dolorem vel ullam est consequuntur provident
+               voluptatibus, sunt voluptatum!
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h1 class="modal-title fs-5" id="privacyPolicyModalLabel">Privacy Policy</h1>
+               <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur quod facere nemo accusantium cum
+               quae corporis omnis illum obcaecati expedita praesentium dolorem vel ullam est consequuntur provident
+               voluptatibus, sunt voluptatum!
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
 
     	
     <!-- Scripts -->
