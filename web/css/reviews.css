@@ -66,10 +66,7 @@
   cursor: pointer;
 }
 
-.fade {
-  opacity: 0;
-  transition: 0.5s;
-}
+
 
 .blur-bg {
   padding: 1px 10px;
