@@ -1687,7 +1687,7 @@
      position: fixed;
      bottom: 20px;
     /* Adjust the distance from the bottom as needed */
-     left: -100px;
+     left: 30px;
     /* Adjust the distance from the right as needed */
      display: flex;
      gap: 5px;

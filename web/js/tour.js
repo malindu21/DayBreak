@@ -157,9 +157,6 @@ const package001 = {
 
 
          packageMeetAndPickUp : "Pickup included from anywhere in Melbourne within 10km radius. Enquire during your booking to confirm the Pickup location. We can also arrange pickup outside the 10km radius from Melbourne CBD at an additional service fee."
-
-
-    
   };
 
 
@@ -357,7 +354,7 @@ insertSectionsIntoContainer();
             packageName.appendChild(packageNameSection(package001.details.title));
             packageSubTitle.appendChild(packageSubTitleSection(package001.details.subTitle));
             packageDesc.appendChild(packageDescSection(package001.details.desc));
-            packageDuration.appendChild(packageDurationSection(package001.details.duration));
+           // packageDuration.appendChild(packageDurationSection(package001.details.duration));
         }
 
     }
@@ -382,25 +379,25 @@ insertSectionsIntoContainer();
     };
 
     // Populate the dropdown with options
-    var dropdown = document.getElementById("dropdown");
-    for (var category in data) {
-        var optgroup = document.createElement("optgroup");
-        optgroup.label = category;
-        data[category].forEach(function (item) {
-            var option = document.createElement("option");
-            option.value = item;
-            option.text = item;
-            optgroup.appendChild(option);
-        });
-        dropdown.appendChild(optgroup);
-    }
+    // var dropdown = document.getElementById("dropdown");
+    // for (var category in data) {
+    //     var optgroup = document.createElement("optgroup");
+    //     optgroup.label = category;
+    //     data[category].forEach(function (item) {
+    //         var option = document.createElement("option");
+    //         option.value = item;
+    //         option.text = item;
+    //         optgroup.appendChild(option);
+    //     });
+    //     dropdown.appendChild(optgroup);
+    // }
 
-    // Event listener for dropdown change
-    dropdown.addEventListener("change", function () {
-        var selectedOption = dropdown.value;
-        var infoDiv = document.getElementById("info");
-        infoDiv.textContent = selectedOption;
-    });
+    // // Event listener for dropdown change
+    // dropdown.addEventListener("change", function () {
+    //     var selectedOption = dropdown.value;
+    //     var infoDiv = document.getElementById("info");
+    //     infoDiv.textContent = selectedOption;
+    // });
     
 	
     function createSection(iconClass, title, description) {
