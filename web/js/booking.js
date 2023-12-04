@@ -15,6 +15,7 @@ let travellerDetails = [];
 let isTravellerDetailsSubmitted = false;
 
 const travellersEl = document.getElementById("travellers-list");
+const ticketType = localStorage.getItem('tourType');
 
 getAllPackages();
 
@@ -42,7 +43,7 @@ function getAllPackages() {
 // ============= TICKET TYPE & NO OF TRAVELLERS =================
 //const travellerDetailsBtn = document.getElementById("traveller-details-btn");
 //const noOfTravellersEle = document.getElementById("no-of-travellers");
-const ticketType = localStorage.getItem('tourType');
+
 
 // noOfTravellersEle.addEventListener("input", function (e) {
 //   if (
@@ -81,13 +82,13 @@ const ticketType = localStorage.getItem('tourType');
 //   "Please Select Ticket type first"
 // );
 
-if (ticketType == "suv") {
+if (ticketType == "SUV") {
   setMinMaxTravellers(1, 4);
   document.getElementById(
     "ticket-type-icon"
   ).innerHTML = `<i class="fa-solid fa-car"></i>`;
   document.getElementById("ticket-type-text").innerHTML = "SUV";
-} else if (ticketType == "van") {
+} else if (ticketType == "VAN") {
   setMinMaxTravellers(1, 7);
   document.getElementById(
     "ticket-type-icon"
