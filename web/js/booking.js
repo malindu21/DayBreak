@@ -42,7 +42,7 @@ function getAllPackages() {
 // ============= TICKET TYPE & NO OF TRAVELLERS =================
 //const travellerDetailsBtn = document.getElementById("traveller-details-btn");
 //const noOfTravellersEle = document.getElementById("no-of-travellers");
-const ticketType = "van";
+const ticketType = localStorage.getItem('tourType');
 
 // noOfTravellersEle.addEventListener("input", function (e) {
 //   if (
