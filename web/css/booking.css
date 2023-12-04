@@ -270,10 +270,15 @@ label {
   font-size: 18px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1100px) {
   .booking-form {
     width: 80%;
   }
+
+  .traveller-list{
+    margin-top: 10px !important;
+  }
+
 }
 @media only screen and (max-width: 1800px) {
   .booking-form {
