@@ -18,13 +18,11 @@
   background: #111;
 }
 .spinner {
-
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- background: #111;
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
 }
 .spinner > div {
   display: inline-block;
@@ -44,24 +42,28 @@
   animation-delay: -0.16s;
 }
 @-webkit-keyframes sk-bouncedelay {
-  0%, 80%, 100% {
-      -webkit-transform: scale(0);
- }
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
   40% {
-      -webkit-transform: scale(1.0);
- }
+    -webkit-transform: scale(1);
+  }
 }
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% {
-      -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-      transform: scale(0);
- }
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
   40% {
-      -webkit-transform: scale(1.0);
-      -ms-transform: scale(1.0);
-      transform: scale(1.0);
- }
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 .loader {
@@ -100,12 +102,12 @@
   transform: translateY(5px);
   margin: 0.2em;
 }
-.scroll-right-wrapper{
+.scroll-right-wrapper {
   background-color: #ffffff30;
   z-index: 9999 !important;
 }
 
-.scroll-right-btn{
+.scroll-right-btn {
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -202,7 +204,11 @@
   margin-bottom: 10px;
 }
 
-.add_traveller_details{
+.add_traveller_details {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   height: 150px;
   width: 250px;
   border-radius: 10px;
@@ -332,10 +338,9 @@ label {
     width: 80%;
   }
 
-  .traveller-list{
+  .traveller-list {
     margin-top: 10px !important;
   }
-
 }
 @media only screen and (max-width: 1800px) {
   .booking-form {
