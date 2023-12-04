@@ -17,6 +17,20 @@ let isTravellerDetailsSubmitted = false;
 const travellersEl = document.getElementById("travellers-list");
 const ticketType = localStorage.getItem('tourType');
 
+  /* Preloader */
+  $(window).on("load", function () {
+    var preloaderFadeOutTime = 500;
+
+    function hidePreloader() {
+      var preloader = $(".spinner-wrapper");
+      setTimeout(function () {
+        preloader.fadeOut(preloaderFadeOutTime);
+      }, 250);
+    }
+
+    hidePreloader();
+  });
+
 getAllPackages();
 
 function getAllPackages() {
@@ -40,47 +54,6 @@ function getAllPackages() {
     });
 }
 
-// ============= TICKET TYPE & NO OF TRAVELLERS =================
-//const travellerDetailsBtn = document.getElementById("traveller-details-btn");
-//const noOfTravellersEle = document.getElementById("no-of-travellers");
-
-
-// noOfTravellersEle.addEventListener("input", function (e) {
-//   if (
-//     e.target.value < minNoOfTravellers ||
-//     e.target.value > maxNoOfTravellers
-//   ) {
-//     noOfTravellersEle.value = 1;
-//   } else {
-//     travellerDetailsBtn.removeAttribute("disabled");
-//     noOfTravellers = Number(e.target.value);
-//     loadTravellersElements();
-//   }
-// });
-
-//const ticketTypeEle = document.getElementById("ticket_type");
-// noOfTravellersEle.setAttribute("readonly", "true");
-// noOfTravellersEle.setAttribute(
-//   "placeholder",
-//   "Please Select Ticket type first"
-// );
-// ticketTypeEle.addEventListener("change", function (e) {
-//   noOfTravellersEle.removeAttribute("readonly");
-//   if (e.target.value == "suv") {
-//     setMinMaxTravellers(1, 4);
-//   } else if (e.target.value == "van") {
-//     setMinMaxTravellers(1, 7);
-//   } else {
-//     noOfTravellersEle.setAttribute("readonly", "true");
-//   }
-//   document.getElementById("max-passengers").innerHTML = maxNoOfTravellers;
-// });
-
-// noOfTravellersEle.setAttribute("readonly", "true");
-// noOfTravellersEle.setAttribute(
-//   "placeholder",
-//   "Please Select Ticket type first"
-// );
 
 if (ticketType == "SUV") {
   setMinMaxTravellers(1, 4);
@@ -101,11 +74,7 @@ if (ticketType == "SUV") {
 function setMinMaxTravellers(minTravellers, maxTravellers) {
   minNoOfTravellers = minTravellers;
   maxNoOfTravellers = maxTravellers;
-  //noOfTravellersEle.removeAttribute("readonly");
-  // noOfTravellersEle.setAttribute(
-  //   "placeholder",
-  //   `Maximum ${maxTravellers} Travellers`
-  // );
+  
   document.querySelectorAll("#max-passengers").forEach((element) => {
    element.innerHTML = maxNoOfTravellers
   });
@@ -113,9 +82,6 @@ function setMinMaxTravellers(minTravellers, maxTravellers) {
 
 // ============= TRAVELLERS DETAILS MODAL =================
 
-// travellerDetailsBtn.addEventListener("click", function (event) {
-//   $("#travellerModal").modal("show");
-// });
 document.getElementById("scroll-right").addEventListener("click", function () {
   travellersEl.scrollLeft += 200;
 });
@@ -158,12 +124,6 @@ function loadTravellersElements() {
   </div>`;
     }
   }
-  // console.log(travellerDetails.length < maxNoOfTravellers);
-  // if (travellerDetails.length < maxNoOfTravellers) {
-  //   document.getElementById('add_traveller_btn').classList.remove('d-none');
-  // }else{
-  //   document.getElementById('add_traveller_btn').classList.add('d-none');
-  // }
 }
 
 function removeTraveller(i) {
@@ -191,22 +151,6 @@ function onAddTravellerDetails(name, age) {
     showToast("Maximum Travellers reached");
   }
 }
-
-// document
-//   .getElementById("travellers-form")
-//   .addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     travellerDetails = [];
-//     isTravellerDetailsSubmitted = true;
-//     let elementList = event.target;
-//     for (let index = 1; index < elementList.length - 2; index++) {
-//       travellerDetails.push({
-//         name: elementList[index].name,
-//         value: elementList[index].value,
-//       });
-//     }
-//     $("#travellerModal").modal("hide");
-//   });
 
 // ============= SEARCH LOCATIONS =================
 let sCoords = {
@@ -360,9 +304,9 @@ function showPopupWithDelay() {
 
 myButton.addEventListener("click", validateCheckout);
 
-closePopup.addEventListener("click", function () {
-  myPopup.classList.remove("show");
-});
+// closePopup.addEventListener("click", function () {
+//   myPopup.classList.remove("show");
+// });
 window.addEventListener("click", function (event) {
   if (event.target == myPopup) {
     myPopup.classList.remove("show");

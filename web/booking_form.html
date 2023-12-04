@@ -14,6 +14,16 @@
 </head>
 
 <body>
+      <!-- Preloader -->
+	<div class="spinner-wrapper">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- end of preloader -->
+
   <div class="main py-2" id="main-bg">
     <div class="booking-form blur-bg p-3">
       <div class="d-flex mb-4">
@@ -26,33 +36,6 @@
         <div class="h2">Checkout</div>
         <div class="text-light">It’s time for a Break</div>
         <div class="row my-3">
-          <!-- <div class="col-lg-4">
-            <div class="form-group">
-              <label for="package-type">Ticket Type</label>
-              <div class="input-group">
-                <span class="input-group-text" id="package-type-addon">
-                  <i class="fas fa-suitcase-rolling"></i>
-                </span>
-                <select class="form-control" id="ticket_type">
-                  <option value="" class="py-2">Click to Select a Ticket</option>
-                  <option value="suv">SUV</option>
-                  <option value="van">Van</option>
-                </select>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="col-lg-6">
-            <div class="form-group">
-              <label for="no-of-travellers">No of Travellers</label>
-              <div class="input-group">
-                <span class="input-group-text" id="no-of-travellers-addon">
-                  <i class="fa-solid fa-users"></i>
-                </span>
-                <input type="number" class="form-control" id="no-of-travellers" placeholder="No of travellers"
-                  aria-describedby="no-of-travellers-addon" />
-              </div>
-            </div>
-          </div> -->
           <div class="col-12">
             <div class="position-relative">
               <div class="row m-0 p-0 mb-2 align-items-center">
@@ -79,13 +62,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-lg-6 d-flex  align-items-center">
-            <button type="button" class="btn btn-lg btn-dark fs-6 mb-0 rounded-pill py-3" disabled
-              id="traveller-details-btn">
-              Click to Enter Traveller Details
-            </button>
-          </div> -->
           <div class="col-lg-6 col-md-12">
             <div class="location-wrapper">
               <div class="form-group">
@@ -211,7 +187,7 @@
   <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header bold">
-        <!-- <img src="..." class="rounded me-2" alt="..."> -->
+       
         <strong class="me-auto bold">Oops!</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
@@ -228,26 +204,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="modal fade" id="travellerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="travellerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <form class="modal-content" id="travellers-form">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="travellerModalLabel">Travellers Details</h1>
-          <button type="button" class="btn-close rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row" id="travellers-list">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="reset" class="btn btn-outline-danger rounded-pill">Reset</button>
-          <button type="submit" class="btn btn-dark rounded-pill">Submit</button>
-        </div>
-      </form>
-    </div>
-  </div> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
