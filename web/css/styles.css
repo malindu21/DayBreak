@@ -1696,6 +1696,20 @@
     /* Vertically align buttons */
     z-index: 5;
 }
+
+.circle-buttons-v2 {
+    position: absolute;
+    bottom: 20px;
+   /* Adjust the distance from the bottom as needed */
+    right: 30px;
+   /* Adjust the distance from the right as needed */
+    display: flex;
+    gap: 5px;
+   /* Adjust the spacing between the buttons as needed */
+    align-items: center;
+   /* Vertically align buttons */
+   z-index: 5;
+}
  .circle-button {
      width: 30px;
      height: 30px;
