@@ -16,8 +16,8 @@
             },
             {
                 "iconClass": "fas fa-clock fa-inverse",
-                "title": "Duration",
-                "description": "11 hours"
+                "title": "Duration - 11hrs",
+                "description": "11 hrs"
             },
             {
                 "iconClass": "fas fa-clock fa-inverse",
@@ -26,12 +26,12 @@
             },
             {
                 "iconClass": "fas fa-map-marker fa-inverse",
-                "title": "Pickup & Drop-off included",
+                "title": "Pickup & Drop-off",
                 "description": "Pickup included from anywhere in Melbourne within 10km radius"
             },
             {
                 "iconClass": "fas fa-users fa-inverse",
-                "title": "Smaller intimate group",
+                "title": "Small groups",
                 "description": "Private tour for your group of maximum 4 people"
             },
             {
