@@ -249,11 +249,18 @@ label {
 .quick-info .text {
   line-height: 0.9;
 }
+.quick-info-footer {
+  display: inline-flex;
+}
+
+.quick-info-footer .text {
+  line-height: 0.9;
+}
 
 .booking-form-footer-item {
   height: 70px;
   min-width: 250px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   font-size: 16px;
 }
 
@@ -346,6 +353,11 @@ label {
 @media only screen and (max-width: 1800px) {
   .booking-form {
     width: 90%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .booking-form-footer-item {
+    margin-bottom: 20px;
   }
 }
 

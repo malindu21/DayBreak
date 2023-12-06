@@ -285,7 +285,7 @@ function validateCheckout() {
   //   showToast("Please enter number of travellers to continue.");
   // }
   else if (!isTravellerDetailsSubmitted) {
-    showToast("Please submit all traveller's details to continue.");
+    showToast("Please submit at least 1 traveller’s details to continue");
   } else if (pachageCat === "") {
     showToast(
       "Address invalid please input your address correctly. Alternatively contact booking team for support"
