@@ -15,21 +15,21 @@ let travellerDetails = [];
 let isTravellerDetailsSubmitted = false;
 
 const travellersEl = document.getElementById("travellers-list");
-const ticketType = localStorage.getItem('tourType');
+const ticketType = localStorage.getItem("tourType");
 
-  /* Preloader */
-  $(window).on("load", function () {
-    var preloaderFadeOutTime = 500;
+/* Preloader */
+$(window).on("load", function () {
+  var preloaderFadeOutTime = 500;
 
-    function hidePreloader() {
-      var preloader = $(".spinner-wrapper");
-      setTimeout(function () {
-        preloader.fadeOut(preloaderFadeOutTime);
-      }, 250);
-    }
+  function hidePreloader() {
+    var preloader = $(".spinner-wrapper");
+    setTimeout(function () {
+      preloader.fadeOut(preloaderFadeOutTime);
+    }, 250);
+  }
 
-    hidePreloader();
-  });
+  hidePreloader();
+});
 
 getAllPackages();
 
@@ -54,7 +54,6 @@ function getAllPackages() {
     });
 }
 
-
 if (ticketType == "SUV") {
   setMinMaxTravellers(1, 4);
   document.getElementById(
@@ -74,9 +73,9 @@ if (ticketType == "SUV") {
 function setMinMaxTravellers(minTravellers, maxTravellers) {
   minNoOfTravellers = minTravellers;
   maxNoOfTravellers = maxTravellers;
-  
+
   document.querySelectorAll("#max-passengers").forEach((element) => {
-   element.innerHTML = maxNoOfTravellers
+    element.innerHTML = maxNoOfTravellers;
   });
 }
 
@@ -108,22 +107,37 @@ function loadTravellersElements() {
       travellersEl.innerHTML += `
     <div class="col-lg-3">
     <div class="d-flex align-items-center justify-content-between">
-      <h6>Traveller ${i+1}</h6>
+      <h6>Traveller ${i + 1}</h6>
       <i class="fa-solid fa-circle-xmark text-danger" onclick="removeTraveller(${i})"></i>
     </div>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
-      <input type="text" class="form-control" name="username${i}" placeholder="Full Name" aria-label="fullName"
+      <input type="text" oninput="onTypeTravellerName(${i})" value="${
+        travellerDetails[i].value.name
+      }" class="form-control" name="username${i}" id="username${i}" placeholder="Full Name" aria-label="fullName"
         aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon2"><i class="fas fa-birthday-cake"></i></span>
-      <input type="number" class="form-control" name="age${i}" placeholder="Age" aria-label="age"
+      <input type="number" oninput="onTypeTravellerAge(${i})" value="${
+        travellerDetails[i].value.age
+      }" class="form-control" name="age${i}" id="age${i}" placeholder="Age" aria-label="age"
         aria-describedby="basic-addon2">
     </div>
   </div>`;
     }
   }
+}
+
+function onTypeTravellerName(index) {
+  travellerDetails[index].value.name = document.getElementById(
+    `username${index}`
+  ).value;
+}
+function onTypeTravellerAge(index) {
+  travellerDetails[index].value.age = document.getElementById(
+    `age${index}`
+  ).value;
 }
 
 function removeTraveller(i) {
@@ -144,10 +158,14 @@ function onAddTravellerDetails(name, age) {
     travellerDetails.push({
       name: name,
       age: age,
+      value: {
+        name: "",
+        age: 0,
+      },
     });
     loadTravellersElements();
     showHideScrollBtn();
-  }else{
+  } else {
     showToast("Maximum Travellers reached");
   }
 }
@@ -277,14 +295,19 @@ flatpickr("input[type=datetime-local]", {
 });
 
 function validateCheckout() {
+  console.log(
+    travellerDetails.some(
+      (traveller) => traveller.value.name != "" && traveller.value.age != 0
+    )
+  );
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketType === "") {
     showToast("Please select your ticket type to continue.");
-  }
-  //  else if (noOfTravellersEle.value === "") {
-  //   showToast("Please enter number of travellers to continue.");
-  // }
-  else if (!isTravellerDetailsSubmitted) {
+  } else if (
+    !travellerDetails.some(
+      (traveller) => traveller.value.name != "" && traveller.value.age != 0
+    )
+  ) {
     showToast("Please submit at least 1 traveller’s details to continue");
   } else if (pachageCat === "") {
     showToast(
