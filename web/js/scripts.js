@@ -6,6 +6,8 @@
 
 function onclickPackage(packageId){
   window.location.href = "tour.html?packageId=" + packageId
+ 
+         localStorage.setItem('packageId', packageId);
 }
 
 (function ($) {

@@ -455,6 +455,12 @@ insertSectionsIntoContainer();
     // Apply different width for mobile devices
     if (mediaQuery.matches) {
         whiteBox.style.width = '90%';
+        // customColWider.style.width = '15%';
+        // customColNarrower.style.width = '85%';
+        // icon.style.fontSize = '10px';
+       
+        // title.style.fontSize = '10px';
+        // description.style.fontSize = '10px';
     } else {
         whiteBox.style.width = '45%';
     }
@@ -467,7 +473,7 @@ insertSectionsIntoContainer();
         div.className = "white-box-tours";
         div.style.width = "45%"; // Set the default width to 45%
     
-        div.innerHTML = `
+        div.innerHTML = ` 
         <div class="custom-col-narrower-about-activity">
             <h3>${iconClass}. ${title}</h3>
             <p>${description}</p>
@@ -523,7 +529,7 @@ insertSectionsIntoContainer();
         // Listen for changes in the media query
         mediaQuery.addListener((mq) => {
             if (mq.matches) {
-                div.style.width = "90%";
+                div.style.width = "45%%";
             } else {
                 div.style.width = "45%";
             }
@@ -543,7 +549,8 @@ insertSectionsIntoContainer();
            <div >
            <h3>${getTitle(title)}</h3>
            <ul>
-               ${items.map(item => `<li>${item}</li>`).join('')}
+                <p>  ${items.map(item => `<li>${item}</li>`).join('')}</p>
+             
            </ul>
          </div>
 
@@ -564,7 +571,7 @@ insertSectionsIntoContainer();
             if (mq.matches) {
                 div.style.width = "90%";
             } else {
-                div.style.width = "45%";
+                div.style.width = "90%";
             }
         });
     
@@ -622,7 +629,7 @@ insertSectionsIntoContainer();
           if (mq.matches) {
               div.style.width = "90%";
           } else {
-              div.style.width = "45%";
+              div.style.width = "90%";
           }
       });
   

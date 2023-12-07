@@ -28,11 +28,16 @@
     width: 100%;
     margin: 0 auto; /* This centers the container itself if it has a fixed width */
   }
+  @media (max-width: 768px) {
+    .footer-text-container h4.user-friendly-paragraph {
+      text-align: center !important;
+      margin-left: 0px;
+    }
+  }
   
-
   @media (max-height: 600px) {
     .white-box {
-        width: 200px;
+        width: 160px;
         height: 120px;
         background-color: rgba(78, 78, 78, 0.8);
         transition: transform .2s;
@@ -61,7 +66,7 @@
          margin-bottom: 3rem;
     }
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -112,7 +117,7 @@
         margin-bottom: 3rem;
    }
     .white-box {
-        width: 200px;
+        width: 160px;
         height: 120px;
         background-color: rgba(78, 78, 78, 0.8);
         transition: transform .2s;
@@ -141,7 +146,7 @@
          margin-bottom: 3rem;
     }
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -161,7 +166,7 @@
 }
  @media (min-height: 700px) and (max-height: 749px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -181,7 +186,7 @@
 }
  @media (min-height: 750px) and (max-height: 799px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -201,7 +206,7 @@
 }
  @media (min-height: 800px) and (max-height: 849px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -221,7 +226,7 @@
 }
  @media (min-height: 850px) and (max-height: 899px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -241,7 +246,7 @@
 }
  @media (min-height: 900px) and (max-height: 949px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -261,7 +266,7 @@
 }
  @media (min-height: 950px) and (max-height: 999px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -281,7 +286,7 @@
 }
  @media (min-height: 1000px) {
      .white-box {
-         width: 200px;
+         width: 160px;
          height: 120px;
          background-color: rgba(78, 78, 78, 0.8);
          transition: transform .2s;
@@ -347,6 +352,7 @@
          margin-left: 20px;
     }
 
+    
     .accordion .area-1{
         border-radius: 0px !important;
    }
@@ -664,15 +670,15 @@
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
  .white-box h3 {
-     font-size: 12px;
+     font-size: 10px;
      font-weight: bold;
      color: #ffff;
 }
  .white-box p {
-     font-size: 12px;
+     font-size: 10px;
      width: 80%;
      font-style: normal;
-     line-height: 20px;
+     line-height: 18px;
 }
  .white-box-about-activity {
      width: 90%;
@@ -1502,7 +1508,7 @@
         color: #f5f5f5;
    }
 }
- @media (max-width: 1500px) {
+ @media (max-width: 1200px) {
      .header {
         height: min-content;
     }
@@ -1727,6 +1733,20 @@
    /* Vertically align buttons */
    z-index: 5;
 }
+
+.book-buttons-v2 {
+    position: absolute;
+    bottom: 20px;
+   /* Adjust the distance from the bottom as needed */
+    right: 30px;
+   /* Adjust the distance from the right as needed */
+    display: flex;
+    gap: 5px;
+   /* Adjust the spacing between the buttons as needed */
+    align-items: center;
+   /* Vertically align buttons */
+   z-index: 5;
+}
  .circle-button {
      width: 30px;
      height: 30px;
@@ -1801,6 +1821,9 @@
      margin-top: auto;
      padding-top: 2rem;
      padding-bottom: 1.5rem;
+}
+.details-container{
+    margin-left: 2%;  
 }
  .accordion h2 {
      margin-bottom: 0;
@@ -2007,7 +2030,13 @@
      text-align: left !important;
      width: max-content;
      margin-left: 20px;
+     
 }
+
+.footer-text-container h4.user-friendly-paragraph {
+    text-align: left;
+    margin-left: 20px;
+  }
  .footer .text-container h4, .footer .text-container p {
      margin: 0;
     /* Remove default margin to ensure text starts from the left edge */
@@ -2179,6 +2208,12 @@
 /* 21. Media Queries */
 /*****************************/
 /* Min-width width 768px */
+@media (max-width: 768px) {
+    .area-2 {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
  @media (min-width: 768px) {
     /* General Styles */
      .p-heading {
