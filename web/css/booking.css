@@ -194,7 +194,7 @@
 }
 
 .booking-form {
-  min-height: 80vh;
+  height: fit-content;
   width: 70%;
   backdrop-filter: blur(20px) !important;
   color: #ffffff;
@@ -359,6 +359,9 @@ label {
   .booking-form-footer-item {
     margin-bottom: 20px;
   }
+}
+@media only screen and (max-width: 1400px), screen and (max-height: 900px) {
+
 }
 
 @media only screen and (max-width: 600px) {
