@@ -4,6 +4,10 @@
    Description: Day Break
 */
 
+function onclickPackage(packageId){
+  window.location.href = "tour.html?packageId=" + packageId
+}
+
 (function ($) {
   const sentences1 = [
     "Private day tours",
@@ -170,6 +174,8 @@
     // typeWriter(0, Box5, typewriterElementBox5, cursorElement1);
     // typeWriter(0, Box6, typewriterElementBox6, cursorElement1);
   }
+
+
 
   function typeWriter(
     sentenceIndex,
