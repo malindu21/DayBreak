@@ -108,7 +108,7 @@ function loadTravellersElements() {
     <div class="col-lg-3">
     <div class="d-flex align-items-center justify-content-between">
       <h6>Traveller ${i + 1}</h6>
-      <i class="fa-solid fa-circle-xmark text-danger" onclick="removeTraveller(${i})"></i>
+      <i class="fa-solid fa-circle-xmark text-danger" role="button" onclick="removeTraveller(${i})"></i>
     </div>
     <div class="input-group mb-2">
       <span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
