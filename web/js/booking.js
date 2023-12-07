@@ -294,12 +294,17 @@ flatpickr("input[type=datetime-local]", {
   minDate: "today",
 });
 
+function generateNamesString(){
+  let namesString = "";
+  travellerDetails.forEach(e=>{
+      namesString += e.value.name + ",";
+  })
+  return namesString.slice(0, -1);
+}
+
 function validateCheckout() {
-  console.log(
-    travellerDetails.some(
-      (traveller) => traveller.value.name != "" && traveller.value.age != 0
-    )
-  );
+  const namesString = generateNamesString(); 
+  
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketType === "") {
     showToast("Please select your ticket type to continue.");
