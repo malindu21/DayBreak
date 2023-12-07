@@ -302,6 +302,8 @@
 
 
  @media (max-width: 700px) {
+
+
      body,html {
          padding: 0 !important;
          margin: 0;
@@ -324,7 +326,7 @@
          padding: 3px;
     }
      .white-box h3, .white-box p {
-         font-size: 0.4rem!important;
+         font-size: 0.45rem!important;
     }
      .white-box p {
        
@@ -361,6 +363,23 @@
 #details{
     margin-top: 0px;
 }
+
+.footer .text-container.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Optional: Set a specific height if needed */
+}
+
+.footer .text-container.about h4 {
+    /* Additional styles for the h4 if needed */
+    text-align: center;
+   margin-left: 45px;
+}
+
+
+
 }
  body, p {
      color: #787976;
@@ -725,47 +744,46 @@
      text-align: start !important;
 }
 
-.dynamic-boxes-container-wrapper {
-    display: inline-table;
-    overflow-x: auto;
-    width: 100%;
-    box-sizing: border-box;
-}
+
 #dynamic-boxes-container {
     display: inline-table;
     overflow-x: auto;
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: auto;
 }
-
-
 
 
 #importantInfomation{
     display: inline-table;
-  overflow-x: auto;
-  width: 75%;
-  box-sizing: border-box; 
-}
- #itinerary{
-     display: inline-table;
      overflow-x: auto;
      width: 100%;
      box-sizing: border-box;
+     margin-bottom: auto;
+}
+
+ #itinerary{
+    display: inline-table;
+     overflow-x: auto;
+     width: 100%;
+     box-sizing: border-box;
+     margin-bottom: auto;
 }
 
 #cancellationPolicy{
     display: inline-table;
-    overflow-x: auto;
-    width: 75%;
-    box-sizing: border-box;
+     overflow-x: auto;
+     width: 100%;
+     box-sizing: border-box;
+     margin-bottom: auto;
 }
 
  #meetAndPickUp{
     display: inline-table;
     overflow-x: auto;
-    width: 75%;
+    width: 100%;
     box-sizing: border-box;
+    margin-bottom: auto;
 }
  .accordion-body {
      display: grid;
@@ -1680,7 +1698,6 @@
      backdrop-filter: blur(40px);
     /* Adjust the blur intensity here */
      -webkit-backdrop-filter: blur(40px);
-     overflow-x: auto;
 }
 
  .circle-buttons {
@@ -1781,6 +1798,7 @@
      max-width: 90%;
      margin-right: auto;
      margin-left: auto;
+     margin-top: auto;
      padding-top: 2rem;
      padding-bottom: 1.5rem;
 }
@@ -2234,9 +2252,12 @@
          max-width: 70%;
     }
      .item-divider {
-         border: none;
+      
         /* Remove any default border styles */
          border-top: 1px solid rgba(255, 255, 255, 0.3);
+         margin: 5px 0; /* Adjust the margin values to reduce space */
+  
+         height: 1px;
     }
     /* end of details 1 */
     /* Details 2 */

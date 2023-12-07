@@ -456,103 +456,123 @@ insertSectionsIntoContainer();
     if (mediaQuery.matches) {
         whiteBox.style.width = '90%';
     } else {
-        whiteBox.style.width = '40%';
+        whiteBox.style.width = '45%';
     }
     }
     
     
     
-function createIterity(iconClass, title, description, duration) {
-    const div = document.createElement("div");
-
-
-    // div.innerHTML = `
-    //     <div class="custom-col-narrower-about-activity">
-    //         <div class="circle">${iconClass}</div>
-    //         <h3>${title}</h3>
-    //         <p>${description}</p>
-    //         <h3>${duration}</h3>
-    //     </div>
-    // `;
+    function createIterity(iconClass, title, description, duration) {
+        const div = document.createElement("div");
+        div.className = "white-box-tours";
+        div.style.width = "45%"; // Set the default width to 45%
     
-
-    div.innerHTML = `
+        div.innerHTML = `
+        <div class="custom-col-narrower-about-activity">
+            <h3>${iconClass}. ${title}</h3>
+            <p>${description}</p>
+            <h3>${duration}</h3>
+        </div>
+        `;
     
-    <div class="comment-container">
-    <div class="chain chain-top"></div>
-    <div class="circle-tours">${iconClass}</div>
-
-    <div class="white-box-tours" style="width: 90vw; height: auto;" >  
-    <div class="comment">
-
-
-    <h3>${title}</h3>
-    <p>${description}</p>
-    <h3>${duration}</h3>
-    </div>
-
+        // Add media query for mobile devices
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
     
-    </div>
-    <div class="chain chain-bottom"></div>
-  </div>
-  
-    `;
-
-
-    return div;
-}
+        // Check if the media query matches
+        if (mediaQuery.matches) {
+            div.style.width = "90%"; // Set the width to 90% for mobile devices
+        }
+    
+        // Listen for changes in the media query
+        mediaQuery.addListener((mq) => {
+            if (mq.matches) {
+                div.style.width = "90%";
+            } else {
+                div.style.width = "45%";
+            }
+        });
+    
+        return div;
+    }
+    
 
 
     function meetAndPickUpSection(index,description) {
         const div = document.createElement("div");
       
-
+        div.className = "white-box-tours";
+        div.style.width = "45%"; // Set the default width to 45%
+    
         div.innerHTML = `
+           <div >
+         <ul>
+         <li><p>${description}</p</li>
+         </div>
 
-        <div class="comment-container">
-        <div class="chain chain-top"></div>
-        <div class="circle-tours">${index}</div>
-        <div class="white-box-tours" style="width: 90vw; height: auto;" >
-        <div class="comment">
-        
-        
- 
-        <p>${description}</p>
-  
-        </div>
-        </div>
-        <div class="chain chain-bottom"></div>
-      </div>
-      
-        `;
+
+`;
+    
+        // Add media query for mobile devices
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
+    
+        // Check if the media query matches
+        if (mediaQuery.matches) {
+            div.style.width = "90%"; // Set the width to 90% for mobile devices
+        }
+    
+        // Listen for changes in the media query
+        mediaQuery.addListener((mq) => {
+            if (mq.matches) {
+                div.style.width = "90%";
+            } else {
+                div.style.width = "45%";
+            }
+        });
     
         return div;
+    
     }
 
     function importantInfomationSection(title, items) {
         const div = document.createElement("div");
-        div.innerHTML = `
 
-        
-        
-            <div class="comment-container">
-            <div class="chain chain-top"></div>
-            <div class="circle-tours"></div>
-            <div class="white-box-tours" style="width: 90vw; height: auto;" >
-            <div class="comment">
-            
-            <h3>${getTitle(title)}</h3>
-            <ul>
-                ${items.map(item => `<li>${item}</li>`).join('')}
-            </ul>
-            </div>
-            </div>
-            <div class="chain chain-bottom"></div>
-          </div>
-          
-            `;
+        div.className = "white-box-tours";
+        div.style.width = "45%"; // Set the default width to 45%
+    
+        div.innerHTML = `
+           <div >
+           <h3>${getTitle(title)}</h3>
+           <ul>
+               ${items.map(item => `<li>${item}</li>`).join('')}
+           </ul>
+         </div>
+
+
+`;
+    
+
+              // Add media query for mobile devices
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
+    
+        // Check if the media query matches
+        if (mediaQuery.matches) {
+            div.style.width = "90%"; // Set the width to 90% for mobile devices
+        }
+    
+        // Listen for changes in the media query
+        mediaQuery.addListener((mq) => {
+            if (mq.matches) {
+                div.style.width = "90%";
+            } else {
+                div.style.width = "45%";
+            }
+        });
+    
         return div;
-    }
+                    return div;
+            
+                }
+    
     
     function getTitle(title) {
         switch (title) {
@@ -577,33 +597,43 @@ function createIterity(iconClass, title, description, duration) {
       
 
 
-        div.innerHTML = `
-
-        <div class="comment-container">
-        <div class="chain chain-top"></div>
-        <div class="circle-tours">${index}</div>
-        <div class="white-box-tours" style="width: 90vw; height: auto;" >
-        <div class="comment">
+                 div.className = "white-box-tours";
+                 div.style.width = "45%"; // Set the default width to 45%
+             
+       
+                 div.innerHTML = `
+                    <div >
+                  <ul>
+                  <li><p>${description}</p</li>
+                  </div>
         
-        
- 
-        <p>${description}</p>
-  
-        </div>
-        </div>
-        <div class="chain chain-bottom"></div>
-      </div>
       
         `;
+      // Add media query for mobile devices
+      const mediaQuery = window.matchMedia("(max-width: 767px)");
     
-        return div;
+      // Check if the media query matches
+      if (mediaQuery.matches) {
+          div.style.width = "90%"; // Set the width to 90% for mobile devices
+      }
+  
+      // Listen for changes in the media query
+      mediaQuery.addListener((mq) => {
+          if (mq.matches) {
+              div.style.width = "90%";
+          } else {
+              div.style.width = "45%";
+          }
+      });
+  
+      return div;
     }
 
     function packageNameSection(title) {
         const div = document.createElement("div");
         div.innerHTML = `
             <div >
-            <h2>${title}</h2>
+            <h2 >${title}</h2>
             </div>
         `;
         return div
@@ -622,8 +652,8 @@ function createIterity(iconClass, title, description, duration) {
     function packageDescSection(desc) {
         const div = document.createElement("div");
         div.innerHTML = `
-            <div >
-            <p>${desc}</p>
+        <div>
+            <p  style="font-size: 15px;">${desc}</p>
             </div>
         `;
         return div

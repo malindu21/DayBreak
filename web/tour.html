@@ -95,7 +95,7 @@
             <div class="accordion-container" id="accordionOne">
                 <div class="containerTourDesc">
                     <div class="left-div">
-                        <div id="packageName"></div>
+                        <div id="packageName" ></div>
              
                         <div id = "packageSubTitle"> </div>
                             <!-- Content for the left div goes here -->
@@ -118,12 +118,13 @@
 
                 </div> -->
 
-                <pre></pre>
+             
                 <hr class="item-divider">
 
                 <div id = "packageDesc"> </div>
                 <hr class="item-divider">
-                <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white">
+                <h4  style="font-size: 15px;"><b>Select Group size</b></h4>
+                <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white mt-1">
                  
                         <div class="row"  style="align-items: center;" >
                             <div class="column d-flex justify-content-center">
@@ -138,7 +139,7 @@
                                 <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center" style="width: 100%;">
                                     <div>
                                         <div id="maxTravelers" class="text-small fw-semibold text-start">
-                                            Max <span id="maxNumber">7</span> travelers
+                                            Max <span id="maxNumber">7</span> travellers
                                         </div>
                                         <div style="white-space: nowrap;">
                                             <span style="display: inline-block; font-size: large; font-weight: bold; padding-bottom: -10px; ">$880</span>
@@ -162,9 +163,10 @@
 
                 <hr class="item-divider">
 
-                  <h3><b>Highlights</b></h3>
+                  <h4  style="font-size: 15px;"><b>Highlights</b></h4>
+               
                     <div class="content">
-                      <ul>
+                      <ul style="font-size: 14px;">
                         <li>Drive through <b>Arthuur's Creek apple orchards</b></li>
                         <li><b>Kinglake</b> town exploration</li>
                         <li><b>Wirrawilla Rainforest walk</b></li>
@@ -179,9 +181,12 @@
        
             <!-- end of accordion -->
 
-            <div class="button-container">
-                <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
-            </div> <!-- end of button-container -->
+         <div class="button-container" style="position: absolute;
+         bottom: 20px;
+        /* Adjust the distance from the bottom as needed */
+         right: 30px;">
+        <a class="btn-solid-reg page-scroll" href="booking_form.html">Book Now</a>
+    </div>
         
             <pre></pre>
             <pre></pre>
@@ -262,25 +267,10 @@
             </span>
         </div>
         <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionOne">
-           
-          
-                   
+        <div class="accordion-container">
+            <div id="itinerary" ></div> 
+        </div>
                         
-                            
-    
-                      
-                          <div id="itinerary" ></div> 
-                       
-                   
-           
-
-            
-               
-                
-                 
-         
-           
-
 
         </div>
     </div> <!-- end of item -->
@@ -309,9 +299,11 @@
             </span>
         </div>
         <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionOne">
-        
-            <div id="importantInfomation"></div> 
+            <div class="accordion-container">
+                <div id="importantInfomation"></div> 
 
+            </div>
+           
         </div>
     </div> <!-- end of item -->
     <hr class="item-divider">
@@ -341,7 +333,7 @@
         <div class="container" >
            <div class="row">
               <div class="col-md-6">
-                 <div class="text-container about">
+                 <div class="text-container about" >
                     <h4 class="user-friendly-paragraph">Travel, Explore, Repeat!</h4>
                     <p class="white"></p>
                  </div>
