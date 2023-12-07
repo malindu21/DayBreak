@@ -110,14 +110,14 @@ function loadTravellersElements() {
       <h6>Traveller ${i + 1}</h6>
       <i class="fa-solid fa-circle-xmark text-danger" onclick="removeTraveller(${i})"></i>
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-2">
       <span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
       <input type="text" oninput="onTypeTravellerName(${i})" value="${
         travellerDetails[i].value.name
       }" class="form-control" name="username${i}" id="username${i}" placeholder="Full Name" aria-label="fullName"
         aria-describedby="basic-addon1">
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group">
       <span class="input-group-text" id="basic-addon2"><i class="fas fa-birthday-cake"></i></span>
       <input type="number" oninput="onTypeTravellerAge(${i})" value="${
         travellerDetails[i].value.age

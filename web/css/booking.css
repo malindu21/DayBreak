@@ -209,7 +209,7 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
-  height: 150px;
+  height: 160px;
   width: 250px;
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -361,7 +361,9 @@ label {
   }
 }
 @media only screen and (max-width: 1400px), screen and (max-height: 900px) {
-
+  .booking-form {
+    width: 98%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
