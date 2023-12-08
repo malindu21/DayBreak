@@ -376,7 +376,7 @@ function addTicketWidget(ref) {
   var widgetContainer = document.getElementById("widget-container");
   var scriptElement = document.createElement("script");
   var url =
-    "https://www.tickettailor.com/all-tickets/malindu/?ref=" +
+    "https://www.tickettailor.com/all-tickets/daybreak/?ref=" +
     selectedDate +
     "&srch=" +
     ref;
@@ -409,7 +409,7 @@ document
 
 function myFunction() {
   console.log("Function executed after 2 seconds");
-  addTicketWidget(pachageCat);
+  addTicketWidget(ticketType);
 
   // Add your code here
   document.getElementById("loader").style.display = "none";
