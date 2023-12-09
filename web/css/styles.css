@@ -360,6 +360,7 @@
    .accordion .area-2{
     border-radius: 0px !important;
     overflow: hidden; 
+    display: none !important;
 }
 
 .accordion{
@@ -752,7 +753,7 @@
 #dynamic-boxes-container {
     display: inline-table;
     overflow-x: auto;
-    width: 100%;
+    width: 70%;
     box-sizing: border-box;
     margin-bottom: auto;
 }
@@ -761,7 +762,7 @@
 #importantInfomation{
     display: inline-table;
      overflow-x: auto;
-     width: 100%;
+     width: 70%;
      box-sizing: border-box;
      margin-bottom: auto;
 }
@@ -769,7 +770,7 @@
  #itinerary{
     display: inline-table;
      overflow-x: auto;
-     width: 100%;
+     width: 70%;
      box-sizing: border-box;
      margin-bottom: auto;
 }
@@ -777,7 +778,7 @@
 #cancellationPolicy{
     display: inline-table;
      overflow-x: auto;
-     width: 100%;
+     width: 70%;
      box-sizing: border-box;
      margin-bottom: auto;
 }
@@ -785,7 +786,7 @@
  #meetAndPickUp{
     display: inline-table;
     overflow-x: auto;
-    width: 100%;
+    width: 70%;
     box-sizing: border-box;
     margin-bottom: auto;
 }
@@ -1416,8 +1417,7 @@
      .accordion {
          border-radius: 20px;
          background-color: rgba(255, 255, 255, 0.09);
-         backdrop-filter: blur(10px);
-         -webkit-backdrop-filter: blur(5px);
+     
     }
     /* end of general styles */
 }
@@ -1537,9 +1537,7 @@
         width: 75%;
         margin: 0 auto; /* This centers the container itself if it has a fixed width */
       }
-     .accordion{
-         margin-top: 3rem;
-    }
+   
      .accordion .area-1{
          border-radius: 10px;
     }
@@ -1698,10 +1696,16 @@
  .area-1.fade-out {
      opacity: 0;
 }
- .accordion .area-2 {
-     backdrop-filter: blur(40px);
-    /* Adjust the blur intensity here */
-     -webkit-backdrop-filter: blur(40px);
+
+.accordion {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.area-plus {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    background: url('../images/into_the_forest/into_the_forest_1.jpg') center/cover;
 }
 
  .circle-buttons {
@@ -2210,6 +2214,7 @@
     .area-2 {
       font-size: 14px;
       line-height: 1.4;
+      display: none !important;
     }
   }
  @media (min-width: 768px) {
@@ -2450,14 +2455,47 @@
     /* end of services */
     /* Details 1 */
      .accordion {
-         background: url('../images/into_the_forest/into_the_forest_1.jpg') center/cover;
+
          border-radius: 20px;
          height: 90vh;
-         backdrop-filter: blur(40px);
-        /* Adjust the blur intensity here */
-         -webkit-backdrop-filter: blur(40px);
          background-color: rgba(255, 255, 255, 0.09);
     }
+
+    
+
+
+
+.fixed
+{
+  position: fixed;
+  z-index: 2;
+
+  left: 0;
+  color: white;
+
+  
+  text-align: center;
+
+}
+
+.fcontainer
+{
+    
+
+}
+
+.inside-fcontainer
+{
+    
+  width: 34.7%;
+  top: 5px;
+  z-index: 3;
+  left: 65%;
+  height: 90vh;
+ 
+ 
+}
+
      .accordion .area-1 {
          width: 65%;
          height: 100%;
@@ -2468,11 +2506,24 @@
      .accordion .area-2 {
          width: 35%;
          height: 100%;
-         display: inline-block;
+        display: none !important;
          vertical-align: top;
          border-top-right-radius: 20px;
          border-bottom-right-radius: 20px;
          background-color: rgba(255, 255, 255, 0.09);
+    
+         float: right;
+  
+      
+    }
+  .area-plus{
+        height: 100%;
+  
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        backdrop-filter: blur(40px) !important;
+        -webkit-backdrop-filter: blur(40px) !important;
+   
     }
      .accordion-container {
          max-width: 88%;

@@ -51,91 +51,80 @@
             <div class="bounce3"></div>
         </div>
     </div>
-    <!-- end of preloader -->
-    
-
-    <!-- Navbar -->
-
-    <!-- end of navbar -->
-
-
-    <!-- Header -->
-
-                    
+    <!-- end of preloader -->                
            
-  
-    <!-- Details 1 -->
-	<div id="details" class="accordion">
-		<div class="area-1">
-            <div class="button-container-left">
-                <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
-                    <i class="fa-solid fa-arrow-left me-2"></i>
-                    <span>Go Back</span>
-                  </a>    
-            </div>
-            <div class="button-container-right">
-              
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
-                    <i class="fa-solid fa-share me-2"></i>
-                  
-                    <span>Share</span>
-                  </a>
-                <!-- //<button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button> -->  
-            </div> 
-            <div class="circle-buttons-v2">
-                <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-left"></i></button>
-                <button onclick=changeBackground() class="circle-button" aria-label="Next Button"><i class="fas fa-arrow-right"></i></button>
-            </div>
-            
-		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
-        
-           
+ <!-- Details Section -->
+<div id="details" class="accordion">
+    <div class="area-1">
+        <!-- Left Button Container -->
+        <div class="button-container-left">
+            <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
+                <i class="fa-solid fa-arrow-left me-2"></i>
+                <span>Go Back</span>
+            </a>
+        </div>
 
-            <!-- Accordion -->
+        <!-- Right Button Container -->
+        <div class="button-container-right">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
+                <i class="fa-solid fa-share me-2"></i>
+                <span>Share</span>
+            </a>
+            <!-- <button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button> -->
+        </div>
 
-            <div class="accordion-container" id="accordionOne">
-                <div class="containerTourDesc">
-                    <div class="left-div">
-                        <div id="packageName" ></div>
-             
-                        <div id = "packageSubTitle"> </div>
-                            <!-- Content for the left div goes here -->
-                     
-                        <!-- Content for the left div goes here -->
+        <!-- Circle Buttons Container -->
+        <div class="circle-buttons-v2">
+            <button onclick="changeBackground()" class="circle-button" aria-label="Next Button">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button onclick="changeBackground()" class="circle-button" aria-label="Next Button">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div><!-- End of Details Section -->
+
+      
+
+
+
+
+<div class="fcontainer">
+    <div class="fixed inside-fcontainer">
+        <div class="accordion">
+            <div class="area-plus">
+                <!-- Accordion -->
+                <div class="accordion-container" id="accordionOne">
+                    <div class="containerTourDesc">
+                        <div class="left-div">
+                            <div id="packageName"></div>
+                            <div id="packageSubTitle"></div>
+                        </div>
+                        <div class="right-div">
+                            <div class="d-flex align-items-center justify-content-center" style="width: 75px; height: 75px;">
+                                <i class="fas fa-tree fa-inverse fa-2x"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="right-div">
-                        <!-- Content for the right div goes here -->
-                        <div class="d-flex align-items-center justify-content-center"
-                        style="width: 75px; height: 75px;">
-
-                        <i class="fas fa-tree fa-inverse fa-2x"></i>
-
-                    </div>
-                    </div>
-                </div>
-
-                <!-- <div class="white-box-time" style="float: right">
-                    <div id = "packageDuration"> </div>
-
-                </div> -->
-
-             
-                <hr class="item-divider">
-
-                <div id = "packageDesc"> </div>
-                <hr class="item-divider">
-                <h4  style="font-size: 15px;"><b>Select Group size</b></h4>
-                <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white mt-1">
-                 
-                        <div class="row"  style="align-items: center;" >
+                    <hr class="item-divider">
+                    <div id="packageDesc" style="text-align: left;"></div>
+                    <hr class="item-divider">
+                    <h4 style="font-size: 15px; text-align: left;"><b>Select Group size</b></h4>
+                    <div class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white mt-1">
+                        <div class="row" style="align-items: center;">
                             <div class="column d-flex justify-content-center">
-                                
                                 <div class="btn-group" role="group" aria-label="Button group" style="justify-content: center;">
-                                    <button type="button" class="btn btn-primary active" onclick="selectButton(this)"> <img class="tourIcon" src="images/van.png" alt="Icon" style="margin-left:auto; width: 30px; height: 30px;"> <div>Van</div></button>
-                                    <button type="button" class="btn btn-primary" onclick="selectButton(this)">  <img class="tourIcon" src="images/suv.png" alt="Icon" style="margin-left:auto; width: 30px; height: 30px;"> <div>Suv</div></button>
+                                    <button type="button" class="btn btn-primary active" onclick="selectButton(this)">
+                                        <img class="tourIcon" src="images/van.png" alt="Icon" style="margin-left:auto; width: 30px; height: 30px;">
+                                        <div>Van</div>
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="selectButton(this)">
+                                        <img class="tourIcon" src="images/suv.png" alt="Icon" style="margin-left:auto; width: 30px; height: 30px;">
+                                        <div>Suv</div>
+                                    </button>
                                 </div>
                             </div>
-                            
                             <div class="column">
                                 <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center" style="width: 100%;">
                                     <div>
@@ -144,82 +133,47 @@
                                         </div>
                                         <div style="white-space: nowrap;">
                                             <span style="display: inline-block; font-size: large; font-weight: bold; padding-bottom: -10px; ">$880</span>
-                                            <span style="display: inline-block; font-size: x-small; "> ( per person )</span>
+                                            <span style="display: inline-block; font-size: x-small; ">( per person )</span>
                                         </div>
-                                        
                                     </div>
-                            
                                     <div id="iconContainer" class="d-flex align-items-center justify-content-end" style="width: 75px; height: 75px;">
-
                                         <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon" style="width: 70%; height: 70%; float: right; margin: auto;">
                                     </div>
                                 </div>
                             </div>
-                            
-                            
                         </div>
-                          
-                   
-                </div>
-
-                <hr class="item-divider">
-
-                  <h4  style="font-size: 15px;"><b>Highlights</b></h4>
-               
-                    <div class="content">
-                      <ul style="font-size: 14px;">
-                        <li><p>Drive through <b>Arthuur's Creek apple orchards</b></p></li>
-                        <li><b>Kinglake</b> town exploration</li>
-                        <li><b>Wirrawilla Rainforest walk</b></li>
-                        <li>Scenic journey through <b>Black Spur</b> Drive</li>
-                        <li><b>Redwood Forest</b> walk</li>
-                        <li><b>Warburton</b> town exploration</li>
-                        <li><b>Steavenson Falls</b></li>
-                        <li><b>Marysville</b> town exploration</li>
-                        <li><b>Keppel Lookout</b></li>
-                      </ul>
                     </div>
-       
-            <!-- end of accordion -->
-                <div class="book-buttons-v2">
-                    <div class="button-container">
-                        <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
-                    </div> <!-- end of button-container -->
-        
-                </div>
-          
-        
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-		</div> <!-- end of area-2 -->
-
-        
-
-   
-              
-            
-
- 
-    <!-- end of description -->
-
-</div> <!-- end of col -->
-
-
-</div> <!-- end of row -->
-
-
-
-
-</div> <!-- end of row -->
+                    <hr class="item-divider">
+                    <h4 style="font-size: 15px;  text-align: left;"><b>Highlights</b></h4>
+                    <div class="content">
+                        <ul style="font-size: 14px;">
+                            <li><p>Drive through <b>Arthuur's Creek apple orchards</b></p></li>
+                            <li><b>Kinglake</b> town exploration</li>
+                            <li><b>Wirrawilla Rainforest walk</b></li>
+                            <li>Scenic journey through <b>Black Spur</b> Drive</li>
+                            <li><b>Redwood Forest</b> walk</li>
+                            <li><b>Warburton</b> town exploration</li>
+                            <li><b>Steavenson Falls</b></li>
+                            <li><b>Marysville</b> town exploration</li>
+                            <li><b>Keppel Lookout</b></li>
+                        </ul>
+                    </div>
+                    <!-- end of accordion -->
+                    <div class="book-buttons-v2">
+                        <div class="button-container">
+                            <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book Now</a>
+                        </div> <!-- end of button-container -->
+                    </div>
+                </div> <!-- end of accordion-container -->
+            </div> <!-- end of area-plus -->
+        </div> <!-- end of accordion -->
+    </div> <!-- end of fixed inside-fcontainer -->
+</div> <!-- end of fcontainer -->
 
 
 
 
 
-
-
-<!-- end of header -->
 
   
 
@@ -230,111 +184,107 @@
         <div class="chevron"></div>
     </div>
 
-   
-<div id="howToBook"  >
+
 
    
-    <pre></pre>
-
+    <div id="howToBook">
+        <pre></pre>
     
-    <div class="item">
-        <div id="headingOne">
-            <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                <span class="circle-numbering"></span><span class="accordion-title">  <h2 class="tour_title">+ About this activity </h2></span>
-            </span>
-        </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne" >
-           
-            <pre></pre>
-            <div id="dynamic-boxes-container"></div>
-<!-- Your dynamically created sections will be appended here -->
-              
-<pre></pre>
-                
-             
-            
-               
-         
-             
-           
-        </div>
-    </div> <!-- end of item -->
-
-
-    <hr class="item-divider">
-    <div class="item">
-        <div id="headingTwo">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">
-                <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Itinerary & What to expect</h2></span>
-            </span>
-        </div>
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionOne">
-        <div class="details-container">
-            <pre></pre>
-            <div id="itinerary" ></div> 
-            <pre></pre>
-        </div>
-                        
-
-        </div>
-    </div> <!-- end of item -->
-
-
-    <hr class="item-divider">
-    <div class="item">
-        <div id="headingThree">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" role="button">
-                <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Meeting & Pickup</h2></span>
-            </span>
-        </div>
-        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionOne">
-            <pre></pre>
-            <div id="meetAndPickUp"></div>   
-            <pre></pre>
-        </div>
-    </div> <!-- end of item -->
-
-    <hr class="item-divider">
-
-
-
-    <div class="item">
-        <div id="headingFour">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" role="button">
-                <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Important information</h2> </span>
-            </span>
-        </div>
-        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionOne">
-            <div class="details-container">
+        <div class="item">
+            <div id="headingOne">
+                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                    <span class="circle-numbering"></span><span class="accordion-title">
+                        <h2 class="tour_title">+ About this activity </h2>
+                    </span>
+                </span>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
                 <pre></pre>
-                <div id="importantInfomation"></div> 
+                <div id="dynamic-boxes-container"></div>
+                <!-- Your dynamically created sections will be appended here -->
                 <pre></pre>
             </div>
-           
-        </div>
-    </div> <!-- end of item -->
-    <hr class="item-divider">
-
-    <div class="item">
-        <div id="headingFive">
-            <span class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" role="button">
-                <span class="circle-numbering"></span><span class="accordion-title"><h2 class="tour_title">+ Cancellation Policy</h2> </span>
-            </span>
-        </div>
-        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionOne">
-            <pre></pre>
-                <div id="cancellationPolicy" ></div> 
-                <pre></pre>
-        </div>
-    </div> <!-- end of item -->
-
-    <hr class="item-divider">
-
+        </div> <!-- end of item -->
     
-    <pre></pre>
-    <pre></pre> 
-    <pre></pre>
-</div> <!-- end of accordion-container -->
+        <hr class="item-divider">
+    
+        <div class="item">
+            <div id="headingTwo">
+                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">
+                    <span class="circle-numbering"></span><span class="accordion-title">
+                        <h2 class="tour_title">+ Itinerary & What to expect</h2>
+                    </span>
+                </span>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionOne">
+                <div class="details-container">
+                    <pre></pre>
+                    <div id="itinerary"></div>
+                    <pre></pre>
+                </div>
+            </div>
+        </div> <!-- end of item -->
+    
+        <hr class="item-divider">
+    
+        <div class="item">
+            <div id="headingThree">
+                <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" role="button">
+                    <span class="circle-numbering"></span><span class="accordion-title">
+                        <h2 class="tour_title">+ Meeting & Pickup</h2>
+                    </span>
+                </span>
+            </div>
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionOne">
+                <pre></pre>
+                <div id="meetAndPickUp"></div>
+                <pre></pre>
+            </div>
+        </div> <!-- end of item -->
+    
+        <hr class="item-divider">
+    
+        <div class="item">
+            <div id="headingFour">
+                <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" role="button">
+                    <span class="circle-numbering"></span><span class="accordion-title">
+                        <h2 class="tour_title">+ Important information</h2>
+                    </span>
+                </span>
+            </div>
+            <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionOne">
+                <div class="details-container">
+                    <pre></pre>
+                    <div id="importantInfomation"></div>
+                    <pre></pre>
+                </div>
+            </div>
+        </div> <!-- end of item -->
+    
+        <hr class="item-divider">
+    
+        <div class="item">
+            <div id="headingFive">
+                <span class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" role="button">
+                    <span class="circle-numbering"></span><span class="accordion-title">
+                        <h2 class="tour_title">+ Cancellation Policy</h2>
+                    </span>
+                </span>
+            </div>
+            <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionOne">
+                <pre></pre>
+                <div id="cancellationPolicy"></div>
+                <pre></pre>
+            </div>
+        </div> <!-- end of item -->
+    
+        <hr class="item-divider">
+    
+        <pre></pre>
+        <pre></pre>
+        <pre></pre>
+    </div> <!-- end of accordion-container -->
+    
      <!-- Footer -->
      <div class="footer" style="margin:0px 0px;">
         <div class="container" >

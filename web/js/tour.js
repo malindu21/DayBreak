@@ -309,6 +309,7 @@ const package001 = {
     
 const area1 = document.querySelector('.accordion');
 const area2 = document.querySelector('.area-1');
+const areaPlus = document.querySelector('.area-plus');
 const backgroundImageUrls = package001.details.backgroundImageUrls;
 let currentIndex = 0;
 let intervalId;
@@ -681,17 +682,23 @@ insertSectionsIntoContainer();
     function changeBackground() {
         currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
     
-        // Set a smooth transition for background-image
-        area1.style.transition = 'background-image 0.5s';
+        // // Set a smooth transition for background-image
+        // area1.style.transition = 'background-image 0.5s';
     
-        // Crossfade effect
-        area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+        // // Crossfade effect
+        // area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
-         // Set a smooth transition for background-image
+        //  // Set a smooth transition for background-image
          area2.style.transition = 'background-image 0.5s';
     
          // Crossfade effect
          area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+    
+
+         areaPlus.style.transition = 'background-image 0.5s';
+    
+         // Crossfade effect
+         areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
     
         resetInterval();
     }
