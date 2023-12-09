@@ -468,39 +468,37 @@ insertSectionsIntoContainer();
     }
     
     
-    
-    function createIterity(iconClass, title, description, duration) {
-        const div = document.createElement("div");
-        div.className = "white-box-tours";
-        div.style.width = "45%"; // Set the default width to 45%
-    
-        div.innerHTML = ` 
-        <div class="custom-col-narrower-about-activity">
-            <h3>${iconClass}. ${title}</h3>
+     function createIterity(iconClass, title, description, duration) {
+                const div = document.createElement("div");
+                div.className = "white-box-tours";
+                div.style.width = "100%"; // Set the default width to 45%
+             
+        
+            div.innerHTML = `
+             
+             
+            <div class="comment-container">
+            <div class="chain chain-top"></div>
+            <div class="circle-tours">${iconClass}</div>
+        
+          <div class="white-box-tours" style="width: 60vw; height: auto;" >  
+            <div class="comment">
+        
+        
+            <h3>${title}</h3>
             <p>${description}</p>
             <h3>${duration}</h3>
-        </div>
-        `;
-    
-        // Add media query for mobile devices
-        const mediaQuery = window.matchMedia("(max-width: 767px)");
-    
-        // Check if the media query matches
-        if (mediaQuery.matches) {
-            div.style.width = "90%"; // Set the width to 90% for mobile devices
-        }
-    
-        // Listen for changes in the media query
-        mediaQuery.addListener((mq) => {
-            if (mq.matches) {
-                div.style.width = "90%";
-            } else {
-                div.style.width = "45%";
+
+            </div>
+            <div class="chain chain-bottom"></div>
+          </div>
+        
+            </div>`;
+        
+             
+                return div;
             }
-        });
-    
-        return div;
-    }
+        
     
 
 

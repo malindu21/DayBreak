@@ -770,7 +770,7 @@
  #itinerary{
     display: inline-table;
      overflow-x: auto;
-     width: 70%;
+     width: 100%;
      box-sizing: border-box;
      margin-bottom: auto;
 }
@@ -3077,7 +3077,7 @@
 }
 
 .chain-bottom {
-  top: 30%;
+  top: 45%;
 }
 
 
