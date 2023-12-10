@@ -787,15 +787,16 @@ function scrollToBottom() {
 
 
 function storeScroll() {
-  if(window.screenY > 700){
+  if(window.scrollY > 700){
     areaPlus.style.borderRadius = "30px";
+    document.getElementById('fixed-fcontainer').style.top = "40px";
+  }else{
+    areaPlus.style.borderRadius = null;
+    document.getElementById('fixed-fcontainer').style.top = null;
   }
   if(window.scrollY > 4080){
       document.getElementById('fixed-fcontainer').style.top = "-180px";
-  }else {
-    document.getElementById('fixed-fcontainer').style.top = "5px";
   }
-  console.log(document.documentElement.dataset.scroll);
 }
 
 document.addEventListener("scroll", storeScroll);
