@@ -1748,12 +1748,16 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .area-plus {
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+
   background: url("../images/into_the_forest/into_the_forest_1.jpg")
     center/cover;
 }
 
+.area-plus-wrapper{
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  height: 100%;
+}
 .circle-buttons {
   position: fixed;
   bottom: 20px;

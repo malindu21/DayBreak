@@ -98,91 +98,96 @@
         <div class="fixed inside-fcontainer" id="fixed-fcontainer">
             <div class="accordion">
                 <div class="area-plus">
-                    <!-- Accordion -->
-                    <div class="accordion-container" id="accordionOne">
-                        <div class="containerTourDesc">
-                            <div class="left-div">
-                                <div id="packageName"></div>
-                                <div id="packageSubTitle"></div>
-                            </div>
-                            <div class="right-div">
-                                <div class="d-flex align-items-center justify-content-center"
-                                    style="width: 75px; height: 75px;">
-                                    <i class="fas fa-tree fa-inverse fa-2x"></i>
+                    <div class="area-plus-wrapper">
+                        <!-- Accordion -->
+                        <div class="accordion-container" id="accordionOne">
+                            <div class="containerTourDesc">
+                                <div class="left-div">
+                                    <div id="packageName"></div>
+                                    <div id="packageSubTitle"></div>
                                 </div>
-                            </div>
-                        </div>
-                        <hr class="item-divider">
-                        <div id="packageDesc" style="text-align: left;"></div>
-                        <hr class="item-divider">
-                        <h4 style="font-size: 15px; text-align: left;"><b>Select Group size</b></h4>
-                        <div
-                            class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white mt-1">
-                            <div class="row" style="align-items: center;">
-                                <div class="column d-flex justify-content-center">
-                                    <div class="btn-group" role="group" aria-label="Button group"
-                                        style="justify-content: center;">
-                                        <button type="button" class="btn btn-primary active"
-                                            onclick="selectButton(this)">
-                                            <img class="tourIcon" src="images/van.png" alt="Icon"
-                                                style="margin-left:auto; width: 30px; height: 30px;">
-                                            <div>Van</div>
-                                        </button>
-                                        <button type="button" class="btn btn-primary" onclick="selectButton(this)">
-                                            <img class="tourIcon" src="images/suv.png" alt="Icon"
-                                                style="margin-left:auto; width: 30px; height: 30px;">
-                                            <div>Suv</div>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center"
-                                        style="width: 100%;">
-                                        <div>
-                                            <div id="maxTravelers" class="text-small fw-semibold text-start">
-                                                Max <span id="maxNumber">7</span> travellers
-                                            </div>
-                                            <div style="white-space: nowrap;">
-                                                <span
-                                                    style="display: inline-block; font-size: large; font-weight: bold; padding-bottom: -10px; ">$880</span>
-                                                <span style="display: inline-block; font-size: x-small; ">( per person
-                                                    )</span>
-                                            </div>
-                                        </div>
-                                        <div id="iconContainer" class="d-flex align-items-center justify-content-end"
-                                            style="width: 75px; height: 75px;">
-                                            <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon"
-                                                style="width: 70%; height: 70%; float: right; margin: auto;">
-                                        </div>
+                                <div class="right-div">
+                                    <div class="d-flex align-items-center justify-content-center"
+                                        style="width: 75px; height: 75px;">
+                                        <i class="fas fa-tree fa-inverse fa-2x"></i>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr class="item-divider">
-                        <h4 style="font-size: 15px;  text-align: left;"><b>Highlights</b></h4>
-                        <div class="content">
-                            <ul style="font-size: 14px;">
-                                <li>
-                                    <p>Drive through <b>Arthuur's Creek apple orchards</b></p>
-                                </li>
-                                <li><b>Kinglake</b> town exploration</li>
-                                <li><b>Wirrawilla Rainforest walk</b></li>
-                                <li>Scenic journey through <b>Black Spur</b> Drive</li>
-                                <li><b>Redwood Forest</b> walk</li>
-                                <li><b>Warburton</b> town exploration</li>
-                                <li><b>Steavenson Falls</b></li>
-                                <li><b>Marysville</b> town exploration</li>
-                                <li><b>Keppel Lookout</b></li>
-                            </ul>
-                        </div>
-                        <!-- end of accordion -->
-                        <div class="book-buttons-v2">
-                            <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="booking_form.html" style="float: right">Book
-                                    Now</a>
-                            </div> <!-- end of button-container -->
-                        </div>
-                    </div> <!-- end of accordion-container -->
+                            <hr class="item-divider">
+                            <div id="packageDesc" style="text-align: left;"></div>
+                            <hr class="item-divider">
+                            <h4 style="font-size: 15px; text-align: left;"><b>Select Group size</b></h4>
+                            <div
+                                class="tour-package-details-page blur-bg d-flex flex-column justify-content-center text-white mt-1">
+                                <div class="row" style="align-items: center;">
+                                    <div class="column d-flex justify-content-center">
+                                        <div class="btn-group" role="group" aria-label="Button group"
+                                            style="justify-content: center;">
+                                            <button type="button" class="btn btn-primary active"
+                                                onclick="selectButton(this)">
+                                                <img class="tourIcon" src="images/van.png" alt="Icon"
+                                                    style="margin-left:auto; width: 30px; height: 30px;">
+                                                <div>Van</div>
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="selectButton(this)">
+                                                <img class="tourIcon" src="images/suv.png" alt="Icon"
+                                                    style="margin-left:auto; width: 30px; height: 30px;">
+                                                <div>Suv</div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="d-inline-flex justify-content-between text-large fw-medium align-items-center"
+                                            style="width: 100%;">
+                                            <div>
+                                                <div id="maxTravelers" class="text-small fw-semibold text-start">
+                                                    Max <span id="maxNumber">7</span> travellers
+                                                </div>
+                                                <div style="white-space: nowrap;">
+                                                    <span
+                                                        style="display: inline-block; font-size: large; font-weight: bold; padding-bottom: -10px; ">$880</span>
+                                                    <span style="display: inline-block; font-size: x-small; ">( per
+                                                        person
+                                                        )</span>
+                                                </div>
+                                            </div>
+                                            <div id="iconContainer"
+                                                class="d-flex align-items-center justify-content-end"
+                                                style="width: 75px; height: 75px;">
+                                                <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon"
+                                                    style="width: 70%; height: 70%; float: right; margin: auto;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="item-divider">
+                            <h4 style="font-size: 15px;  text-align: left;"><b>Highlights</b></h4>
+                            <div class="content">
+                                <ul style="font-size: 14px;">
+                                    <li>
+                                        <p>Drive through <b>Arthuur's Creek apple orchards</b></p>
+                                    </li>
+                                    <li><b>Kinglake</b> town exploration</li>
+                                    <li><b>Wirrawilla Rainforest walk</b></li>
+                                    <li>Scenic journey through <b>Black Spur</b> Drive</li>
+                                    <li><b>Redwood Forest</b> walk</li>
+                                    <li><b>Warburton</b> town exploration</li>
+                                    <li><b>Steavenson Falls</b></li>
+                                    <li><b>Marysville</b> town exploration</li>
+                                    <li><b>Keppel Lookout</b></li>
+                                </ul>
+                            </div>
+                            <!-- end of accordion -->
+                            <div class="book-buttons-v2">
+                                <div class="button-container">
+                                    <a class="btn-solid-reg page-scroll" href="booking_form.html"
+                                        style="float: right">Book
+                                        Now</a>
+                                </div> <!-- end of button-container -->
+                            </div>
+                        </div> <!-- end of accordion-container -->
+                    </div>
                 </div> <!-- end of area-plus -->
             </div> <!-- end of accordion -->
         </div> <!-- end of fixed inside-fcontainer -->
@@ -246,7 +251,7 @@
         </div> <!-- end of item -->
 
         <hr class="item-divider">
-       
+
         <div class="item">
             <div id="headingThree">
                 <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"

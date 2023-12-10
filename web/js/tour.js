@@ -368,6 +368,7 @@ const package002 = {
 const area1 = document.querySelector(".accordion");
 const area2 = document.querySelector(".area-1");
 const areaPlus = document.querySelector(".area-plus");
+const areaPlusWrapper = document.querySelector(".area-plus-wrapper");
 const backgroundImageUrls = package001.details.backgroundImageUrls;
 let currentIndex = 0;
 let intervalId;
@@ -789,9 +790,11 @@ function scrollToBottom() {
 function storeScroll() {
   if(window.scrollY > 700){
     areaPlus.style.borderRadius = "30px";
+    areaPlusWrapper.style.borderRadius = "30px";
     document.getElementById('fixed-fcontainer').style.top = "40px";
   }else{
     areaPlus.style.borderRadius = null;
+    areaPlusWrapper.style.borderRadius =null;
     document.getElementById('fixed-fcontainer').style.top = null;
   }
   if(window.scrollY > 4080){
