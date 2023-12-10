@@ -784,3 +784,20 @@ function scrollToBottom() {
     }
   });
 }
+
+
+function storeScroll() {
+  if(window.screenY > 700){
+    areaPlus.style.borderRadius = "30px";
+  }
+  if(window.scrollY > 4080){
+      document.getElementById('fixed-fcontainer').style.top = "-180px";
+  }else {
+    document.getElementById('fixed-fcontainer').style.top = "5px";
+  }
+  console.log(document.documentElement.dataset.scroll);
+}
+
+document.addEventListener("scroll", storeScroll);
+
+storeScroll();

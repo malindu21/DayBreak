@@ -2543,7 +2543,6 @@ a:hover.back-to-top {
   }
   .area-plus {
     height: 100%;
-
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     backdrop-filter: blur(40px) !important;
@@ -3208,4 +3207,8 @@ b {
 }
 .btn-group button:hover .tourIcon {
   filter: invert(0); /* Invert back to original colors */
+}
+
+.inside-fcontainer{
+transition: 0.5s !important;
 }
