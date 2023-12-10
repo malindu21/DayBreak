@@ -1748,9 +1748,15 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .area-plus {
-
   background: url("../images/into_the_forest/into_the_forest_1.jpg")
     center/cover;
+}
+
+.horizontal-line{
+  margin-left: 15px;
+  flex: 1;
+  height: 2px;
+  background-color: #000000;
 }
 
 .area-plus-wrapper{
@@ -1911,8 +1917,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 .tour_title:hover {
   /* Apply hover state styles */
   color: #068b33;
-  animation: shakeY;
-  animation-duration: 2s; /* don't forget to set a duration! */
+  /* animation: shakeY;
+  animation-duration: 2s; */
 }
 
 .accordion span[aria-expanded="false"] .circle-numbering {
