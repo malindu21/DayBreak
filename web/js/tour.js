@@ -792,11 +792,6 @@ function storeScroll() {
     document.body.offsetHeight, document.documentElement.offsetHeight,
     document.body.clientHeight, document.documentElement.clientHeight
   );
-  console.log("Scroll Y", window.scrollY);
-  console.log(
-    "Scroll Height",
-    maxScrollHeight
-  );
 
   if (window.scrollY > 700) {
     areaPlus.style.borderRadius = "30px";
