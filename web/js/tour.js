@@ -551,31 +551,23 @@ function createIterity(iconClass, title, description, duration) {
   div.className = "white-box-tours";
   div.style.width = "100%"; // Set the default width to 45%
 
-  div.innerHTML = `
-             
-             
-            <div class="comment-container">
+  div.innerHTML = `<div class="comment-container">
             <div class="chain chain-top"></div>
             <div class="circle-tours">${iconClass}</div>
-        
-          <div class="white-box-tours" style="width: 80%; height: auto;" >  
+            <div class="white-box-tours" style="width: 80%; height: auto;" >  
             <div class="comment">
-        
-        
-            <h3>${title}</h3>
-            <p>${description}</p>
-            <h3>${duration}</h3>
-
+              <h3>${title}</h3>
+              <p>${description}</p>
+              <h3>${duration}</h3>
             </div>
             ${
-              Object.entries(package001.package1Iternity).length != Number(iconClass)
+              Object.entries(package001.package1Iternity).length !=
+              Number(iconClass)
                 ? `<div class="chain chain-bottom"></div>`
                 : ""
             }
           </div>
-        
-            </div>`;
-
+        </div>`;
   return div;
 }
 
