@@ -41,7 +41,6 @@ html {
   margin: 0 auto; /* This centers the container itself if it has a fixed width */
 }
 
-
 @media (max-width: 768px) {
   .footer-text-container h4.user-friendly-paragraph {
     text-align: center !important;
@@ -524,7 +523,6 @@ strong {
   transform: scale(1.1);
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
-
 
 .white-box-about-activity {
   width: 90%;
@@ -1598,8 +1596,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .area-plus-wrapper {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(20px);
   height: 100%;
@@ -1753,7 +1751,6 @@ input.cmn-toggle-round-flat:checked + label:after {
   cursor: pointer;
   transition: all 0.2s ease, transform 0.2s ease; /* Add transform property for smoother transition */
 }
-
 
 .tour_title:hover {
   /* Apply hover state styles */
@@ -2118,17 +2115,20 @@ a:hover.back-to-top {
     display: none !important;
   }
 
-  .tour_title{
+  .tour_title {
     font-size: 24px;
   }
 
-  .area-plus-wrapper{
-    border-radius: 0px !important;
+  .area-plus-wrapper,
+  .area-plus {
+    border-radius: 0px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
-  .accordion .accordion-container{
-    margin:0px;
+  .accordion .accordion-container {
+    margin: 0px;
     padding-left: 10px;
-    padding-right:10px ;
+    padding-right: 10px;
   }
 }
 @media (min-width: 768px) {
