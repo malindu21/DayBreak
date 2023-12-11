@@ -1748,8 +1748,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .area-plus {
-  background: url("../images/into_the_forest/into_the_forest_1.jpg")
-    center/cover;
+  background: center/cover;
 }
 
 .horizontal-line{
@@ -1760,8 +1759,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .area-plus-wrapper{
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(5px);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(20px);
   height: 100%;
 }
 .circle-buttons {
