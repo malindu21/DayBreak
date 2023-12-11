@@ -792,7 +792,8 @@ function storeScroll() {
     document.body.offsetHeight, document.documentElement.offsetHeight,
     document.body.clientHeight, document.documentElement.clientHeight
   );
-
+console.log(window.innerWidth)
+if(window.innerWidth >768){
   if (window.scrollY > 700) {
     areaPlus.style.borderRadius = "30px";
     areaPlusWrapper.style.borderRadius = "30px";
@@ -805,6 +806,7 @@ function storeScroll() {
   if ((maxScrollHeight - window.scrollY) <  1100) {
     document.getElementById("fixed-fcontainer").style.top = "-30vh";
   }
+}
 }
 
 document.addEventListener("scroll", storeScroll);

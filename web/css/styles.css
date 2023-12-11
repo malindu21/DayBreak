@@ -643,6 +643,8 @@ strong {
 @media screen and (max-width: 980px) {
   .howToBook {
     width: 100%;
+    padding: 5px;
+    padding-right: 5px;
   }
 }
 .accordion-body {
@@ -1752,6 +1754,7 @@ input.cmn-toggle-round-flat:checked + label:after {
   transition: all 0.2s ease, transform 0.2s ease; /* Add transform property for smoother transition */
 }
 
+
 .tour_title:hover {
   /* Apply hover state styles */
   color: #068b33;
@@ -2109,6 +2112,23 @@ a:hover.back-to-top {
     font-size: 14px;
     line-height: 1.4;
     display: none !important;
+  }
+
+  .horizontal-line {
+    display: none !important;
+  }
+
+  .tour_title{
+    font-size: 24px;
+  }
+
+  .area-plus-wrapper{
+    border-radius: 0px !important;
+  }
+  .accordion .accordion-container{
+    margin:0px;
+    padding-left: 10px;
+    padding-right:10px ;
   }
 }
 @media (min-width: 768px) {
