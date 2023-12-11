@@ -567,7 +567,11 @@ function createIterity(iconClass, title, description, duration) {
             <h3>${duration}</h3>
 
             </div>
-            <div class="chain chain-bottom"></div>
+            ${
+              Object.entries(package001.package1Iternity).length != Number(iconClass)
+                ? `<div class="chain chain-bottom"></div>`
+                : ""
+            }
           </div>
         
             </div>`;
@@ -787,26 +791,28 @@ function scrollToBottom() {
 }
 
 function storeScroll() {
-  let maxScrollHeight =  Math.max(
-    document.body.scrollHeight, document.documentElement.scrollHeight,
-    document.body.offsetHeight, document.documentElement.offsetHeight,
-    document.body.clientHeight, document.documentElement.clientHeight
+  let maxScrollHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
   );
-console.log(window.innerWidth)
-if(window.innerWidth >768){
-  if (window.scrollY > 700) {
-    areaPlus.style.borderRadius = "30px";
-    areaPlusWrapper.style.borderRadius = "30px";
-    document.getElementById("fixed-fcontainer").style.top = "4vh";
-  } else {
-    areaPlus.style.borderRadius = null;
-    areaPlusWrapper.style.borderRadius = null;
-    document.getElementById("fixed-fcontainer").style.top = null;
+  if (window.innerWidth > 768) {
+    if (window.scrollY > 700) {
+      areaPlus.style.borderRadius = "30px";
+      areaPlusWrapper.style.borderRadius = "30px";
+      document.getElementById("fixed-fcontainer").style.top = "4vh";
+    } else {
+      areaPlus.style.borderRadius = null;
+      areaPlusWrapper.style.borderRadius = null;
+      document.getElementById("fixed-fcontainer").style.top = null;
+    }
+    if (maxScrollHeight - window.scrollY < 1100) {
+      document.getElementById("fixed-fcontainer").style.top = "-30vh";
+    }
   }
-  if ((maxScrollHeight - window.scrollY) <  1100) {
-    document.getElementById("fixed-fcontainer").style.top = "-30vh";
-  }
-}
 }
 
 document.addEventListener("scroll", storeScroll);
