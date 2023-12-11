@@ -796,14 +796,14 @@ function storeScroll() {
   if (window.scrollY > 700) {
     areaPlus.style.borderRadius = "30px";
     areaPlusWrapper.style.borderRadius = "30px";
-    document.getElementById("fixed-fcontainer").style.top = "30px";
+    document.getElementById("fixed-fcontainer").style.top = "4vh";
   } else {
     areaPlus.style.borderRadius = null;
     areaPlusWrapper.style.borderRadius = null;
     document.getElementById("fixed-fcontainer").style.top = null;
   }
   if ((maxScrollHeight - window.scrollY) <  1100) {
-    document.getElementById("fixed-fcontainer").style.top = "-200px";
+    document.getElementById("fixed-fcontainer").style.top = "-30vh";
   }
 }
 
