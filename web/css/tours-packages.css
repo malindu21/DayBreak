@@ -1,3 +1,4 @@
+
 .tour-package {
   background: url(../images/tour1.jpg) no-repeat center center;
   background-size: cover;
@@ -9,6 +10,11 @@
   background-blend-mode: darken;
   transition: transform 0.5s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tour-package.into-the-forest{
+    background: url(../images/into_the_forest/into-the-forest.webp);
+   background-size: cover;
 }
 
 h5 {
