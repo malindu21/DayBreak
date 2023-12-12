@@ -7,8 +7,20 @@ const package001 = {
     desc: "Embark on a picturesque journey through lush apple orchards, serene rainforests, and iconic Australian forests, all while savouring quick coffee breaks and exploring charming towns along the way. Be captivated by one of the state's tallest waterfalls, before concluding the day with a mesmerizing sunset, overlooking the majestic mountains.",
     duration: "Duration: 11.00 Hours",
     backgroundImageUrls: [
-      "images/into_the_forest/into_the_forest_1.jpg",
-      "images/into_the_forest/into_the_forest_2.jpg",
+      "images/into_the_forest/1-min.webp",
+      "images/into_the_forest/2-min.webp",
+      "images/into_the_forest/3-min.webp",
+      "images/into_the_forest/4-min.webp",
+      "images/into_the_forest/5-min.webp",
+      "images/into_the_forest/6-min.webp",
+      "images/into_the_forest/7-min.webp",
+      "images/into_the_forest/8-min.webp",
+      "images/into_the_forest/9-min.webp",
+      "images/into_the_forest/10-min.webp",
+      "images/into_the_forest/11-min.webp",
+      "images/into_the_forest/12-min.webp",
+      "images/into_the_forest/13-min.webp",
+      "images/into_the_forest/14-min.webp",
     ],
   },
 
@@ -810,3 +822,33 @@ function storeScroll() {
 document.addEventListener("scroll", storeScroll);
 
 storeScroll();
+
+if ('IntersectionObserver' in window) {
+  document.addEventListener("DOMContentLoaded", function() {
+
+    function handleIntersection(entries) {
+      entries.map((entry) => {
+        if (entry.isIntersecting) {
+          // Item has crossed our observation
+          // threshold - load src from data-src
+          entry.target.style.backgroundImage = "url('"+entry.target.dataset.bgimage+"')";
+          // Job done for this item - no need to watch it!
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+
+    const headers = document.querySelectorAll('.header-container');
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      { rootMargin: "100px" }
+    );
+    headers.forEach(header => observer.observe(header));
+  });
+} else {
+  // No interaction support? Load all background images automatically
+  const headers = document.querySelectorAll('.header-container');
+  headers.forEach(header => {
+    header.style.backgroundImage = "url('"+header.dataset.bgimage+"')";
+  });
+}

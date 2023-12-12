@@ -1585,7 +1585,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .area-plus {
-  background: center/cover;
+  background: url("../images/header-background.jpg")  no-repeat;
+  background-size: cover;
 }
 
 .horizontal-line {
