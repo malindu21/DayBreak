@@ -754,18 +754,16 @@ function changeBackground() {
   // // Crossfade effect
   // area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    //  // Set a smooth transition for background-image
-    area2.style.transition = "background-image 0.5s";
+  //  // Set a smooth transition for background-image
+  area2.style.transition = "background-image 0.5s";
 
-    // Crossfade effect
-    area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+  // Crossfade effect
+  area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
-    areaPlus.style.transition = "background-image 0.5s";
+  areaPlus.style.transition = "background-image 0.5s";
 
-    // Crossfade effect
-    areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
-  });
+  // Crossfade effect
+  areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
   resetInterval();
 }
