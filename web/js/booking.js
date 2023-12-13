@@ -38,17 +38,20 @@ function getAllPackages() {
     .then((response) => response.json())
     .then((data) => {
       const activityList = document.getElementById("activity-list");
-      document.getElementById("package-title").innerHTML = data[0].title;
+      let dataset = data.filter(
+        (e) => e.id == localStorage.getItem("packageId")
+      )[0];
+
+      document.getElementById("package-title").innerHTML = dataset.title;
       document.getElementById("main-bg").style.background =
-        "url(" + data[0].backgroundImageUrls[0] + ") no-repeat center center";
+        "url(" + dataset.backgroundImageUrls[0] + ") no-repeat center center";
       document.getElementById("main-bg").style.backgroundSize = "cover";
       activityList.innerHTML = "";
-      data[0].activities.map((e) => {
+      dataset.activities.map((e) => {
         let element = `<div class="quick-info">
       <i class="${e.iconClass}"></i>
       <span class="text ms-2">${e.title}</span>
     </div>`;
-
         activityList.innerHTML += element;
       });
     });
@@ -294,17 +297,17 @@ flatpickr("input[type=datetime-local]", {
   minDate: "today",
 });
 
-function generateNamesString(){
+function generateNamesString() {
   let namesString = "";
-  travellerDetails.forEach(e=>{
-      namesString += e.value.name + ",";
-  })
+  travellerDetails.forEach((e) => {
+    namesString += e.value.name + ",";
+  });
   return namesString.slice(0, -1);
 }
 
 function validateCheckout() {
-  const namesString = generateNamesString(); 
-  
+  const namesString = generateNamesString();
+
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketType === "") {
     showToast("Please select your ticket type to continue.");
