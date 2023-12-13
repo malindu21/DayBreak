@@ -376,20 +376,14 @@ const package002 = {
 };
 
 const area1 = document.querySelector(".accordion");
-// const area2 = document.querySelector(".area-1");
+const area2 = document.querySelector(".area-1");
 const areaPlus = document.querySelector(".area-plus");
 const areaPlusWrapper = document.querySelector(".area-plus-wrapper");
 const backgroundImageUrls = package001.details.backgroundImageUrls;
 let currentIndex = 0;
 let intervalId;
 
-//changeBackground();
-
-$('.area-1').square1({
-  caption: 'none',
-  theme: 'light'
-});
-
+changeBackground();
 insertSectionsIntoContainer();
 function insertSectionsIntoContainer() {
   const packageName = document.getElementById("packageName");
@@ -751,14 +745,33 @@ function packageDurationSection(duration) {
 
 // tour.js
 
-function changeBackground(isNext) {
-  if(isNext){
-    $('.slideshow').square1('next');
-  }else{
-    $('.slideshow').square1('prev');
-  }
+function changeBackground() {
+  currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
+
+  // // Set a smooth transition for background-image
+  // area1.style.transition = 'background-image 0.5s';
+
+  // // Crossfade effect
+  // area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+  //  // Set a smooth transition for background-image
+  area2.style.transition = "background-image 0.5s";
+
+  // Crossfade effect
+  area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+  areaPlus.style.transition = "background-image 0.5s";
+
+  // Crossfade effect
+  areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+  resetInterval();
 }
 
+function resetInterval() {
+  clearInterval(intervalId);
+  intervalId = setInterval(changeBackground, 7000);
+}
 
 function scrollToBottom() {
   var area2Element = document.querySelector(".area-2");
@@ -789,15 +802,17 @@ function storeScroll() {
     document.documentElement.clientHeight
   );
   if (window.innerWidth > 768) {
-    // if (window.scrollY > 700) {
-    //   document.getElementById("fixed-fcontainer").style.top = "4vh";
-    // } else {
-    //   document.getElementById("fixed-fcontainer").style.top = null;
-    // }
+    if (window.scrollY > 700) {
+      areaPlus.style.borderRadius = "30px";
+      areaPlusWrapper.style.borderRadius = "30px";
+      document.getElementById("fixed-fcontainer").style.top = "4vh";
+    } else {
+      areaPlus.style.borderRadius = null;
+      areaPlusWrapper.style.borderRadius = null;
+      document.getElementById("fixed-fcontainer").style.top = null;
+    }
     if (maxScrollHeight - window.scrollY < 1100) {
       document.getElementById("fixed-fcontainer").style.top = "-30vh";
-    }else{
-      document.getElementById("fixed-fcontainer").style.top = null;
     }
   }
 }

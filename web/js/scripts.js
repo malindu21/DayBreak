@@ -34,7 +34,14 @@ function onclickPackage(packageId){
   // First Typewriter
   const typewriterElement1 = document.getElementById("typewriter-text");
   const cursorElement1 = document.getElementById("cursor");
-  
+
+  // // Second Typewriter
+  // const typewriterElementBox1 = document.getElementById('typewriter-text-box-1');
+  // const typewriterElementBox2 = document.getElementById('typewriter-text-box-2');
+  // const typewriterElementBox3 = document.getElementById('typewriter-text-box-3');
+  // const typewriterElementBox4 = document.getElementById('typewriter-text-box-4');
+  // const typewriterElementBox5 = document.getElementById('typewriter-text-box-5');
+  // const typewriterElementBox6 = document.getElementById('typewriter-text-box-6');
 
   /* Preloader */
   $(window).on("load", function () {

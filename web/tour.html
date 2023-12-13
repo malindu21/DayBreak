@@ -40,7 +40,6 @@
     <link href="css/tours-packages.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="./css/tours.css">
-    <link rel="stylesheet" href="./css/square1.min.css">
 
     <!-- Favicon  -->
     <link rel="icon" href="images/Icon.png">
@@ -60,45 +59,33 @@
 
     <!-- Details Section -->
     <div id="details" class="accordion">
+        <div class="area-1">
+            <!-- Left Button Container -->
+            <div class="button-container-left">
+                <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
+                    <i class="fa-solid fa-arrow-left me-2"></i>
+                    <span>Go Back</span>
+                </a>
+            </div>
 
-        <div class="slideshow area-1">
-            <img src="https://raw.githubusercontent.com/malindu21/DayBreak/main/web/images/into_the_forest/1-min.webp"
-                alt="Image 1 from http://jqueryscript.net/">
+            <!-- Right Button Container -->
+            <div class="button-container-right">
+                <a role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer view-modal">
+                    <i class="fa-solid fa-share me-2"></i>
+                    <span>Share</span>
+                </a>
+                <!-- <button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button> -->
+            </div>
 
-
-            <img src="https://raw.githubusercontent.com/malindu21/DayBreak/main/web/images/into_the_forest/10-min.webp"
-                alt="Image 1 from http://jqueryscript.net/">
-
-            <img src="https://raw.githubusercontent.com/malindu21/DayBreak/main/web/images/into_the_forest/11-min.webp"
-                alt="Image 1 from http://jqueryscript.net/">
-        </div>
-
-
-        <!-- Left Button Container -->
-        <div class="button-container-left">
-            <a href="index.html" role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer">
-                <i class="fa-solid fa-arrow-left me-2"></i>
-                <span>Go Back</span>
-            </a>
-        </div>
-
-        <!-- Right Button Container -->
-        <div class="button-container-right">
-            <a role="button" class="btn text-white back-button blur-bg px-4 py-2 cursor-pointer view-modal">
-                <i class="fa-solid fa-share me-2"></i>
-                <span>Share</span>
-            </a>
-            <!-- <button class="circle-button" aria-label="Next Button"><i class="fas fa-share"></i></button> -->
-        </div>
-
-        <!-- Circle Buttons Container -->
-        <div class="circle-buttons-v2">
-            <button onclick="changeBackground(false)" class="circle-button" aria-label="Next Button">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <button onclick="changeBackground(true)" class="circle-button" aria-label="Next Button">
-                <i class="fas fa-arrow-right"></i>
-            </button>
+            <!-- Circle Buttons Container -->
+            <div class="circle-buttons-v2">
+                <button onclick="changeBackground()" class="circle-button" aria-label="Next Button">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button onclick="changeBackground()" class="circle-button" aria-label="Next Button">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
     </div><!-- End of Details Section -->
 
@@ -457,7 +444,6 @@
     <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
     <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
-    <script src="./js/square1.min.js"></script>
     <script src="js/tour.js"></script>
     <script>
         const collapsibles = document.querySelectorAll('.collapsible');
