@@ -1602,7 +1602,7 @@ input.cmn-toggle-round-flat:checked + label:after {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   height: 100%;
-  background-color: #00000010;
+  background-color: #00000080;
   background-blend-mode: darken;
 }
 .circle-buttons {
