@@ -338,7 +338,7 @@ function showPopupWithDelay() {
 try {
   generatedKeyword = generateUniqueKeyword(string1, string2);
   console.log("Generated Keyword:", generatedKeyword);
-  submitForm("John Doe", "cheakone2@gmail.com", "Inquiry", "Hello, I have a question!",generatedKeyword);
+  submitForm("John Doe", "info@daybreak-adventures.com.au", "Inquiry", "Hello, I have a question!",generatedKeyword);
 } catch (error) {
   console.error(error.message);
 }

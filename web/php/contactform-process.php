@@ -35,8 +35,8 @@ if (isset($_POST["send"])) {
    
  
     //Recipients
-    $mail->setFrom( "cheakone2@gmail.com", "DayBreak"); // Sender Email and name
-    $mail->addAddress('cheakone2@gmail.com');     //Add a recipient email  
+    $mail->setFrom( "info@daybreak-adventures.com.au", "DayBreak"); // Sender Email and name
+    $mail->addAddress('info@daybreak-adventures.com.au');     //Add a recipient email  
   
  
     //Content
