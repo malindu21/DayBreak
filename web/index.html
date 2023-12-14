@@ -351,7 +351,7 @@
                </div>
             </div>
             <div>
-               <a id="bookPackageTwo" value="002" onclick=showAlert()
+               <a id="bookPackageTwo" value="002" href="tour.html"
                   class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3">
                   Book Now
                </a>
@@ -414,7 +414,7 @@
                </div>
             </div>
             <div>
-               <a id="bookPackageThree" value="003" onclick=showAlert()
+               <a id="bookPackageThree" value="003" href="tour.html"
                   class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3">
                   Book Now
                </a>
@@ -449,7 +449,7 @@
                         <div id="iconContainer" class="d-flex align-items-center justify-content-end"
                            style="width: 35px; height: 35px;">
 
-                           <img class="tourIcon" id="iconImage" src="images/suv.svg" alt="Icon"
+                           <img class="tourIcon" id="iconImage" src="images/van.png" alt="Icon"
                               style="width: 100%; height: 100%; float: right; margin: auto;">
                         </div>
                         <div class="text-small fw-light text-start lh-1"> Max 7 travellers</div>
@@ -479,7 +479,7 @@
                </div>
             </div>
             <div>
-               <a id="bookPackageFour" value="004" onclick=showAlert()
+               <a id="bookPackageFour" value="004" href="tour.html"
                   class="btn btn-lg btn-dark text-regular w-50 rounded-pill mt-3 px-3 py-3">
                   Book Now
                </a>
@@ -805,6 +805,20 @@
          var buttonValue = this.getAttribute('value');
          localStorage.setItem('packageId', buttonValue);
       });
+      document.getElementById('bookPackageTwo').addEventListener('click', function () {
+         var buttonValue = this.getAttribute('value');
+         localStorage.setItem('packageId', buttonValue);
+      });
+      document.getElementById('bookPackageThree').addEventListener('click', function () {
+         var buttonValue = this.getAttribute('value');
+         localStorage.setItem('packageId', buttonValue);
+      });
+      document.getElementById('bookPackageFour').addEventListener('click', function () {
+         var buttonValue = this.getAttribute('value');
+         localStorage.setItem('packageId', buttonValue);
+      });
+
+      
    </script>
    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
