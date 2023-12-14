@@ -213,9 +213,342 @@ const package002 = {
   // ... your dummy data here
 
   details: {
-    title: "Coming Soon",
-    subTitle: "",
-    desc: "",
+    title: "Ocean Vibes",
+    subTitle: "Geelong, Ferries, Wineries & Sorrento",
+    desc: "Embark on a mesmerizing journey as we explore the coastal wonders of Geelong and the Peninsula, unravelling a rich tapestry of unforgettable experiences. Allow yourself to be captivated by the sheer beauty of scenic lookouts and the enchanting allure of coastal trails that grace our road trip. This adventure also promises a taste of the region's cool climate wineries and the thrill of various aerial attractions, adding layers of excitement to our exploration. As the day draws to a close, immerse yourself in the tranquility of a ferry ride across the pristine waters of Port Phillip Bay, setting the stage for a golden-hour finale by the tranquil ocean's edge. ",
+    duration: "Duration: N/A",
+  },
+
+  packageActivity: {
+    section1: {
+      iconClass: "fas fa-window-close fa-inverse",
+      title: "Free Cancellation",
+      description: "Cancel up to 24 hours in advance for a full refund",
+    },
+    section2: {
+      iconClass: "fas fa-clock fa-inverse",
+      title: "Duration",
+      description: "11 hours",
+    },
+    section3: {
+      iconClass: "fas fa-clock fa-inverse",
+      title: "Start & End time",
+      description: "between 8/9 AM & End between 7/9 PM",
+    },
+    section4: {
+      iconClass: "fas fa-map-marker fa-inverse",
+      title: "Pickup & Drop-off included",
+      description:
+        "Pickup included from anywhere in Melbourne within 10km radius ",
+    },
+    section5: {
+      iconClass: "fas fa-users fa-inverse",
+      title: "Smaller intimate group",
+      description: "Private tour for your group of maximum 4 people ",
+    },
+    section6: {
+      iconClass: "fas fa-car fa-inverse",
+      title: "Designated chauffeur",
+      description:
+        "Enjoy the convenience of having a dedicated chauffeur throughout the entire journey, ensuring a personalized and stress-free experience.",
+    },
+    section7: {
+      iconClass: "fas fa-glass-martini fa-inverse",
+      title: "Beverages on-board",
+      description:
+        "Stay refreshed with a selection of soft drinks, beers and ciders on the house!",
+    },
+    section8: {
+      iconClass: "fas fa-utensils fa-inverse",
+      title: "Lunch",
+      description:
+        "Your trip includes a delicious lunch with locally sourced ingredients and picturesque views",
+    },
+    section9: {
+      iconClass: "fab fa-spotify fa-inverse",
+      title: "Spotify",
+      description:
+        "Enhance your road trip experience & Set the mood with your favourite tunes using our Spotify access during the journey",
+    },
+    section10: {
+      iconClass: "fas fa-chair fa-inverse",
+      title: "Comfort items",
+      description:
+        "Stay comfy with complimentary use of blankets, umbrellas & USB charging ports",
+    },
+    section11: {
+      iconClass: "fas fa-camera fa-inverse",
+      title: "Free Photography",
+      description:
+        "Capture your memories effortlessly as photography is included and provided to you following the tour.",
+    },
+  },
+
+  package1Iternity: {
+    1: {
+      iconClass: "fas fa-car fa-inverse",
+      title: "Apted Orchards - Arthur’s Creek",
+      description:
+        "Look around the rows of apple trees and enjoy the ambience on this captivating drive",
+      duration: "20 minutes ● Scenic Drive",
+    },
+    2: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Kinglake town (Songbird Cafe & Larder) ",
+      description:
+        "A morning stop to stretch our legs as we continue travelling inland towards the beautiful rainforests. Just a quick break to buy some coffee/breakfast if needed (own expenses)",
+      duration: "20 minutes ● Coffee break",
+    },
+    3: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Wirrawilla Rainforest walk",
+      description:
+        "Take in the sounds & smells of a beautiful rainforest surrounded by Myrtle Beech and Sassafras tress. One km grade two walk suitable for all ages & fitness levels ",
+      duration: "30 minutes ● Forest walk",
+    },
+    4: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Black Spur Drive",
+      description:
+        "Lower the windows and enjoy the fresh air as you pass through this iconic route through the lush Australian forest. Gaze up at the mountain ash trees and the green ferns as you drive through the winding roads with breathtaking views at every turn ",
+      duration: "30 minutes ● Scenic drive",
+    },
+    5: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Redwood Forest",
+      description:
+        "Step amongst the towering Californian Redwood Forest and enjoy a majestic walk in the company of over thousand enormous red-barked trees reaching up to 55 metres high.  Notice the climate getting cooler, quieter and calmer as you step through the woods. ",
+      duration: "30 minutes ● Forest walk",
+    },
+    6: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Warburton",
+      description:
+        "Attractive town nestled in a valley between heavily forested mountains is our lunch spot. Many of the restaurants/cafes are housed in buildings which date back to Warburton's early beginnings as a mountain escape for Melburnians in the early 1900s. ",
+      duration: "20 minutes ● Town exploration",
+    },
+    7: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Marysville",
+      description:
+        "Take a stroll through Marysville and surrounds, an ideal destination for lovers of nature and the outdoors. Learn about the history of this town as you stroll through the main streets and honour the fallen soldiers at the solemn memorial in Gallipoli Park.",
+      duration: "20 minutes ● Town exploration",
+    },
+    8: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Steavenson Falls",
+      description:
+        "Cascading waterfall in the heart of Marysville. One of the tallest waterfalls in the state!",
+      duration: "30 minutes ● Waterfall trail",
+    },
+    9: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Keppel Lookout",
+      description:
+        "Immerse yourself in a serene moment, gazing upon the majestic mountains as the day transitions into the enchanting golden hour or, depending on the time of year, witness a breathtaking sunset over the horizon.",
+      duration: "20 minutes ● Sunset",
+    },
+  },
+
+  packageCancellationPolicy: {
+    1: {
+      value:
+        "Full refund available with cancellation 24 hours before the road-trip start time",
+    },
+    2: {
+      value:
+        "No refund for cancellations made within 24 hours of the road-trip start time",
+    },
+    3: {
+      value:
+        "Changes requested within 24 hours of the road-trip start time will not be accommodated.",
+    },
+    4: {
+      value: "Departure and destination times align with Melbourne local time",
+    },
+    5: {
+      value:
+        "In case the road-trip is cancelled due to severe weather conditions, you will be offered either a full refund or an alternative date to travel",
+    },
+  },
+
+  packageMeetAndPickUp: "N/A",
+};
+
+const package003 = {
+  // ... your dummy data here
+
+  details: {
+    title: "Beach to Greenery",
+    subTitle: "Great Ocean Road, 12 Apostles & Scenic Drives ",
+    desc: "Explore the stunning Great Ocean Road with our expertly crafted tour. This scenic drive offers breathtaking coastal views, with highlights including the iconic Split Point Lighthouse, Teddy's Lookout for panoramic vistas, a leisurely stroll through Mait's Rest Rainforest, a unique perspective at Gibson Steps, and the awe-inspiring Thunder Cave. The tour culminates at the world-famous Twelve Apostles, where you can witness the changing light throughout the day and possibly catch a spectacular sunset. Join us for a day filled with natural beauty and unforgettable experiences along this iconic Australian coastal highway. ",
+    duration: "Duration: N/A",
+  },
+
+  packageActivity: {
+    section1: {
+      iconClass: "fas fa-window-close fa-inverse",
+      title: "Free Cancellation",
+      description: "Cancel up to 24 hours in advance for a full refund",
+    },
+    section2: {
+      iconClass: "fas fa-clock fa-inverse",
+      title: "Duration",
+      description: "11 hours",
+    },
+    section3: {
+      iconClass: "fas fa-clock fa-inverse",
+      title: "Start & End time",
+      description: "between 8/9 AM & End between 7/9 PM",
+    },
+    section4: {
+      iconClass: "fas fa-map-marker fa-inverse",
+      title: "Pickup & Drop-off included",
+      description:
+        "Pickup included from anywhere in Melbourne within 10km radius ",
+    },
+    section5: {
+      iconClass: "fas fa-users fa-inverse",
+      title: "Smaller intimate group",
+      description: "Private tour for your group of maximum 4 people ",
+    },
+    section6: {
+      iconClass: "fas fa-car fa-inverse",
+      title: "Designated chauffeur",
+      description:
+        "Enjoy the convenience of having a dedicated chauffeur throughout the entire journey, ensuring a personalized and stress-free experience.",
+    },
+    section7: {
+      iconClass: "fas fa-glass-martini fa-inverse",
+      title: "Beverages on-board",
+      description:
+        "Stay refreshed with a selection of soft drinks, beers and ciders on the house!",
+    },
+    section8: {
+      iconClass: "fas fa-utensils fa-inverse",
+      title: "Lunch",
+      description:
+        "Your trip includes a delicious lunch with locally sourced ingredients and picturesque views",
+    },
+    section9: {
+      iconClass: "fab fa-spotify fa-inverse",
+      title: "Spotify",
+      description:
+        "Enhance your road trip experience & Set the mood with your favourite tunes using our Spotify access during the journey",
+    },
+    section10: {
+      iconClass: "fas fa-chair fa-inverse",
+      title: "Comfort items",
+      description:
+        "Stay comfy with complimentary use of blankets, umbrellas & USB charging ports",
+    },
+    section11: {
+      iconClass: "fas fa-camera fa-inverse",
+      title: "Free Photography",
+      description:
+        "Capture your memories effortlessly as photography is included and provided to you following the tour.",
+    },
+  },
+
+  package1Iternity: {
+    1: {
+      iconClass: "fas fa-car fa-inverse",
+      title: "Apted Orchards - Arthur’s Creek",
+      description:
+        "Look around the rows of apple trees and enjoy the ambience on this captivating drive",
+      duration: "20 minutes ● Scenic Drive",
+    },
+    2: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Kinglake town (Songbird Cafe & Larder) ",
+      description:
+        "A morning stop to stretch our legs as we continue travelling inland towards the beautiful rainforests. Just a quick break to buy some coffee/breakfast if needed (own expenses)",
+      duration: "20 minutes ● Coffee break",
+    },
+    3: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Wirrawilla Rainforest walk",
+      description:
+        "Take in the sounds & smells of a beautiful rainforest surrounded by Myrtle Beech and Sassafras tress. One km grade two walk suitable for all ages & fitness levels ",
+      duration: "30 minutes ● Forest walk",
+    },
+    4: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Black Spur Drive",
+      description:
+        "Lower the windows and enjoy the fresh air as you pass through this iconic route through the lush Australian forest. Gaze up at the mountain ash trees and the green ferns as you drive through the winding roads with breathtaking views at every turn ",
+      duration: "30 minutes ● Scenic drive",
+    },
+    5: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Redwood Forest",
+      description:
+        "Step amongst the towering Californian Redwood Forest and enjoy a majestic walk in the company of over thousand enormous red-barked trees reaching up to 55 metres high.  Notice the climate getting cooler, quieter and calmer as you step through the woods. ",
+      duration: "30 minutes ● Forest walk",
+    },
+    6: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Warburton",
+      description:
+        "Attractive town nestled in a valley between heavily forested mountains is our lunch spot. Many of the restaurants/cafes are housed in buildings which date back to Warburton's early beginnings as a mountain escape for Melburnians in the early 1900s. ",
+      duration: "20 minutes ● Town exploration",
+    },
+    7: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Marysville",
+      description:
+        "Take a stroll through Marysville and surrounds, an ideal destination for lovers of nature and the outdoors. Learn about the history of this town as you stroll through the main streets and honour the fallen soldiers at the solemn memorial in Gallipoli Park.",
+      duration: "20 minutes ● Town exploration",
+    },
+    8: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Steavenson Falls",
+      description:
+        "Cascading waterfall in the heart of Marysville. One of the tallest waterfalls in the state!",
+      duration: "30 minutes ● Waterfall trail",
+    },
+    9: {
+      iconClass: "fas fa-bicycle fa-inverse",
+      title: "Keppel Lookout",
+      description:
+        "Immerse yourself in a serene moment, gazing upon the majestic mountains as the day transitions into the enchanting golden hour or, depending on the time of year, witness a breathtaking sunset over the horizon.",
+      duration: "20 minutes ● Sunset",
+    },
+  },
+
+  packageCancellationPolicy: {
+    1: {
+      value:
+        "Full refund available with cancellation 24 hours before the road-trip start time",
+    },
+    2: {
+      value:
+        "No refund for cancellations made within 24 hours of the road-trip start time",
+    },
+    3: {
+      value:
+        "Changes requested within 24 hours of the road-trip start time will not be accommodated.",
+    },
+    4: {
+      value: "Departure and destination times align with Melbourne local time",
+    },
+    5: {
+      value:
+        "In case the road-trip is cancelled due to severe weather conditions, you will be offered either a full refund or an alternative date to travel",
+    },
+  },
+
+  packageMeetAndPickUp: "N/A",
+};
+
+
+const package004 = {
+  // ... your dummy data here
+
+  details: {
+    title: "Cliffs & Chills",
+    subTitle: "Mornington Peninsula, National Parks & Geothermal Hot Springs",
+    desc: "Discover the allure of the Mornington Peninsula that seamlessly blends encounters with native wildlife, leisurely coastal strolls, boutique shopping, coastal exploration, and ultimate relaxation. Experience a close encounter with the region's iconic wildlife, gaining insights into their conservation efforts. Take in the coastal beauty during relaxing walks while collecting unique mementos.  Explore the dramatic coastal landscapes unique to this region before concluding your adventure with a tranquil soak in mineral-rich geothermal pools, allowing stress to melt away amidst the peninsula's serene natural beauty. ",
     duration: "Duration: N/A",
   },
 
@@ -443,6 +776,132 @@ function insertSectionsIntoContainer() {
     );
     packageDesc.appendChild(packageDescSection(package001.details.desc));
     // packageDuration.appendChild(packageDurationSection(package001.details.duration));
+  }else if (packageId == "002"){
+    
+    for (const section of Object.values(package001.packageActivity)) {
+      aboutThisActivity(section.title, section.description, section.iconClass);
+    }
+
+    for (const [index, section] of Object.entries(
+      package001.package1Iternity
+    )) {
+      itinerary.appendChild(
+        createIterity(
+          index,
+          section.title,
+          section.description,
+          section.duration
+        )
+      );
+    }
+
+    for (const [index, title, items] of Object.entries(
+      package001.importantInformation
+    )) {
+      importantInfomation.appendChild(
+        importantInfomationSection(index, title, items)
+      );
+    }
+
+    for (const [index, section] of Object.entries(
+      package001.packageCancellationPolicy
+    )) {
+      cancellationPolicy.appendChild(
+        cancellationPolicySection(index, section.value)
+      );
+    }
+    meetAndPickUp.appendChild(
+      meetAndPickUpSection(1, package001.packageMeetAndPickUp)
+    );
+    packageName.appendChild(packageNameSection(package002.details.title));
+    packageSubTitle.appendChild(
+      packageSubTitleSection(package002.details.subTitle)
+    );
+    packageDesc.appendChild(packageDescSection(package002.details.desc));
+  }else if (packageId == "003"){
+    
+    for (const section of Object.values(package001.packageActivity)) {
+      aboutThisActivity(section.title, section.description, section.iconClass);
+    }
+
+    for (const [index, section] of Object.entries(
+      package001.package1Iternity
+    )) {
+      itinerary.appendChild(
+        createIterity(
+          index,
+          section.title,
+          section.description,
+          section.duration
+        )
+      );
+    }
+
+    for (const [index, title, items] of Object.entries(
+      package001.importantInformation
+    )) {
+      importantInfomation.appendChild(
+        importantInfomationSection(index, title, items)
+      );
+    }
+
+    for (const [index, section] of Object.entries(
+      package001.packageCancellationPolicy
+    )) {
+      cancellationPolicy.appendChild(
+        cancellationPolicySection(index, section.value)
+      );
+    }
+    meetAndPickUp.appendChild(
+      meetAndPickUpSection(1, package001.packageMeetAndPickUp)
+    );
+    packageName.appendChild(packageNameSection(package003.details.title));
+    packageSubTitle.appendChild(
+      packageSubTitleSection(package003.details.subTitle)
+    );
+    packageDesc.appendChild(packageDescSection(package003.details.desc));
+  }else if (packageId == "004"){
+    
+    for (const section of Object.values(package001.packageActivity)) {
+      aboutThisActivity(section.title, section.description, section.iconClass);
+    }
+
+    for (const [index, section] of Object.entries(
+      package001.package1Iternity
+    )) {
+      itinerary.appendChild(
+        createIterity(
+          index,
+          section.title,
+          section.description,
+          section.duration
+        )
+      );
+    }
+
+    for (const [index, title, items] of Object.entries(
+      package001.importantInformation
+    )) {
+      importantInfomation.appendChild(
+        importantInfomationSection(index, title, items)
+      );
+    }
+
+    for (const [index, section] of Object.entries(
+      package001.packageCancellationPolicy
+    )) {
+      cancellationPolicy.appendChild(
+        cancellationPolicySection(index, section.value)
+      );
+    }
+    meetAndPickUp.appendChild(
+      meetAndPickUpSection(1, package001.packageMeetAndPickUp)
+    );
+    packageName.appendChild(packageNameSection(package004.details.title));
+    packageSubTitle.appendChild(
+      packageSubTitleSection(package004.details.subTitle)
+    );
+    packageDesc.appendChild(packageDescSection(package004.details.desc));
   }
 }
 
