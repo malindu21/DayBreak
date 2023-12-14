@@ -309,6 +309,15 @@ label {
     justify-content: center;
   } */
 
+.tt-widget-nodal-content .modal-body {
+  padding: 0px !important;
+}
+
+.tt-widget-nodal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 .bold {
   font-weight: bold !important;
 }

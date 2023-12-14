@@ -298,17 +298,17 @@ flatpickr("input[type=datetime-local]", {
   minDate: "today",
 });
 
-function generateNamesString(){
+function generateNamesString() {
   let namesString = "";
-  travellerDetails.forEach(e=>{
-      namesString += e.value.name + "-";
-  })
+  travellerDetails.forEach((e) => {
+    namesString += e.value.name + "-";
+  });
   return namesString.slice(0, -1);
 }
 
 function validateCheckout() {
-  const namesString = generateNamesString(); 
-  
+  const namesString = generateNamesString();
+
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketType === "") {
     showToast("Please select your ticket type to continue.");
@@ -325,29 +325,38 @@ function validateCheckout() {
   } else if (selectedDate === "") {
     showToast("Please select your tour date to continue.");
   } else {
-    showPopupWithDelay();
+    addTicketWidget(ticketType);
+    $("#ttWidgetModal").modal('show');
+   // showPopupWithDelay();
   }
 }
 
 function showPopupWithDelay() {
   myPopup.classList.add("show");
 
-  const string1 =  + "4bfg2d1e8hijk3a5679c" + selectedDate + "-" + generateNamesString() + "4bfg2d1e8hijk3a5679c";
-  const string2 =  + "!@#$%^&*()_+" + generateNamesString() + "1234567890";
+  const string1 =
+    +"4bfg2d1e8hijk3a5679c" +
+    selectedDate +
+    "-" +
+    generateNamesString() +
+    "4bfg2d1e8hijk3a5679c";
+  const string2 = +"!@#$%^&*()_+" + generateNamesString() + "1234567890";
 
-try {
-  generatedKeyword = generateUniqueKeyword(string1, string2);
-  console.log("Generated Keyword:", generatedKeyword);
-  submitForm("John Doe", "info@daybreak-adventures.com.au", "Inquiry", "Hello, I have a question!",generatedKeyword);
-} catch (error) {
-  console.error(error.message);
-}
-
+  try {
+    generatedKeyword = generateUniqueKeyword(string1, string2);
+    console.log("Generated Keyword:", generatedKeyword);
+    submitForm(
+      "John Doe",
+      "info@daybreak-adventures.com.au",
+      "Inquiry",
+      "Hello, I have a question!",
+      generatedKeyword
+    );
+  } catch (error) {
+    console.error(error.message);
+  }
 
   setTimeout(myFunction, 2000);
-
-
- 
 }
 
 myButton.addEventListener("click", validateCheckout);
@@ -455,42 +464,39 @@ function showToast(message) {
 
 function submitForm(name, email, subject, message, key) {
   // Get form data
- 
+
   // Example usage:
 
+  // Assuming your PHP file is named send_email.php
+  const url = "php/contactform-process.php";
+  const generatedKeyword = key; // Replace with your actual generation logic
 
-    // Assuming your PHP file is named send_email.php
-    const url = 'php/contactform-process.php'; 
-    const generatedKeyword = key; // Replace with your actual generation logic
+  // Assuming you have form data to send along with the request
+  const formData = new FormData();
+  formData.append("send", true);
+  formData.append("key", generatedKeyword);
 
-    // Assuming you have form data to send along with the request
-    const formData = new FormData();
-    formData.append('send', true);
-    formData.append('key', generatedKeyword);
+  fetch(url, {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      // Assuming your PHP file echoes a response
+      console.log(data);
 
-    fetch(url, {
-        method: 'POST',
-        body: formData
+      // You can add more logic here based on the PHP file's response
+      if (data.includes("Message was sent successfully!")) {
+        alert("Message was sent successfully!");
+        //window.location.href = 'index.php';
+      } else {
+        alert("Failed to send the message.");
+      }
     })
-    .then(response => response.text())
-    .then(data => {
-        // Assuming your PHP file echoes a response
-        console.log(data);
-
-        // You can add more logic here based on the PHP file's response
-        if (data.includes('Message was sent successfully!')) {
-            alert('Message was sent successfully!');
-            //window.location.href = 'index.php';
-        } else {
-            alert('Failed to send the message.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while sending the message.');
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("An error occurred while sending the message.");
     });
-
-
 }
 
 function generateUniqueKeyword(string1, string2, length = 15) {
@@ -498,18 +504,19 @@ function generateUniqueKeyword(string1, string2, length = 15) {
   const allChars = string1 + string2;
 
   // Remove duplicates and non-alphanumeric characters
-  const uniqueChars = [...new Set(allChars.split('').filter(c => c.match(/[a-zA-Z0-9]/)))].join('');
+  const uniqueChars = [
+    ...new Set(allChars.split("").filter((c) => c.match(/[a-zA-Z0-9]/))),
+  ].join("");
 
   // Ensure we have enough unique characters
   if (uniqueChars.length < length) {
-      throw new Error("Not enough unique characters to generate a keyword.");
+    throw new Error("Not enough unique characters to generate a keyword.");
   }
 
   // Generate the keyword
-  const keyword = Array.from({ length }, () => uniqueChars.charAt(Math.floor(Math.random() * uniqueChars.length))).join('');
+  const keyword = Array.from({ length }, () =>
+    uniqueChars.charAt(Math.floor(Math.random() * uniqueChars.length))
+  ).join("");
 
   return keyword;
 }
-
-
-

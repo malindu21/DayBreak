@@ -14,15 +14,15 @@
 </head>
 
 <body>
-      <!-- Preloader -->
-	<div class="spinner-wrapper">
+  <!-- Preloader -->
+  <div class="spinner-wrapper">
     <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
     </div>
-</div>
-<!-- end of preloader -->
+  </div>
+  <!-- end of preloader -->
 
   <div class="main py-2" id="main-bg">
     <div class="booking-form blur-bg p-3">
@@ -46,11 +46,10 @@
                   <div>Add traveller details</div>
                   <small>Max <span id="max-passengers">0</span> travellers</small>
                 </div>
-                <div class="col-9 row m-0 p-0 flex-nowrap overflow-x-auto traveller-list" id="travellers-list">
-                </div>
+                <div class="col-9 row m-0 p-0 flex-nowrap overflow-x-auto traveller-list" id="travellers-list"></div>
               </div>
               <div id="scroll-indicators"
-                class="position-absolute top-0 bottom-0 end-0 pe-2  d-flex flex-column align-items-center justify-content-center">
+                class="position-absolute top-0 bottom-0 end-0 pe-2 d-flex flex-column align-items-center justify-content-center">
                 <div role="button" id="scroll-right"
                   class="scroll-right-btn bg-black d-flex align-items-center justify-content-center p-3 mb-2">
                   <i class="fa-solid fa-chevron-right"></i>
@@ -96,16 +95,15 @@
             </div>
           </div>
           <div class="col-12">
-            <div class="selected-tour-card  p-3">
+            <div class="selected-tour-card p-3">
               <div class="h4 fw-bold" id="package-title">Into The Forest</div>
-              <div class="d-flex flex-wrap justify-content-center my-3" id="activity-list">
-              </div>
-              <div class="d-flex blur-bg  p-3 flex-wrap">
-   
+              <div class="d-flex flex-wrap justify-content-center my-3" id="activity-list"></div>
+              <div class="d-flex blur-bg p-3 flex-wrap">
                 <div class="booking-form-footer-item tour-price d-inline-flex flex-column justify-content-evenly">
                   <div class="quick-info-footer max-passengers">
                     <i class="fa-solid fa-users"></i>
-                    <span class="text ms-2" style="font-size:13px;"><span id="max-passengers">0</span> Max Travellers</span>
+                    <span class="text ms-2" style="font-size: 13px"><span id="max-passengers">0</span> Max
+                      Travellers</span>
                   </div>
                   <div class="quick-info-footer max-passengers">
                     <span id="ticket-type-icon"></span>
@@ -121,43 +119,76 @@
                   class="booking-form-footer-item price-brakedown d-inline-flex flex-column justify-content-evenly me-5">
                   <div class="text-white fw-light">Price breakdown</div>
                   <div class="breakdown d-inline-flex align-items-center">
-                    <div class="h5 mb-0 me-2">Tour <span id="price-breakdown">$140</span></div>
-                    <div class="h6 mb-0">+ Pickup and drop off charges<span class="ms-2" id="pickup-charge">$0</span>
+                    <div class="h5 mb-0 me-2">
+                      Tour <span id="price-breakdown">$140</span>
+                    </div>
+                    <div class="h6 mb-0">
+                      + Pickup and drop off charges<span class="ms-2" id="pickup-charge">$0</span>
                     </div>
                   </div>
                   <small id="distance-msg" class="fw-light">(Within Melbourne CBD 10km radius)</small>
                 </div>
 
-                <div class="booking-form-footer-item  add-to-cart d-inline-flex flex-column justify-content-center ">
+                <div class="booking-form-footer-item add-to-cart d-inline-flex flex-column justify-content-center">
                   <div id="myButton" class="btn btn-dark rounded-pill py-3">
                     <i class="fa-solid fa-cart-shopping text-light"></i>
                     <span class="ms-2">Proceed to Checkout</span>
                   </div>
                 </div>
-
               </div>
-              <small class="fw-light">By Continuing you accept the <a role="button" data-bs-toggle="modal" data-bs-target="#termsConditionModal"
-                  class="fw-bold text-white">terms & conditions</a> </small>
+              <small class="fw-light">By Continuing you accept the
+                <a role="button" data-bs-toggle="modal" data-bs-target="#termsConditionModal"
+                  class="fw-bold text-white">terms & conditions</a>
+              </small>
             </div>
           </div>
         </div>
       </form>
     </div>
 
-
     <!-- Modal -->
-    <div class="modal fade" id="termsConditionModal" tabindex="-1" aria-labelledby="termsConditionModalLabel" aria-hidden="true">
+    <div class="modal fade" id="termsConditionModal" tabindex="-1" aria-labelledby="termsConditionModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="termsConditionModalLabel">Terms & Conditions</h1>
+            <h1 class="modal-title fs-5" id="termsConditionModalLabel">
+              Terms & Conditions
+            </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur quod facere nemo accusantium cum quae corporis omnis illum obcaecati expedita praesentium dolorem vel ullam est consequuntur provident voluptatibus, sunt voluptatum!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Consequatur quod facere nemo accusantium cum quae corporis omnis
+            illum obcaecati expedita praesentium dolorem vel ullam est
+            consequuntur provident voluptatibus, sunt voluptatum!
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT Widget Modal -->
+    <div class="modal fade" id="ttWidgetModal" data-bs-backdrop="static"  tabindex="-1" aria-labelledby="ttWidgetModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content tt-widget-nodal-content">
+          <div class="modal-body">
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            <div id="widget-container" class="tt-widget">
+              <div class="tt-widget-fallback">
+                <p>
+                  <a href="https://www.tickettailor.com/all-tickets/malindu/?ref=website_widget&srch=into_the_forest_plus"
+                    target="_blank"></a><br />
+                  <small>
+                    <a href="https://www.tickettailor.com?rf=wdg_162152" class="tt-widget-powered"></a>
+                  </small>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -188,17 +219,16 @@
   <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header bold">
-       
         <strong class="me-auto bold">Oops!</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body">
         <div class="mb-2" id="toast-body"></div>
         <div class="d-flex">
-          <a role="button" onclick="$('#liveToast').toast('hide')" class="btn btn-sm btn-dark me-2 ">
+          <a role="button" onclick="$('#liveToast').toast('hide')" class="btn btn-sm btn-dark me-2">
             Okay
           </a>
-          <a role="button" target="_blank" href="index.html#contact" class="btn btn-sm btn-dark ">
+          <a role="button" target="_blank" href="index.html#contact" class="btn btn-sm btn-dark">
             Contact us
           </a>
         </div>
@@ -208,6 +238,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="js/booking.js"></script>
 </body>
 
