@@ -309,11 +309,11 @@ label {
     justify-content: center;
   } */
 
-.tt-widget-nodal-content .modal-body {
+.tt-widget-modal-content .modal-body {
   padding: 0px !important;
 }
 
-.tt-widget-nodal-content {
+.tt-widget-modal-content {
   background-color: transparent !important;
   border: none !important;
 }
