@@ -2371,6 +2371,11 @@ a:hover.back-to-top {
     background-color: rgba(255, 255, 255, 0.09);
   }
 
+  .area-plus-accordion{
+    height: 93vh;
+    overflow-y: auto;
+  }
+
   .fixed {
     position: fixed;
     z-index: 2;
