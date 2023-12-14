@@ -758,7 +758,18 @@ function changeBackground() {
   area2.style.transition = "background-image 0.5s";
 
   // Crossfade effect
-  area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const imageUrl = backgroundImageUrls[currentIndex];
+        area2.style.backgroundImage = `url(${imageUrl})`;
+        observer.unobserve(area2);
+      }
+    });
+  });
+  observer.observe(area2);
+  //area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
 
   areaPlus.style.transition = "background-image 0.5s";
 
