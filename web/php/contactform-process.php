@@ -20,18 +20,23 @@ if (isset($_POST["send"])) {
 
   $mail = new PHPMailer(true);
  
+
+
     //Server settings
-    $mail->isSMTP();                              //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';       //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;             //Enable SMTP authentication
-    $mail->Username   = 'cheakone2@gmail.com';   //SMTP write your email
-    $mail->Password   = 'qdhtkpyqrrqehsun';      //SMTP password
-    $mail->SMTPSecure = 'ssl';            //Enable implicit SSL encryption
-    $mail->Port       = 465;                                    
+    $mail->isSMTP();
+    $mail->Host = 'localhost';
+    $mail->SMTPAuth = false;
+    $mail->SMTPAutoTLS = false; 
+    $mail->Port = 25; 
+    
+    
+    $mail = new PHPMailer();
+   $mail->isSMTP();                                      
+   
  
     //Recipients
-    $mail->setFrom( "cheakone2@gmail.com", "DayBreak"); // Sender Email and name
-    $mail->addAddress('cheakone2@gmail.com');     //Add a recipient email  
+    $mail->setFrom( "info@daybreak-adventures.com.au", "DayBreak"); // Sender Email and name
+    $mail->addAddress('info@daybreak-adventures.com.au');     //Add a recipient email  
   
  
     //Content

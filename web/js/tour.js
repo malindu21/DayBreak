@@ -1,3 +1,6 @@
+
+
+
 const package001 = {
   // ... your dummy data here
 
@@ -217,6 +220,25 @@ const package002 = {
     subTitle: "Geelong, Ferries, Wineries & Sorrento",
     desc: "Embark on a mesmerizing journey as we explore the coastal wonders of Geelong and the Peninsula, unravelling a rich tapestry of unforgettable experiences. Allow yourself to be captivated by the sheer beauty of scenic lookouts and the enchanting allure of coastal trails that grace our road trip. This adventure also promises a taste of the region's cool climate wineries and the thrill of various aerial attractions, adding layers of excitement to our exploration. As the day draws to a close, immerse yourself in the tranquility of a ferry ride across the pristine waters of Port Phillip Bay, setting the stage for a golden-hour finale by the tranquil ocean's edge. ",
     duration: "Duration: N/A",
+    backgroundImageUrls: [
+      "images/ocean_vibes/0.webp",
+      "images/ocean_vibes/1.webp",
+      "images/ocean_vibes/2.webp",
+      "images/ocean_vibes/3.webp",
+      "images/ocean_vibes/4.webp",
+      "images/ocean_vibes/5.webp",
+      "images/ocean_vibes/5.webp",
+      "images/ocean_vibes/6.webp",
+      "images/ocean_vibes/7.webp",
+      "images/ocean_vibes/8.webp",
+      "images/ocean_vibes/9.webp",
+      "images/ocean_vibes/10.webp",
+      "images/ocean_vibes/11.webp",
+      "images/ocean_vibes/12.webp",
+      "images/ocean_vibes/13.webp",
+      "images/ocean_vibes/14.webp",
+      "images/ocean_vibes/15.webp",
+    ],
   },
 
   packageActivity: {
@@ -383,6 +405,19 @@ const package003 = {
     subTitle: "Great Ocean Road, 12 Apostles & Scenic Drives ",
     desc: "Explore the stunning Great Ocean Road with our expertly crafted tour. This scenic drive offers breathtaking coastal views, with highlights including the iconic Split Point Lighthouse, Teddy's Lookout for panoramic vistas, a leisurely stroll through Mait's Rest Rainforest, a unique perspective at Gibson Steps, and the awe-inspiring Thunder Cave. The tour culminates at the world-famous Twelve Apostles, where you can witness the changing light throughout the day and possibly catch a spectacular sunset. Join us for a day filled with natural beauty and unforgettable experiences along this iconic Australian coastal highway. ",
     duration: "Duration: N/A",
+    backgroundImageUrls: [
+      "images/beach_to_greenery/5.webp",
+      "images/beach_to_greenery/5.webp",
+      "images/beach_to_greenery/6.webp",
+      "images/beach_to_greenery/7.webp",
+      "images/beach_to_greenery/8.webp",
+      "images/beach_to_greenery/9.webp",
+      "images/beach_to_greenery/10.webp",
+      "images/beach_to_greenery/11.webp",
+      "images/beach_to_greenery/12.webp",
+      "images/beach_to_greenery/13.webp",
+      "images/beach_to_greenery/14.webp",
+    ],
   },
 
   packageActivity: {
@@ -550,6 +585,21 @@ const package004 = {
     subTitle: "Mornington Peninsula, National Parks & Geothermal Hot Springs",
     desc: "Discover the allure of the Mornington Peninsula that seamlessly blends encounters with native wildlife, leisurely coastal strolls, boutique shopping, coastal exploration, and ultimate relaxation. Experience a close encounter with the region's iconic wildlife, gaining insights into their conservation efforts. Take in the coastal beauty during relaxing walks while collecting unique mementos.  Explore the dramatic coastal landscapes unique to this region before concluding your adventure with a tranquil soak in mineral-rich geothermal pools, allowing stress to melt away amidst the peninsula's serene natural beauty. ",
     duration: "Duration: N/A",
+    backgroundImageUrls: [
+      "images/clif/0.webp",
+      "images/clif/1.webp",
+      "images/clif/2.webp",
+      "images/clif/3.webp",
+      "images/clif/4.webp",
+      "images/clif/5.webp",
+      "images/clif/5.webp",
+      "images/clif/6.webp",
+      "images/clif/7.webp",
+      "images/clif/8.webp",
+      "images/clif/9.webp",
+      "images/clif/10.webp",
+      "images/clif/11.webp",
+    ],
   },
 
   packageActivity: {
@@ -712,11 +762,12 @@ const area1 = document.querySelector(".accordion");
 const area2 = document.querySelector(".area-1");
 const areaPlus = document.querySelector(".area-plus");
 const areaPlusWrapper = document.querySelector(".area-plus-wrapper");
-const backgroundImageUrls = package001.details.backgroundImageUrls;
+var backgroundImageUrls = [];
 let currentIndex = 0;
 let intervalId;
 
-changeBackground();
+
+
 insertSectionsIntoContainer();
 function insertSectionsIntoContainer() {
   const packageName = document.getElementById("packageName");
@@ -734,7 +785,8 @@ function insertSectionsIntoContainer() {
 
   if (packageId == "001") {
     //aboutThisActivity();
-
+    backgroundImageUrls = [];
+    backgroundImageUrls = package001.details.backgroundImageUrls;
     for (const section of Object.values(package001.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -778,6 +830,8 @@ function insertSectionsIntoContainer() {
     // packageDuration.appendChild(packageDurationSection(package001.details.duration));
   }else if (packageId == "002"){
     
+    backgroundImageUrls = [];
+    backgroundImageUrls = package002.details.backgroundImageUrls;
     for (const section of Object.values(package001.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -819,7 +873,8 @@ function insertSectionsIntoContainer() {
     );
     packageDesc.appendChild(packageDescSection(package002.details.desc));
   }else if (packageId == "003"){
-    
+    backgroundImageUrls = [];
+    backgroundImageUrls = package003.details.backgroundImageUrls;
     for (const section of Object.values(package001.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -861,7 +916,8 @@ function insertSectionsIntoContainer() {
     );
     packageDesc.appendChild(packageDescSection(package003.details.desc));
   }else if (packageId == "004"){
-    
+    backgroundImageUrls = [];
+    backgroundImageUrls = package004.details.backgroundImageUrls;
     for (const section of Object.values(package001.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -905,6 +961,7 @@ function insertSectionsIntoContainer() {
   }
 }
 
+changeBackground();
 var data = {
   whatToWear: ["Comfortable clothing", "Walking shoes", "Sunscreen", "Jacket"],
   notAllowed: [
@@ -1320,3 +1377,4 @@ copy.onclick = () => {
     }, 3000);
   }
 };
+
