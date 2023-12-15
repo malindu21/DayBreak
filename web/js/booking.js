@@ -7,7 +7,7 @@ let packageName = "";
 let pachageCat = "";
 let selectedDate = "";
 let generatedKeyword = "";
-let test = "Into The Forest [SUV] - General";
+let test = "Into The Forest General SUV";
 
 let maxNoOfTravellers = 0;
 let minNoOfTravellers = 0;
@@ -410,7 +410,7 @@ function addTicketWidget(ref) {
   var url =
     "https://www.tickettailor.com/all-tickets/daybreak/?ref=" +
     generatedKeyword +
-    "&srch=" + test;
+    "&srch=" + generateWidgetRef(ref);
 
   scriptElement.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
   scriptElement.setAttribute("data-url", url);
@@ -426,7 +426,7 @@ function addTicketWidget(ref) {
 
   widgetContainer.appendChild(scriptElement);
 
-  alert(packageName + " " + ref + " " + pachageCat);
+
 }
 
 // Call the function to add the widget when the page loads
@@ -523,4 +523,9 @@ function generateUniqueKeyword(string1, string2, length = 15) {
   ).join("");
 
   return keyword;
+}
+
+function generateWidgetRef(packageType) {
+  let test = packageName + " " + pachageCat + " " + packageType;
+  return test;
 }
