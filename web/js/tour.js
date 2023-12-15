@@ -1251,6 +1251,14 @@ function importantInfomationSection(title, items) {
 }
 
 function populateList(dynamicData) {
+  var dynamicNameElement = document.getElementById("dynamicName");
+
+  // Your dynamic name (you can replace this with any dynamic value)
+  var dynamicName = "Highlights";
+
+  // Set the innerHTML of the h4 element to the dynamic name
+  dynamicNameElement.innerHTML = "<b>" + dynamicName + "</b>";
+  
   var listContainer = document.getElementById('dynamicList');
   dynamicData.forEach(function (item) {
       var listItem = document.createElement('li');
