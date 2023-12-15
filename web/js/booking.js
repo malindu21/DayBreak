@@ -525,7 +525,4 @@ function generateUniqueKeyword(string1, string2, length = 15) {
   return keyword;
 }
 
-function generateWidgetRef(packageType) {
-  let test = packageName + " " + pachageCat + " " + packageType;
-  return test;
-}
+function generateWidgetRef(packageType) {return packageName + " " + pachageCat + " " + packageType;}
