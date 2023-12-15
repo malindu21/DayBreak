@@ -866,6 +866,15 @@ function insertSectionsIntoContainer() {
     //aboutThisActivity();
     backgroundImageUrls = [];
     backgroundImageUrls = package001.details.backgroundImageUrls;
+
+
+    preloadImages(backgroundImageUrls, function () {
+      // All images are now preloaded
+      // You can proceed with setting up your background change logic here
+      // For example, you can call your changeBackground function here
+      changeBackground();
+    });
+    
     for (const section of Object.values(package001.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -1041,7 +1050,7 @@ function insertSectionsIntoContainer() {
   }
 }
 
-changeBackground();
+//changeBackground();
 var data = {
   whatToWear: ["Comfortable clothing", "Walking shoes", "Sunscreen", "Jacket"],
   notAllowed: [
@@ -1358,6 +1367,31 @@ function packageDurationSection(duration) {
 
 // tour.js
 
+function preloadImages(imageUrls, callback) {
+  let loadedImages = 0;
+  const totalImages = imageUrls.length;
+
+  // Function to check if all images are loaded
+  function imagesLoaded() {
+    loadedImages++;
+    if (loadedImages === totalImages) {
+      callback();
+    }
+  }
+
+  // Preload each image
+  imageUrls.forEach((imageUrl) => {
+    const img = new Image();
+    img.src = imageUrl;
+    img.onload = imagesLoaded;
+    img.onerror = imagesLoaded; // Handle errors as well
+  });
+}
+
+// Usage
+
+
+
 function changeBackground() {
   currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
 
@@ -1387,19 +1421,13 @@ function changeBackground() {
   areaPlus.style.transition = "background-image 0.5s";
 
   // Crossfade effect
+  areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
-
-  area1.style.backgroundImage = `url(${backgroundImageUrls[currentIndex]})`;
-area2.style.backgroundImage = `url(${backgroundImageUrls[currentIndex]})`;
-areaPlus.style.backgroundImage = `url(${backgroundImageUrls[currentIndex]})`;
-
-  
   resetInterval();
 }
 
 function resetInterval() {
   clearInterval(intervalId);
-  
   intervalId = setInterval(changeBackground, 7000);
 }
 
