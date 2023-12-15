@@ -7,6 +7,7 @@ let packageName = "";
 let pachageCat = "";
 let selectedDate = "";
 let generatedKeyword = "";
+let test = "Into The Forest [SUV] - General";
 
 let maxNoOfTravellers = 0;
 let minNoOfTravellers = 0;
@@ -409,8 +410,7 @@ function addTicketWidget(ref) {
   var url =
     "https://www.tickettailor.com/all-tickets/daybreak/?ref=" +
     generatedKeyword +
-    "&srch=" +
-      ref + pachageCat;
+    "&srch=" + test;
 
   scriptElement.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
   scriptElement.setAttribute("data-url", url);
