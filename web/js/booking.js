@@ -410,7 +410,7 @@ function addTicketWidget(ref) {
     "https://www.tickettailor.com/all-tickets/daybreak/?ref=" +
     generatedKeyword +
     "&srch=" +
-    packageName + " " + ref + " " ;
+    packageName + " " + ref + " " + pachageCat;
 
   scriptElement.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
   scriptElement.setAttribute("data-url", url);
@@ -426,7 +426,7 @@ function addTicketWidget(ref) {
 
   widgetContainer.appendChild(scriptElement);
 
-  alert( packageName + ref + pachageCat);
+  alert(packageName + " " + ref + " " + pachageCat);
 }
 
 // Call the function to add the widget when the page loads
