@@ -256,7 +256,7 @@ function loadCityResult(address) {
     if (distance > 20) {
       showDistanceExceedPopup();
     } else {
-      pachageCat = distance > 10 ? "plus" : "general";
+      pachageCat = distance > 10 ? "Plus" : "General";
       calculateValue(distance > 10);
     }
   });
@@ -410,7 +410,7 @@ function addTicketWidget(ref) {
     "https://www.tickettailor.com/all-tickets/daybreak/?ref=" +
     generatedKeyword +
     "&srch=" +
-    packageName + ref;
+    packageName + " " + ref + " " ;
 
   scriptElement.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
   scriptElement.setAttribute("data-url", url);
@@ -425,6 +425,8 @@ function addTicketWidget(ref) {
   scriptElement.setAttribute("data-inline-ref", "website_widget");
 
   widgetContainer.appendChild(scriptElement);
+
+  alert( packageName + ref + pachageCat);
 }
 
 // Call the function to add the widget when the page loads
