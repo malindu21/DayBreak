@@ -1387,13 +1387,19 @@ function changeBackground() {
   areaPlus.style.transition = "background-image 0.5s";
 
   // Crossfade effect
-  areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
+
+  area1.style.backgroundImage = `url(${backgroundImageUrls[currentIndex]})`;
+area2.style.backgroundImage = `url(${backgroundImageUrls[currentIndex]})`;
+areaPlus.style.backgroundImage = `url(${backgroundImageUrls[currentIndex]})`;
+
+  
   resetInterval();
 }
 
 function resetInterval() {
   clearInterval(intervalId);
+  
   intervalId = setInterval(changeBackground, 7000);
 }
 
