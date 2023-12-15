@@ -331,8 +331,9 @@ function validateCheckout() {
   }
 }
 
+showPopupWithDelay();
 function showPopupWithDelay() {
-  myPopup.classList.add("show");
+  //myPopup.classList.add("show");
 
   const string1 =
     +"4bfg2d1e8hijk3a5679c" +
@@ -356,7 +357,7 @@ function showPopupWithDelay() {
     console.error(error.message);
   }
 
-  setTimeout(myFunction, 2000);
+  //setTimeout(myFunction, 2000);
 }
 
 myButton.addEventListener("click", validateCheckout);
