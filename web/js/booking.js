@@ -44,6 +44,7 @@ function getAllPackages() {
       )[0];
 
       document.getElementById("package-title").innerHTML = dataset.title;
+      packageName = dataset.title
       document.getElementById("main-bg").style.background =
         "url(" + dataset.backgroundImageUrls[0] + ") no-repeat center center";
       document.getElementById("main-bg").style.backgroundSize = "cover";
@@ -409,7 +410,7 @@ function addTicketWidget(ref) {
     "https://www.tickettailor.com/all-tickets/daybreak/?ref=" +
     generatedKeyword +
     "&srch=" +
-    ref;
+    packageName + ref;
 
   scriptElement.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
   scriptElement.setAttribute("data-url", url);

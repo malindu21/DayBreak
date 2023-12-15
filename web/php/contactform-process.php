@@ -19,17 +19,15 @@ if (isset($_POST["send"])) {
   $key =  $_POST['key'];
 
   $mail = new PHPMailer(true);
- 
-
 
     //Server settings
     $mail->isSMTP();
-    $mail->Host = 'daybreak-adventures.com.au';
-    $mail->SMTPAuth = true;
+    $mail->isSMTP();
+    $mail->Host = 'relay-hosting.secureserver.net';
     $mail->Username = 'info@daybreak-adventures.com.au'; // it may be your domain mail too, for ex mail@yourdomain.com
     $mail->Password = 'm-peMszZe7';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+    $mail->Port = 25;
+    $mail->CharSet = 'utf-8';
 
     $mail = new PHPMailer();
    $mail->isSMTP();                                      
