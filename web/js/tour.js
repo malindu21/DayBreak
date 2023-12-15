@@ -874,7 +874,7 @@ function insertSectionsIntoContainer() {
       // For example, you can call your changeBackground function here
       changeBackground();
     });
-    
+
     for (const section of Object.values(package001.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -921,6 +921,16 @@ function insertSectionsIntoContainer() {
     
     backgroundImageUrls = [];
     backgroundImageUrls = package002.details.backgroundImageUrls;
+
+
+    preloadImages(backgroundImageUrls, function () {
+      // All images are now preloaded
+      // You can proceed with setting up your background change logic here
+      // For example, you can call your changeBackground function here
+      changeBackground();
+    });
+    
+
     for (const section of Object.values(package002.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -964,6 +974,16 @@ function insertSectionsIntoContainer() {
   }else if (packageId == "003"){
     backgroundImageUrls = [];
     backgroundImageUrls = package003.details.backgroundImageUrls;
+
+
+    preloadImages(backgroundImageUrls, function () {
+      // All images are now preloaded
+      // You can proceed with setting up your background change logic here
+      // For example, you can call your changeBackground function here
+      changeBackground();
+    });
+    
+
     for (const section of Object.values(package003.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -1007,6 +1027,15 @@ function insertSectionsIntoContainer() {
   }else if (packageId == "004"){
     backgroundImageUrls = [];
     backgroundImageUrls = package004.details.backgroundImageUrls;
+
+
+    preloadImages(backgroundImageUrls, function () {
+      // All images are now preloaded
+      // You can proceed with setting up your background change logic here
+      // For example, you can call your changeBackground function here
+      changeBackground();
+    });
+    
     for (const section of Object.values(package004.packageActivity)) {
       aboutThisActivity(section.title, section.description, section.iconClass);
     }
@@ -1428,7 +1457,7 @@ function changeBackground() {
 
 function resetInterval() {
   clearInterval(intervalId);
-  intervalId = setInterval(changeBackground, 7000);
+  intervalId = setInterval(changeBackground, 10000);
 }
 
 function scrollToBottom() {
