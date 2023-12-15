@@ -24,12 +24,13 @@ if (isset($_POST["send"])) {
 
     //Server settings
     $mail->isSMTP();
-    $mail->Host = 'localhost';
-    $mail->SMTPAuth = false;
-    $mail->SMTPAutoTLS = false; 
-    $mail->Port = 25; 
-    
-    
+    $mail->Host = 'daybreak-adventures.com.au';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'info@daybreak-adventures.com.au'; // it may be your domain mail too, for ex mail@yourdomain.com
+    $mail->Password = 'm-peMszZe7';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+
     $mail = new PHPMailer();
    $mail->isSMTP();                                      
    
@@ -57,7 +58,7 @@ if (isset($_POST["send"])) {
     echo
     " 
     <script> 
-     alert('Message was sent successfully!');
+     alert('Message was sent successfully! php');
    
     </script>
     ";

@@ -487,7 +487,7 @@ function submitForm(name, email, subject, message, key) {
 
       // You can add more logic here based on the PHP file's response
       if (data.includes("Message was sent successfully!")) {
-        alert("Message was sent successfully!");
+        alert("Message was sent successfully! js");
         //window.location.href = 'index.php';
       } else {
         alert("Failed to send the message.");
