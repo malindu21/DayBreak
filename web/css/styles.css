@@ -585,6 +585,10 @@ strong {
   text-align: start;
 }
 
+.collection-list li {
+  color: #484a46 !important; /* Set your desired font color here */
+}
+
 .white-box-tours li {
   color: #000;
   font-size: 15px;

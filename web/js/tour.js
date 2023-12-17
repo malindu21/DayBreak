@@ -878,7 +878,8 @@ function insertSectionsIntoContainer() {
           index,
           section.title,
           section.description,
-          section.duration
+          section.duration,
+          package001
         )
       );
     }
@@ -924,7 +925,8 @@ function insertSectionsIntoContainer() {
           index,
           section.title,
           section.description,
-          section.duration
+          section.duration,
+          package002
         )
       );
     }
@@ -967,7 +969,8 @@ function insertSectionsIntoContainer() {
           index,
           section.title,
           section.description,
-          section.duration
+          section.duration,
+          package003
         )
       );
     }
@@ -1010,7 +1013,8 @@ function insertSectionsIntoContainer() {
           index,
           section.title,
           section.description,
-          section.duration
+          section.duration,
+          package004
         )
       );
     }
@@ -1155,7 +1159,7 @@ function aboutThisActivity(topic, desc, iconClass) {
   }
 }
 
-function createIterity(iconClass, title, description, duration) {
+function createIterity(iconClass, title, description, duration,package) {
   const div = document.createElement("div");
   div.className = "white-box-tours";
   div.style.width = "100%"; // Set the default width to 45%
@@ -1163,14 +1167,14 @@ function createIterity(iconClass, title, description, duration) {
   div.innerHTML = `<div class="comment-container">
             <div class="chain chain-top"></div>
             <div class="circle-tours">${iconClass}</div>
-            <div class="white-box-tours" style="width: 80%; height: auto;" >  
+            <div class="white-box-tours" style="width: 80%; " >  
             <div class="comment">
               <h3>${title}</h3>
               <p>${description}</p>
               <h3>${duration}</h3>
             </div>
             ${
-              Object.entries(package001.package1Iternity).length !=
+              Object.entries(package.package1Iternity).length !=
               Number(iconClass)
                 ? `<div class="chain chain-bottom"></div>`
                 : ""

@@ -45,7 +45,7 @@ function onclickPackage(packageId){
 
   /* Preloader */
   $(window).on("load", function () {
-    var preloaderFadeOutTime = 500;
+    var preloaderFadeOutTime = 250;
 
     function hidePreloader() {
       var preloader = $(".spinner-wrapper");
