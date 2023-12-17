@@ -1368,35 +1368,23 @@ function packageDurationSection(duration) {
 function changeBackground() {
   currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
 
-  // // Set a smooth transition for background-image
-  // area1.style.transition = 'background-image 0.5s';
+  const nextImage = new Image();
+  nextImage.src = backgroundImageUrls[currentIndex];
 
-  // // Crossfade effect
-  // area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+  nextImage.onload = function () {
+    // Set a smooth transition for background-image
+    area2.style.transition = "background-image 0.5s";
 
-  //  // Set a smooth transition for background-image
-  area2.style.transition = "background-image 0.5s";
+    // Crossfade effect
+    area2.style.backgroundImage = `url('${nextImage.src}')`;
 
-  // Crossfade effect
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const imageUrl = backgroundImageUrls[currentIndex];
-        area2.style.backgroundImage = `url(${imageUrl})`;
-        observer.unobserve(area2);
-      }
-    });
-  });
-  observer.observe(area2);
-  //area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+    areaPlus.style.transition = "background-image 0.5s";
 
+    // Crossfade effect
+    areaPlus.style.backgroundImage = `url('${nextImage.src}'), url('${area1.style.backgroundImage}')`;
 
-  areaPlus.style.transition = "background-image 0.5s";
-
-  // Crossfade effect
-  areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
-
-  //esetInterval();
+    resetInterval();
+  };
 }
 
 
