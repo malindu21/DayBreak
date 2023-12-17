@@ -1044,12 +1044,7 @@ function insertSectionsIntoContainer() {
 
 changeBackground();
 
-const preloadedImages = [];
-for (const imageUrl of backgroundImageUrls) {
-  const img = new Image();
-  img.src = imageUrl;
-  preloadedImages.push(img);
-}
+
 var data = {
   whatToWear: ["Comfortable clothing", "Walking shoes", "Sunscreen", "Jacket"],
   notAllowed: [
@@ -1397,7 +1392,50 @@ function changeBackground() {
   // Crossfade effect
   areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
 
-  resetInterval();
+  //esetInterval();
+}
+
+function btnChangeBackground() {
+
+
+  currentIndex = (currentIndex + 1) % backgroundImageUrls.length;
+
+  // // Set a smooth transition for background-image
+  // area1.style.transition = 'background-image 0.5s';
+
+  // // Crossfade effect
+  // area1.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+  //  // Set a smooth transition for background-image
+  area2.style.transition = "background-image 0.5s";
+
+  // Crossfade effect
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const imageUrl = backgroundImageUrls[currentIndex];
+        area2.style.backgroundImage = `url(${imageUrl})`;
+        observer.unobserve(area2);
+      }
+    });
+  });
+  observer.observe(area2);
+  //area2.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+
+  areaPlus.style.transition = "background-image 0.5s";
+
+  // Crossfade effect
+  areaPlus.style.backgroundImage = `url('${backgroundImageUrls[currentIndex]}'), url('${area1.style.backgroundImage}')`;
+
+  const preloadedImages = [];
+  for (const imageUrl of backgroundImageUrls) {
+    const img = new Image();
+    img.src = imageUrl;
+    preloadedImages.push(img);
+  }
+  
+  //resetInterval();
 }
 
 function resetInterval() {
