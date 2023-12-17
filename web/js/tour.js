@@ -1041,6 +1041,12 @@ function insertSectionsIntoContainer() {
   }
 }
 
+const preloadedImages = [];
+for (const imageUrl of backgroundImageUrls) {
+  const img = new Image();
+  img.src = imageUrl;
+  preloadedImages.push(img);
+}
 changeBackground();
 var data = {
   whatToWear: ["Comfortable clothing", "Walking shoes", "Sunscreen", "Jacket"],
