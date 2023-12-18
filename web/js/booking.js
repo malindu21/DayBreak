@@ -64,13 +64,15 @@ if (ticketType == "SUV") {
   setMinMaxTravellers(1, 4);
   document.getElementById(
     "ticket-type-icon"
-  ).innerHTML = `<i class="fa-solid fa-car"></i>`;
+  ).innerHTML = `<img class="tourIcon" src="images/suv.svg" alt="Icon"
+  style="margin-left:auto; width: 33px; height: 35px;filter:invert(1)">`;
   document.getElementById("ticket-type-text").innerHTML = "SUV";
 } else if (ticketType == "VAN") {
   setMinMaxTravellers(1, 7);
   document.getElementById(
     "ticket-type-icon"
-  ).innerHTML = `<i class="fas fa-shuttle-van"></i>`;
+  ).innerHTML = `<img class="tourIcon" src="images/van.png" alt="Icon"
+  style="margin-left:auto; width: 33px; height: 35px;filter:invert(1)">`;
   document.getElementById("ticket-type-text").innerHTML = "Van";
 } else {
   // noOfTravellersEle.setAttribute("readonly", "true");
