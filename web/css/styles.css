@@ -1642,6 +1642,7 @@ input.cmn-toggle-round-flat:checked + label:after {
   position: fixed;
   bottom: 20px;
   -webkit-transform: translateZ(0);
+  transform: translate3d(0,0,0);
   /* Adjust the distance from the bottom as needed */
   right: 30px;
   /* Adjust the distance from the right as needed */
