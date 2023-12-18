@@ -33,6 +33,22 @@ $(window).on("load", function () {
   hidePreloader();
 });
 
+//UI fix
+
+document.addEventListener("DOMContentLoaded", function () {
+  const pickup = document.getElementById("pickup-drop-col");
+  const pickupDate = document.getElementById("pickup-date-col");
+  const additionalMessage = document.getElementById("additional-message-col");
+     if(window.innerHeight < 850){
+      pickup.classList.remove("col-lg-6");
+      pickup.classList.add("col-lg-4");
+      pickupDate.classList.remove("col-lg-6");
+      pickupDate.classList.add("col-lg-4");
+      additionalMessage.classList.add("col-lg-4");
+      document.getElementById("additional_details").setAttribute("rows",2);
+     }
+})
+
 getAllPackages();
 
 function getAllPackages() {
