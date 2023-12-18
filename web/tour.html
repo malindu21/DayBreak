@@ -564,7 +564,16 @@
 
     </script>
 
+    <script>
+        // Get the h4 element by its id
+        var dynamicNameElement = document.getElementById("dynamicName");
 
+        // Check if the content is empty
+        if (!dynamicNameElement.innerText.trim()) {
+            // If empty, add a non-breaking space
+            dynamicNameElement.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    </script>
 </body>
 
 </html>
