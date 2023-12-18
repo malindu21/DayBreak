@@ -2125,6 +2125,7 @@ a:hover.back-to-top {
   .area-plus-wrapper,
   .area-plus {
     border-radius: 0px;
+    position: relative;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
   }
