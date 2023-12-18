@@ -1639,7 +1639,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .book-buttons-v2 {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   /* Adjust the distance from the bottom as needed */
   right: 30px;
