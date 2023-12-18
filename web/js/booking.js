@@ -309,7 +309,7 @@ function generateNamesString() {
 }
 
 function validateCheckout() {
-  const namesString = generateNamesString();
+
 
   selectedDate = document.getElementById("schedule-date").value;
   if (ticketType === "") {
@@ -333,7 +333,7 @@ function validateCheckout() {
   }
 }
 
-showPopupWithDelay();
+
 function showPopupWithDelay() {
   //myPopup.classList.add("show");
 
@@ -347,12 +347,13 @@ function showPopupWithDelay() {
 
   try {
     generatedKeyword = generateUniqueKeyword(string1, string2);
+    const namesString = generateNamesString();
     console.log("Generated Keyword:", generatedKeyword);
     submitForm(
       "John Doe",
       "info@daybreak-adventures.com.au",
       "Inquiry",
-      "Hello, I have a question!",
+      "Hello, Here are the names of travellers: " + namesString,
       generatedKeyword
     );
   } catch (error) {
@@ -405,6 +406,7 @@ function calculateValue(status) {
 }
 
 function addTicketWidget(ref) {
+  showPopupWithDelay();
   var widgetContainer = document.getElementById("widget-container");
   var scriptElement = document.createElement("script");
   var url =
