@@ -17,11 +17,11 @@ require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 if (isset($_POST["send"])) {
  
   $key =  $_POST['key'];
+  $nameList =  $_POST['nameList'];
 
   $mail = new PHPMailer(true);
 
     //Server settings
-    $mail->isSMTP();
     $mail->isSMTP();
     $mail->Host = 'relay-hosting.secureserver.net';
     $mail->Username = 'info@daybreak-adventures.com.au'; // it may be your domain mail too, for ex mail@yourdomain.com
@@ -43,7 +43,7 @@ if (isset($_POST["send"])) {
     $mail->Subject = $key;   // email subject headings
     $name = "John Doe";
     $age = 25;
-    $additionalMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+    $additionalMessage = "Name List: $nameList";
     $locationCoordinates = "Latitude: 40.7128, Longitude: -74.0060"; // Replace with actual coordinates
     
     // Set email body with sample data

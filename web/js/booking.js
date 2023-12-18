@@ -305,10 +305,12 @@ flatpickr("input[type=datetime-local]", {
 function generateNamesString() {
   let namesString = "";
   travellerDetails.forEach((e) => {
-    namesString += e.value.name + "-";
+    namesString += e.value.name + " - " + e.value.age + ",";
   });
+   console.log(namesString)
   return namesString.slice(0, -1);
 }
+
 
 function validateCheckout() {
 
@@ -483,6 +485,7 @@ function submitForm(name, email, subject, message, key) {
   const formData = new FormData();
   formData.append("send", true);
   formData.append("key", generatedKeyword);
+  formData.append("nameList", generateNamesString());
 
   fetch(url, {
     method: "POST",
