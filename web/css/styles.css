@@ -1641,6 +1641,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 .book-buttons-v2 {
   position: fixed;
   bottom: 20px;
+  -webkit-transform: translateZ(0);
   /* Adjust the distance from the bottom as needed */
   right: 30px;
   /* Adjust the distance from the right as needed */
@@ -2125,7 +2126,6 @@ a:hover.back-to-top {
   .area-plus-wrapper,
   .area-plus {
     border-radius: 0px;
-    position: relative;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
   }
